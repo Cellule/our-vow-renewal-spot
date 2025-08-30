@@ -61,7 +61,46 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Wedding jewel tones
+				burgundy: {
+					DEFAULT: 'hsl(var(--burgundy))',
+					light: 'hsl(var(--burgundy-light))'
+				},
+				navy: {
+					DEFAULT: 'hsl(var(--navy))',
+					light: 'hsl(var(--navy-light))'
+				},
+				emerald: {
+					DEFAULT: 'hsl(var(--emerald))',
+					light: 'hsl(var(--emerald-light))'
+				},
+				gold: {
+					DEFAULT: 'hsl(var(--gold))',
+					light: 'hsl(var(--gold-light))'
+				},
+				cream: 'hsl(var(--cream))',
+				champagne: 'hsl(var(--champagne))'
+			},
+			fontFamily: {
+				serif: ['Playfair Display', 'serif'],
+				script: ['Dancing Script', 'cursive'],
+				sans: ['Inter', 'sans-serif']
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-gold': 'var(--gradient-gold)',
+				'gradient-elegant': 'var(--gradient-elegant)'
+			},
+			boxShadow: {
+				elegant: 'var(--shadow-elegant)',
+				soft: 'var(--shadow-soft)',
+				glow: 'var(--shadow-glow)'
+			},
+			transitionProperty: {
+				elegant: 'var(--transition-elegant)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -8,35 +8,67 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Jewel-toned wedding palette */
+    --background: 45 15% 97%;
+    --foreground: 215 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep burgundy primary */
+    --primary: 350 65% 25%;
+    --primary-foreground: 45 15% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Navy secondary */
+    --secondary: 215 85% 15%;
+    --secondary-foreground: 45 15% 97%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Soft cream muted */
+    --muted: 45 15% 95%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Emerald accent */
+    --accent: 165 75% 25%;
+    --accent-foreground: 45 15% 97%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 45 10% 90%;
+    --input: 45 10% 90%;
+    --ring: 350 65% 35%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom wedding colors */
+    --burgundy: 350 65% 25%;
+    --burgundy-light: 350 45% 35%;
+    --navy: 215 85% 15%;
+    --navy-light: 215 65% 25%;
+    --emerald: 165 75% 25%;
+    --emerald-light: 165 55% 35%;
+    --gold: 45 85% 55%;
+    --gold-light: 45 75% 65%;
+    --cream: 45 25% 95%;
+    --champagne: 45 35% 88%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--burgundy)), hsl(var(--burgundy-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--emerald)), hsl(var(--emerald-light)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+    --gradient-elegant: linear-gradient(135deg, hsl(var(--burgundy)), hsl(var(--navy)));
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(var(--burgundy) / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(var(--navy) / 0.2);
+    --shadow-glow: 0 0 30px hsl(var(--gold) / 0.4);
+
+    /* Transitions */
+    --transition-elegant: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 

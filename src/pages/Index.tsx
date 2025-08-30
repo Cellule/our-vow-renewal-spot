@@ -1,13 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import SaveTheDateHero from "@/components/SaveTheDateHero";
+import OurStory from "@/components/OurStory";
+import EventDetails from "@/components/EventDetails";
+import ContactInfo from "@/components/ContactInfo";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="min-h-screen">
+      <SaveTheDateHero />
+      <OurStory />
+      <EventDetails />
+      <ContactInfo />
+      
+      {/* Footer */}
+      <footer className="bg-gradient-elegant py-12">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="font-script text-3xl text-cream mb-4">
+            With all our love
+          </p>
+          <div className="w-16 h-px bg-gradient-gold mx-auto mb-4"></div>
+          <p className="font-serif text-lg text-champagne">
+            [Your Names] • [Year]
+          </p>
+        </div>
+      </footer>
+    </main>
   );
 };
 
