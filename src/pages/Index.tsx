@@ -2,10 +2,15 @@ import SaveTheDateHero from "@/components/SaveTheDateHero";
 import OurStory from "@/components/OurStory";
 import EventDetails from "@/components/EventDetails";
 import ContactInfo from "@/components/ContactInfo";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+  
   return (
     <main className="min-h-screen">
+      <LanguageSwitcher />
       <SaveTheDateHero />
       <OurStory />
       <EventDetails />
@@ -15,11 +20,11 @@ const Index = () => {
       <footer className="bg-gradient-elegant py-12">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="font-script text-3xl text-cream mb-4">
-            With all our love
+            {t('footer.withLove')}
           </p>
           <div className="w-16 h-px bg-gradient-gold mx-auto mb-4"></div>
           <p className="font-serif text-lg text-champagne">
-            [Your Names] • [Year]
+            {t('footer.names')}
           </p>
         </div>
       </footer>

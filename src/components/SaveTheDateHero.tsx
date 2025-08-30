@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SaveTheDateHero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -16,11 +19,11 @@ const SaveTheDateHero = () => {
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="mb-8">
           <h1 className="font-script text-6xl md:text-8xl lg:text-9xl text-cream mb-4 drop-shadow-lg">
-            Save the Date
+            {t('hero.saveDate')}
           </h1>
           <div className="w-32 h-px bg-gradient-gold mx-auto mb-6"></div>
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-champagne mb-6">
-            We're Renewing Our Vows
+            {t('hero.renewingVows')}
           </h2>
         </div>
 
@@ -28,41 +31,40 @@ const SaveTheDateHero = () => {
           <div className="grid md:grid-cols-2 gap-8 text-cream">
             <div>
               <h3 className="font-serif text-xl md:text-2xl mb-4 text-gold">
-                The Couple
+                {t('hero.couple')}
               </h3>
-              <p className="font-sans text-lg md:text-xl font-medium">
-                Andréanne Salvas
-                <br /> Michaël Ferris
+              <p className="font-sans text-lg md:text-xl font-medium whitespace-pre-line">
+                {t('hero.coupleNames')}
               </p>
             </div>
             <div>
               <h3 className="font-serif text-xl md:text-2xl mb-4 text-gold">
-                The Date(s)
+                {t('hero.dates')}
               </h3>
               <p className="font-sans text-lg md:text-xl font-medium">
-                September 25th-27th, 2026
+                {t('hero.datesValue')}
               </p>
             </div>
           </div>
 
           <div className="mt-8 pt-8 border-t border-cream/20">
             <h3 className="font-serif text-xl md:text-2xl mb-4 text-gold">
-              The Location
+              {t('hero.location')}
             </h3>
-            <p className="font-sans text-lg md:text-xl font-medium text-cream">
-              Manoir Montpellier <br /> 533 QC-315, Montpellier, QC J0V 1M0
+            <p className="font-sans text-lg md:text-xl font-medium text-cream whitespace-pre-line">
+              {t('hero.locationValue')}
             </p>
           </div>
 
           <div className="mt-8 pt-8 border-t border-cream/20">
             <p className="font-sans text-sm md:text-base text-champagne mb-6">
-              Formal invitation to follow
+              {t('hero.formalInvitation')}
             </p>
             <Button
               size="lg"
               className="bg-gradient-gold hover:shadow-glow transition-all duration-300 font-sans font-semibold text-burgundy px-8 py-3"
             >
-              More Details Coming Soon
+              {t('hero.moreDetails')}
             </Button>
           </div>
         </div>
