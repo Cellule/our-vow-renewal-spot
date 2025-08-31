@@ -83,7 +83,7 @@ function RSVPInfo() {
         <p className="font-serif text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto">
           {t("contact.rsvpText")}
         </p>
-        <div className="space-y-4 font-sans max-w-md mx-auto">
+        {/* <div className="space-y-4 font-sans max-w-md mx-auto">
           <div className="flex justify-between items-center py-3 px-6 bg-cream/10 rounded-lg border border-cream/20">
             <span>{t("contact.formalInvitations")}</span>
             <span className="font-semibold">
@@ -96,7 +96,7 @@ function RSVPInfo() {
               {t("contact.rsvpDeadlineValue")}
             </span>
           </div>
-        </div>
+        </div> */}
         <div className="mt-8">
           <Button
             size="lg"

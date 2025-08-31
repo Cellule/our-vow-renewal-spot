@@ -132,7 +132,7 @@ const translations = {
 
     // Footer
     "footer.withLove": "With all our love",
-    "footer.names": "[Your Names] • [Year]",
+    "footer.names": "Andréanne & Michaël • 2025",
   },
   fr: {
     // Hero Section
@@ -141,7 +141,7 @@ const translations = {
     "hero.couple": "Le Couple",
     "hero.coupleNames": "Andréanne Salvas\nMichaël Ferris",
     "hero.dates": "La Date",
-    "hero.datesValue": "25-27 septembre 2026",
+    "hero.datesValue": "26 septembre 2026",
     "hero.location": "Le Lieu",
     "hero.locationValue":
       "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
@@ -196,11 +196,11 @@ const translations = {
     "contact.title": "Restons en Contact",
     "contact.subtitle": "Des questions? Nous aimerions avoir de vos nouvelles",
     "contact.email": "Envoyez-nous un Courriel",
-    "contact.emailValue": "[votre-email@email.com]",
+    // "contact.emailValue": "[votre-email@email.com]",
     "contact.call": "Appelez-nous",
-    "contact.callValue": "[Votre Numéro de Téléphone]",
+    // "contact.callValue": "[Votre Numéro de Téléphone]",
     "contact.text": "Textez-nous",
-    "contact.textValue": "[Votre Numéro de Téléphone]",
+    // "contact.textValue": "[Votre Numéro de Téléphone]",
     "contact.rsvpTitle": "Information RSVP",
     "contact.rsvpText":
       "Les invitations officielles avec les détails RSVP seront envoyées plus près de la date. Cette réservation de date est pour vous assurer de pouvoir marquer vos calendriers!",
@@ -212,7 +212,6 @@ const translations = {
 
     // Footer
     "footer.withLove": "Avec tout notre amour",
-    "footer.names": "[Vos Noms] • [Année]",
   },
 };
 
