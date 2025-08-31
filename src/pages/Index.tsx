@@ -1,7 +1,7 @@
 import SaveTheDateHero from "@/components/SaveTheDateHero";
 import OurStory from "@/components/OurStory";
 import EventDetails from "@/components/EventDetails";
-import ContactInfo from "@/components/ContactInfo";
+import Connect from "@/components/Connect";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -13,8 +13,8 @@ const Index = () => {
       <LanguageSwitcher />
       <SaveTheDateHero />
       <OurStory />
-      <EventDetails />
-      <ContactInfo />
+      {/* <EventDetails /> */}
+      <Connect />
       
       {/* Footer */}
       <footer className="bg-gradient-elegant py-12">
