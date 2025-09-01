@@ -7,10 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "build:server": "vite build --mode ssr",
-    "build:preview": "npm run build && npm run build:server && npm run pre-render",
+    "build:preview": "npm run build && npm run build:server && npm run pre-render && npm run update-meta",
     "build:dev": "vite build --mode development",
     "clean": "rimraf dist",
     "pre-render": "node scripts/pre-render.js",
+    "update-meta": "node scripts/update-meta.js",
     "test:preview": "node scripts/test-preview.js",
     "lint": "eslint .",
     "preview": "vite preview"
