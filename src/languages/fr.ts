@@ -1,3 +1,4 @@
+import { yearsMarried } from "@/lib/first-celebration";
 import type { TranslationKeys } from "./translations";
 
 export const fr: Record<TranslationKeys, string | undefined> = {
@@ -24,10 +25,11 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "story.now": "Maintenant",
   "story.nowText":
     "[Partagez comment vous avez grandi ensemble, ce que vous avez appris, et pourquoi vous choisissez de renouveler vos vœux - ce que cette célébration signifie pour vous]",
-  "story.yearsTitle": "10 Années",
+  "story.yearsTitle": `${yearsMarried} Années`,
   "story.yearsSubtitle": "d'amour, de rire et d'aventure",
   "story.yearsMarried": "Années Mariés",
-  "story.yearsMarriedValue": "10",
+  "story.yearsMarriedValue": `${yearsMarried}`,
+  "story.firstCelebration": "Première Célébration",
   "story.adventures": "Aventures Partagées",
   "story.adventuresValue": "Innombrables",
   "story.love": "Amour",

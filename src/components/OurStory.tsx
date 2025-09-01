@@ -1,4 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { firstCelebrationDate } from "@/lib/first-celebration";
 
 const OurStory = () => {
   const { t } = useLanguage();
@@ -44,6 +45,10 @@ const OurStory = () => {
                 </div>
                 
                 <div className="space-y-4 font-sans">
+                <div className="flex justify-between items-center py-2 border-b border-cream/20">
+                    <span>{t('story.firstCelebration')}</span>
+                    <span className="font-semibold">{firstCelebrationDate.toLocaleDateString()}</span>
+                  </div>
                   <div className="flex justify-between items-center py-2 border-b border-cream/20">
                     <span>{t('story.yearsMarried')}</span>
                     <span className="font-semibold">{t('story.yearsMarriedValue')}</span>

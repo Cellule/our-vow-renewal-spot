@@ -1,3 +1,5 @@
+import { yearsMarried } from "@/lib/first-celebration";
+
 export const en = {
   // Hero Section
   "hero.saveDate": "Save the Date",
@@ -23,10 +25,11 @@ export const en = {
   "story.now": "Now",
   "story.nowText":
     "[Share how you've grown together, what you've learned, and why you're choosing to renew your vows - what this celebration means to you]",
-  "story.yearsTitle": "10 Years",
+  "story.yearsTitle": `${yearsMarried} Years`,
   "story.yearsSubtitle": "of love, laughter & adventure",
   "story.yearsMarried": "Years Married",
-  "story.yearsMarriedValue": "10",
+  "story.yearsMarriedValue": `${yearsMarried}`,
+  "story.firstCelebration": "First Celebration",
   "story.adventures": "Adventures Shared",
   "story.adventuresValue": "Countless",
   "story.love": "Love",
