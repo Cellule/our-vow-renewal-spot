@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="14 14 228 228" aria-labelledby="title" role="img">
+  <title>Save the Date Favicon</title>
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Binding posts -->
+    <line x1="88" y1="36" x2="88" y2="84" stroke-width="14"/>
+    <line x1="168" y1="36" x2="168" y2="84" stroke-width="14"/>
+    <!-- Calendar body -->
+    <rect x="36" y="56" width="184" height="164" rx="26" stroke-width="14" fill="#FFFFFF"/>
+    <line x1="36" y1="96" x2="220" y2="96" stroke-width="14"/>
+  </g>
+
+  <!-- Heart -->
+  <path fill="#E53935" d="M128 178c-30-23-52-42-52-66 0-17 13-30 30-30 12 0 22 7 26 18 4-11 14-18 26-18 17 0 30 13 30 30 0 24-22 43-60 66z"/>
+</svg>
