@@ -1,22 +1,52 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+import { resolve } from "path";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  plugins: [
-    react(),
-    mode === 'development' &&
-    componentTagger(),
-  ].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+export default defineConfig(({ command, mode }) => {
+  // Use SSR config for server builds
+  if (command === "build" && mode === "ssr") {
+    return {
+      plugins: [react()],
+      resolve: {
+        alias: {
+          "@": resolve(__dirname, "./src"),
+        },
+      },
+      build: {
+        ssr: true,
+        outDir: "dist/server",
+        rollupOptions: {
+          input: "src/entry-server.tsx",
+          output: {
+            format: "esm",
+            entryFileNames: "[name].js",
+          },
+        },
+      },
+      ssr: {
+        noExternal: ["react-router-dom"],
+      },
+    };
+  }
+
+  // Default config for client builds
+  return {
+    plugins: [react()],
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "./src"),
+      },
     },
-  },
-}));
+    build: {
+      rollupOptions: {
+        input: {
+          main: resolve(__dirname, "index.html"),
+        },
+      },
+    },
+    ssr: {
+      noExternal: ["react-router-dom"],
+    },
+  };
+});

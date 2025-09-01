@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:server": "vite build --mode ssr",
+    "build:preview": "npm run build && npm run build:server && npm run pre-render",
     "build:dev": "vite build --mode development",
+    "clean": "rimraf dist",
+    "pre-render": "node scripts/pre-render.js",
+    "test:preview": "node scripts/test-preview.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -74,8 +79,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
-    "lovable-tagger": "^1.1.9",
     "postcss": "^8.5.6",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",

@@ -1,73 +1,105 @@
-# Welcome to your Lovable project
+# Our Vow Renewal Celebration
 
-## Project info
+A beautiful, responsive website for Andréanne & Michaël's vow renewal celebration on September 26th, 2026.
 
-**URL**: https://lovable.dev/projects/e25f54c1-66fe-4d06-b3dc-3fd5a025b359
+## 🚀 Features
 
-## How can I edit this code?
+- **Responsive Design**: Beautiful design that works on all devices
+- **Bilingual Support**: English and French language options
+- **Server-Side Rendering**: Pre-rendered content for perfect link previews
+- **Social Media Ready**: Open Graph and Twitter Card support
+- **SEO Optimized**: Structured data and meta tags for search engines
 
-There are several ways of editing your application.
+## 🛠️ Development
 
-**Use Lovable**
+### Prerequisites
+- Node.js 18+ 
+- npm or bun
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e25f54c1-66fe-4d06-b3dc-3fd5a025b359) and start prompting.
+### Installation
+```bash
+npm install
+```
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Development Server
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Building for Production
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+#### Standard Build
+```bash
+npm run build
+```
 
-**Use GitHub Codespaces**
+#### Build with SSR (Recommended for Production)
+```bash
+npm run build:preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This command:
+1. Builds the client bundle
+2. Builds the server bundle for SSR
+3. Pre-renders the content into `index.html`
 
-## What technologies are used for this project?
+#### Testing Pre-rendered Content
+```bash
+npm run test:preview
+```
 
-This project is built with:
+## 📱 Link Preview Features
 
-- Vite
+The site now includes comprehensive meta tags and pre-rendered content for:
+
+- **Facebook/LinkedIn**: Open Graph tags with rich previews
+- **Twitter**: Twitter Card support with large image previews
+- **Messaging Apps**: WhatsApp, Telegram, Discord, etc.
+- **Search Engines**: Structured data and meta descriptions
+
+### What Gets Pre-rendered
+
+- Hero section with save the date information
+- Couple names and event details
+- Location and venue information
+- Our story section with journey details
+- Contact and RSVP information
+- Footer with love message
+
+## 🌐 Deployment
+
+After building with `npm run build:preview`, the `dist/` folder contains:
+
+- `index.html` - Pre-rendered HTML with all content
+- `assets/` - CSS, JavaScript, and images
+- `server/` - Server bundle for SSR (if needed)
+
+Deploy the entire `dist/` folder to your hosting provider.
+
+## 🔧 Customization
+
+### Update Domain URLs
+Replace `https://your-domain.com/` in `index.html` with your actual domain.
+
+### Update Hero Image
+Replace the hero image path in the meta tags with your actual image URL.
+
+### Modify Content
+Update the content in `src/languages/en.ts` and `src/languages/fr.ts` as needed.
+
+## 📚 Documentation
+
+For detailed information about the SSR setup, see [SSR_SETUP.md](./SSR_SETUP.md).
+
+## 🎨 Design
+
+Built with:
+- React 18
 - TypeScript
-- React
-- shadcn-ui
 - Tailwind CSS
+- Shadcn/ui components
+- Custom wedding-themed design system
 
-## How can I deploy this project?
+## 📄 License
 
-Simply open [Lovable](https://lovable.dev/projects/e25f54c1-66fe-4d06-b3dc-3fd5a025b359) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Private project for personal use.
