@@ -74,6 +74,7 @@ export const en = {
   "contact.rsvpDeadline": "RSVP Deadline",
   "contact.rsvpDeadlineValue": "[RSVP Date]",
   "contact.addToCalendar": "Add to Calendar",
+  "contact.addToCalendarTitle": "Andréanne & Michaël's Wedding",
 
   // Footer
   "footer.withLove": "With all our love",

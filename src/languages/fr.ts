@@ -76,6 +76,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "contact.rsvpDeadline": "Date Limite RSVP",
   "contact.rsvpDeadlineValue": "[Date RSVP]",
   "contact.addToCalendar": "Ajouter au Calendrier",
+  "contact.addToCalendarTitle": "Mariage Andréanne & Michaël",
 
   // Footer
   "footer.withLove": "Avec tout notre amour",
