@@ -1,0 +1,5 @@
+---
+description: When writing any text, write the text in the translation files en.ts and fr.ts in the translations folder for both languages. Then retrieve the text using the t function from the useLanguage hook with the key of the text.
+globs: **/*.tsx, **/*.ts
+alwaysApply: true
+---

@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -60,12 +59,11 @@ const SaveTheDateHero = () => {
             <p className="font-sans text-sm md:text-base text-champagne mb-6">
               {t('hero.formalInvitation')}
             </p>
-            <Button
-              size="lg"
-              className="bg-gradient-gold hover:shadow-glow transition-all duration-300 font-sans font-semibold text-burgundy px-8 py-3"
-            >
-              {t('hero.moreDetails')}
-            </Button>
+            <div className="bg-amber-50/20 backdrop-blur-sm rounded-lg p-6 border border-amber-200/30">
+              <p className="font-sans text-base md:text-lg text-amber-100 font-medium leading-relaxed">
+                {t('hero.addressCallout')}
+              </p>
+            </div>
           </div>
         </div>
       </div>
