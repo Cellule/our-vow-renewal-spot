@@ -1,10 +1,12 @@
 import { Mail, Phone, MessageCircle, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { createEvent } from "ics";
+
+const coupleNames = "Andréanne & Michaël";
+const organizerEmail = "mike.ferris@hotmail.com";
 
 const Connect = () => {
-  const { t } = useLanguage();
-
   return (
     <section className="py-20 bg-gradient-to-b from-background to-champagne">
       <div className="max-w-4xl mx-auto px-6">
@@ -108,27 +110,38 @@ function RSVPInfo() {
   };
 
   const downloadICSFile = () => {
-    // Create and download .ics file for Apple Calendar and other calendar apps
-    const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-DTSTART:${eventDetails.startTime.replace(/[-:]/g, "")}
-DTEND:${eventDetails.endTime.replace(/[-:]/g, "")}
-SUMMARY:${eventDetails.title}
-DESCRIPTION:${eventDetails.description}
-LOCATION:${eventDetails.location}
-END:VEVENT
-END:VCALENDAR`;
+    // Create and download .ics file using the ics package
+    const event = {
+      start: eventDetails.startTime.split('T')[0].split('-').map(Number) as [number, number, number],
+      startInputType: 'local' as const,
+      startOutputType: 'local' as const,
+      duration: { hours: 26 }, // 26 hours from start to end
+      title: eventDetails.title,
+      description: eventDetails.description,
+      location: eventDetails.location.replace(/\n/g, ", "),
+      status: 'CONFIRMED' as const,
+      busyStatus: 'BUSY' as const,
+      organizer: { name: coupleNames, email: organizerEmail },
+    };
 
-    const blob = new Blob([icsContent], { type: "text/calendar" });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "vow-renewal-event.ics";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
+    createEvent(event, (error, value) => {
+      if (error) {
+        console.error('Error creating ICS file:', error);
+        return;
+      }
+
+      if (value) {
+        const blob = new Blob([value], { type: 'text/calendar' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'vow-renewal-event.ics';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      }
+    });
   };
 
   return (
@@ -221,7 +234,7 @@ END:VCALENDAR`;
                   d="M19 3H5C3.89 3 3 3.89 3 5V19C3 20.11 3.89 21 5 21H19C20.11 21 21 20.11 21 19V5C21 3.89 20.11 3 19 3M19 19H5V9H19V19M19 7H5V5H19V7M7 11H12V16H7V11Z"
                 />
               </svg>
-              <span>Apple Calendar</span>
+              <span>Apple Calendar (.ics)</span>
             </Button>
           </div>
         </div>
