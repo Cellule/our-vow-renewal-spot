@@ -78,8 +78,8 @@ function RSVPInfo() {
   const addToCalendar = () => {
     // Event details using language context
     const eventDetails = {
-      title: t("hero.renewingVows"),
-      description: `${t("hero.coupleNames")} - ${t("event.subtitle")}`,
+      title: `${t("hero.coupleNames")} - ${t("hero.renewingVows")}`,
+      description: `${t("event.subtitle")}`,
       location: t("hero.locationValue"),
       startTime: "2026-09-26T18:00:00", // September 26th, 2026 at 6:00 PM
       endTime: "2026-09-26T23:00:00", // September 26th, 2026 at 11:00 PM
@@ -90,8 +90,6 @@ function RSVPInfo() {
     
     const outlookUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(eventDetails.title)}&body=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}&startdt=${eventDetails.startTime}&enddt=${eventDetails.endTime}`;
     
-    const appleCalendarUrl = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ADTSTART:${eventDetails.startTime.replace(/[-:]/g, '')}%0ADTEND:${eventDetails.endTime.replace(/[-:]/g, '')}%0ASUMMARY:${encodeURIComponent(eventDetails.title)}%0ADESCRIPTION:${encodeURIComponent(eventDetails.description)}%0ALOCATION:${encodeURIComponent(eventDetails.location)}%0AEND:VEVENT%0AEND:VCALENDAR`;
-
     // Show options to user
     const userChoice = window.confirm(
       language === "fr" 
