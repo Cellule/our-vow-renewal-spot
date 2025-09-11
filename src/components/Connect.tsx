@@ -81,8 +81,8 @@ function RSVPInfo() {
     title: t("contact.addToCalendarTitle"),
     description: `${t("event.subtitle")}`,
     location: t("hero.locationValue"),
-    startTime: "2026-09-26T09:00:00", // September 26th, 2026 at 9:00 AM
-    endTime: "2026-09-27T11:00:00", // September 27th, 2026 at 11:00 AM
+    startTime: "2026-09-19T09:00:00", // September 19th, 2026 at 9:00 AM
+    endTime: "2026-09-20T11:00:00", // September 20th, 2026 at 11:00 AM
   };
   const addToGoogleCalendar = () => {
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(

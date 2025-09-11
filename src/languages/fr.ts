@@ -8,7 +8,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "hero.couple": "Le Couple",
   "hero.coupleNames": "Andréanne Salvas\nMichaël Ferris",
   "hero.dates": "La Date",
-  "hero.datesValue": "26 septembre 2026",
+  "hero.datesValue": "19 septembre 2026",
   "hero.location": "Le Lieu",
   "hero.locationValue":
     "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
@@ -40,7 +40,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "event.subtitle":
     "Joignez-vous à nous pour une soirée d'amour, de renouveau et de célébration",
   "event.date": "Date",
-  "event.dateValue": "26 septembre 2026",
+  "event.dateValue": "19 septembre 2026",
   "event.dayOfWeek": "[Jour de la Semaine]",
   "event.time": "Heure",
   "event.timeValue": "[Heure de la Cérémonie]",

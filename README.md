@@ -1,6 +1,6 @@
 # Our Vow Renewal Celebration
 
-A beautiful, responsive website for Andréanne & Michaël's vow renewal celebration on September 26th, 2026.
+A beautiful, responsive website for Andréanne & Michaël's vow renewal celebration on September 19th, 2026.
 
 ## 🚀 Features
 

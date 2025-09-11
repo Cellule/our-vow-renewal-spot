@@ -21,7 +21,7 @@ try {
     },
     {
       name: "Event Date",
-      search: "September 26th, 2026",
+      search: "September 19th, 2026",
       expected: true,
     },
     {
