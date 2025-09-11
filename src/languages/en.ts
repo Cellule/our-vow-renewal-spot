@@ -13,7 +13,7 @@ export const en = {
     "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.formalInvitation": "Formal invitation to follow",
   "hero.addressCallout":
-    "Important: Please ensure you've shared your address with us.",
+    "Important: Please ensure you've shared your postal address with us.",
 
   // Our Story Section
   "story.title": "Our Journey",

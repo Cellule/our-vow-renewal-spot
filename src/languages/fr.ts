@@ -14,7 +14,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
     "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.formalInvitation": "Invitation officielle à suivre",
   "hero.addressCallout":
-    "Important : Assurez-vous d'avoir partagé votre adresse avec nous.",
+    "Important : Assurez-vous d'avoir partagé votre adresse postale avec nous.",
 
   // Our Story Section
   "story.title": "Notre Parcours",
