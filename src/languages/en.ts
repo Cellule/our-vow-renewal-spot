@@ -21,12 +21,12 @@ export const en = {
     "Celebrating the love that has grown stronger with each passing year",
   "story.then": "Then",
   "story.thenText":
-    "[Share a brief story about when you first got married - what you were like, your hopes and dreams, the early days of your marriage]",
+    "We got married humbly. We were freshly graduated, full of hope, with a life waiting for us in another country. Ready to build our life together, far from home, after a small “yes” filled with big dreams.",
   "story.now": "Now",
   "story.nowText":
-    "[Share how you've grown together, what you've learned, and why you're choosing to renew your vows - what this celebration means to you]",
+    "Since then, our relationship has grown through distance, parenthood, and our return home. This celebration is our way of honoring everything we’ve shared and created over the years—surrounded by the people we love.",
   "story.yearsTitle": `${yearsMarried} Years`,
-  "story.yearsSubtitle": "of love, laughter & adventure",
+  "story.yearsSubtitle": "of love, laughter & experiences",
   "story.yearsMarried": "Years Married",
   "story.yearsMarriedValue": `${yearsMarried}`,
   "story.firstCelebration": "First Celebration",

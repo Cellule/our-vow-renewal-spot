@@ -19,14 +19,13 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   // Our Story Section
   "story.title": "Notre Parcours",
   "story.subtitle": "Célébrant l'amour qui s'est renforcé au fil des années",
-  "story.then": "Alors",
-  "story.thenText":
-    "[Partagez une brève histoire de votre premier mariage - comment vous étiez, vos espoirs et rêves, les premiers jours de votre mariage]",
+  "story.then": "Au commencement",
+  "story.thenText": `Nous nous sommes mariés humblement. Nous étions fraîchement diplômés, remplis d'espoir, avec une vie qui nous attendait dans un autre pays. Prêts à bâtir notre vie commune, loin de chez nous, après un petit “oui” chargé de grands rêves.`,
   "story.now": "Maintenant",
   "story.nowText":
-    "[Partagez comment vous avez grandi ensemble, ce que vous avez appris, et pourquoi vous choisissez de renouveler vos vœux - ce que cette célébration signifie pour vous]",
+    "Depuis, notre couple a grandi à travers la distance, la parentalité, et le retour chez nous. Cette célébration est notre façon de mettre à l’honneur tout ce que nous avons partagé et créé au fil des années, et cela—entourés de ceux qu’on aime.",
   "story.yearsTitle": `${yearsMarried} Années`,
-  "story.yearsSubtitle": "d'amour, de rire et d'aventure",
+  "story.yearsSubtitle": "d'amour, de rire et d'expériences",
   "story.yearsMarried": "Années Mariés",
   "story.yearsMarriedValue": `${yearsMarried}`,
   "story.firstCelebration": "Première Célébration",
