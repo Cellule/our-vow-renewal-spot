@@ -3,39 +3,41 @@ import type { TranslationKeys } from "./translations";
 
 export const fr: Record<TranslationKeys, string | undefined> = {
   // Hero Section
-  "hero.saveDate": "Réservez la Date",
-  "hero.renewingVows": "Nous Renouvelons Nos Vœux",
-  "hero.couple": "Le Couple",
+  "hero.saveDate": "Réservez la date",
+  "hero.renewingVows": "Nous renouvelons nos vœux",
+  "hero.couple": "Le couple",
   "hero.coupleNames": "Andréanne Salvas\nMichaël Ferris",
-  "hero.dates": "La Date",
+  "hero.dates": "La date",
   "hero.datesValue": "19 septembre 2026",
-  "hero.location": "Le Lieu",
+  "hero.location": "Le lieu",
   "hero.locationValue":
     "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.formalInvitation": "Invitation officielle à suivre",
   "hero.addressCallout":
     "Important : Assurez-vous d'avoir partagé votre adresse postale avec nous.",
+  "hero.googleFormLink":
+    "Remplissez notre formulaire Google pour partager votre adresse postale",
 
   // Our Story Section
-  "story.title": "Notre Parcours",
+  "story.title": "Notre parcours",
   "story.subtitle": "Célébrant l'amour qui s'est renforcé au fil des années",
   "story.then": "Au commencement",
-  "story.thenText": `Nous nous sommes mariés humblement. Nous étions fraîchement diplômés, remplis d'espoir, avec une vie qui nous attendait dans un autre pays. Prêts à bâtir notre vie commune, loin de chez nous, après un petit “oui” chargé de grands rêves.`,
+  "story.thenText": "Nous nous sommes mariés humblement. Nous étions fraîchement diplômés, remplis d'espoir, avec une vie qui nous attendait dans un autre pays. Prêts à bâtir notre vie commune, loin de chez nous, après un petit “oui” chargé de grands rêves.",
   "story.now": "Maintenant",
   "story.nowText":
     "Depuis, notre couple a grandi à travers la distance, la parentalité, et le retour chez nous. Cette célébration est notre façon de mettre à l’honneur tout ce que nous avons partagé et créé au fil des années, et cela—entourés de ceux qu’on aime.",
   "story.yearsTitle": `${yearsMarried} Années`,
   "story.yearsSubtitle": "d'amour, de rire et d'expériences",
-  "story.yearsMarried": "Années Mariés",
+  "story.yearsMarried": "Années mariés",
   "story.yearsMarriedValue": `${yearsMarried}`,
-  "story.firstCelebration": "Première Célébration",
-  "story.adventures": "Aventures Partagées",
+  "story.firstCelebration": "Première célébration",
+  "story.adventures": "Aventures partagées",
   "story.adventuresValue": "Innombrables",
   "story.love": "Amour",
   "story.loveValue": "Infini",
 
   // Event Details Section
-  "event.title": "Détails de la Célébration",
+  "event.title": "Détails de la célébration",
   "event.subtitle":
     "Joignez-vous à nous pour une soirée d'amour, de renouveau et de célébration",
   "event.date": "Date",
@@ -53,7 +55,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "event.presenceTitle": "Votre Présence est Notre Cadeau",
   "event.presenceText":
     "Nous sommes si reconnaissants pour l'amour et le soutien que vous nous avez témoignés tout au long de notre mariage. Votre présence à notre célébration de renouvellement de vœux rendrait cette journée encore plus spéciale.",
-  "event.gettingThere": "Comment S'y Rendre",
+  "event.gettingThere": "Comment s'y rendre",
   "event.gettingThereText":
     "[Inclure les informations de stationnement, les options de transport, ou toute instruction spéciale]",
   "event.accommodations": "Hébergement",

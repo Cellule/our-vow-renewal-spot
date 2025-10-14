@@ -14,6 +14,8 @@ export const en = {
   "hero.formalInvitation": "Formal invitation to follow",
   "hero.addressCallout":
     "Important: Please ensure you've shared your postal address with us.",
+  "hero.googleFormLink":
+    "Fill out our Google Form to share your postal address",
 
   // Our Story Section
   "story.title": "Our Journey",
