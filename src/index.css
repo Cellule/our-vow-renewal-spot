@@ -50,8 +50,8 @@ All colors MUST be HSL.
     --navy-light: 215 65% 25%;
     --emerald: 165 75% 25%;
     --emerald-light: 165 55% 35%;
-    --gold: 45 85% 55%;
-    --gold-light: 45 75% 65%;
+    --gold: 20 80% 70%;
+    --gold-dark: 20 70% 60%;
     --cream: 45 25% 95%;
     --champagne: 45 35% 88%;
 
@@ -59,7 +59,7 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(var(--burgundy)), hsl(var(--burgundy-light)));
     --gradient-secondary: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-light)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--emerald)), hsl(var(--emerald-light)));
-    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-dark)));
     --gradient-elegant: linear-gradient(135deg, hsl(var(--burgundy)), hsl(var(--navy)));
 
     /* Shadows */

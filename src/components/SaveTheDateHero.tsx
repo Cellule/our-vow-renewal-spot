@@ -87,7 +87,7 @@ const SaveTheDateHero = () => {
               </a>
             </div> */}
             <a
-                href="https://forms.google.com/your-form-url"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScJ-25Zw3FPnANJ4ktoPVl57bvBwpDfR0WfHFqJ5sIseeVJTA/viewform?usp=dialog"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded-lg border border-gold/30 hover:border-gold/50 transition-all duration-200 hover:shadow-lg"
