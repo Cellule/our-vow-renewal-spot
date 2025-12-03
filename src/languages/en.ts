@@ -12,6 +12,7 @@ export const en = {
   "hero.location": "The Location",
   "hero.locationValue":
     "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
+  "hero.viewOnGoogleMaps": "View on Google Maps",
   "hero.formalInvitation": "Formal invitation to follow",
   "hero.addressCallout":
     "Important: Please ensure you've shared your postal address with us.",

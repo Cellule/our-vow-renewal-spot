@@ -13,6 +13,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "hero.location": "Le lieu",
   "hero.locationValue":
     "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
+  "hero.viewOnGoogleMaps": "Voir sur Google Maps",
   "hero.formalInvitation": "Invitation officielle à suivre",
   "hero.addressCallout":
     "Important : Assurez-vous d'avoir partagé votre adresse postale avec nous.",

@@ -1,6 +1,7 @@
 import heroImage from "@/assets/hero-image.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsWeekend } from "@/hooks/use-is-weekend";
+import { MapPin } from "lucide-react";
 
 const SaveTheDateHero = () => {
   const { t } = useLanguage();
@@ -52,9 +53,18 @@ const SaveTheDateHero = () => {
             <h3 className="font-serif text-xl md:text-2xl mb-4 text-gold">
               {t('hero.location')}
             </h3>
-            <p className="font-sans text-lg md:text-xl font-medium text-cream whitespace-pre-line">
+            <p className="font-sans text-lg md:text-xl font-medium text-cream whitespace-pre-line mb-3">
               {t('hero.locationValue')}
             </p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Manoir+Montpellier,+533+QC-315,+Montpellier,+QC+J0V+1M0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gold/20 hover:bg-gold/30 text-gold font-medium rounded-lg border border-gold/30 hover:border-gold/50 transition-all duration-200 hover:shadow-lg"
+            >
+              <MapPin className="w-4 h-4" />
+              {t('hero.viewOnGoogleMaps')}
+            </a>
           </div>
 
           <div className="mt-8 pt-8 border-t border-cream/20">
