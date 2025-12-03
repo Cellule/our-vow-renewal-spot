@@ -8,6 +8,7 @@ export const en = {
   "hero.coupleNames": "Andréanne Salvas\nMichaël Ferris",
   "hero.dates": "The Date",
   "hero.datesValue": "September 19th, 2026",
+  "hero.datesValueWeekend": "September 18th-20th, 2026",
   "hero.location": "The Location",
   "hero.locationValue":
     "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
@@ -42,7 +43,9 @@ export const en = {
   "event.subtitle": "Join us for an evening of love, renewal, and celebration",
   "event.date": "Date",
   "event.dateValue": "September 19th, 2026",
+  "event.dateValueWeekend": "September 18th-20th, 2026",
   "event.dayOfWeek": "Saturday",
+  "event.dayOfWeekWeekend": "Friday to Sunday",
   "event.time": "Time",
   "event.timeValue": "[Ceremony Time]",
   "event.reception": "Reception to follow",

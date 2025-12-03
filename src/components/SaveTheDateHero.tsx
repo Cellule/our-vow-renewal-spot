@@ -1,8 +1,10 @@
 import heroImage from "@/assets/hero-image.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useIsWeekend } from "@/hooks/use-is-weekend";
 
 const SaveTheDateHero = () => {
   const { t } = useLanguage();
+  const isWeekend = useIsWeekend();
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -41,7 +43,7 @@ const SaveTheDateHero = () => {
                 {t('hero.dates')}
               </h3>
               <p className="font-sans text-lg md:text-xl font-medium">
-                {t('hero.datesValue')}
+                {isWeekend ? t('hero.datesValueWeekend') : t('hero.datesValue')}
               </p>
             </div>
           </div>

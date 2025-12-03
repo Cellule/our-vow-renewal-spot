@@ -1,8 +1,10 @@
 import { Calendar, MapPin, Clock, Users } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useIsWeekend } from "@/hooks/use-is-weekend";
 
 const EventDetails = () => {
   const { t } = useLanguage();
+  const isWeekend = useIsWeekend();
   
   return (
     <section className="py-20 bg-gradient-to-b from-champagne to-background">
@@ -23,8 +25,12 @@ const EventDetails = () => {
               <Calendar className="w-8 h-8 text-cream" />
             </div>
             <h3 className="font-serif text-xl text-burgundy mb-4">{t('event.date')}</h3>
-            <p className="font-sans text-foreground font-semibold text-lg mb-2">{t('event.dateValue')}</p>
-            <p className="font-sans text-muted-foreground">{t('event.dayOfWeek')}</p>
+            <p className="font-sans text-foreground font-semibold text-lg mb-2">
+              {isWeekend ? t('event.dateValueWeekend') : t('event.dateValue')}
+            </p>
+            <p className="font-sans text-muted-foreground">
+              {isWeekend ? t('event.dayOfWeekWeekend') : t('event.dayOfWeek')}
+            </p>
           </div>
           
           <div className="bg-card rounded-2xl p-8 text-center shadow-soft border border-emerald/10 hover:shadow-elegant transition-all duration-300">

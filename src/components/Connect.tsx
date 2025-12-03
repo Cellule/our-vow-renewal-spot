@@ -1,7 +1,8 @@
-import { Mail, Phone, MessageCircle, Calendar } from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { createEvent } from "ics";
+import { createEvent, EventAttributes } from "ics";
+import { useIsWeekend } from "@/hooks/use-is-weekend";
 
 const coupleNames = "Andréanne & Michaël";
 const organizerEmail = "mike.ferris@hotmail.com";
@@ -76,12 +77,13 @@ function ContactInfo() {
 
 function RSVPInfo() {
   const { t } = useLanguage();
+  const isWeekend = useIsWeekend();
 
   const eventDetails = {
     title: t("contact.addToCalendarTitle"),
     description: `${t("event.subtitle")}`,
     location: t("hero.locationValue"),
-    startTime: "2026-09-19T09:00:00", // September 19th, 2026 at 9:00 AM
+    startTime: isWeekend ? "2026-09-18T15:00:00" : "2026-09-19T09:00:00", // September 18th at 15:00 (weekend) or 19th (regular) at 9:00 AM
     endTime: "2026-09-20T11:00:00", // September 20th, 2026 at 11:00 AM
   };
   const addToGoogleCalendar = () => {
@@ -111,11 +113,15 @@ function RSVPInfo() {
 
   const downloadICSFile = () => {
     // Create and download .ics file using the ics package
-    const event = {
-      start: eventDetails.startTime.split('T')[0].split('-').map(Number) as [number, number, number],
+    // Calculate duration: from start to end time
+    const startDate = new Date(eventDetails.startTime);
+    const endDate = new Date(eventDetails.endTime);
+    
+    const event: EventAttributes = {
+      start: startDate.getTime(),
+      end: endDate.getTime(),
       startInputType: 'local' as const,
       startOutputType: 'local' as const,
-      duration: { hours: 26 }, // 26 hours from start to end
       title: eventDetails.title,
       description: eventDetails.description,
       location: eventDetails.location.replace(/\n/g, ", "),
