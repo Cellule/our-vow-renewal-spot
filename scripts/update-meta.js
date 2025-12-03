@@ -8,9 +8,7 @@ try {
   // Find the actual built hero image filename from the assets folder
   const assetsPath = path.join(import.meta.dirname, "../dist/assets");
   const files = fs.readdirSync(assetsPath);
-  const heroImageFile = files.find(
-    (file) => file.startsWith("hero-image-") && file.endsWith(".jpg")
-  );
+  const heroImageFile = files.find((file) => file.startsWith("hero-image-") && file.endsWith(".jpg"));
 
   if (heroImageFile) {
     console.log(`🖼️  Found built hero image: ${heroImageFile}`);
@@ -19,10 +17,7 @@ try {
     const oldUrl = "/assets/hero-image.jpg";
     const newUrl = `/assets/${heroImageFile}`;
 
-    html = html.replace(
-      new RegExp(oldUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"),
-      newUrl
-    );
+    html = html.replace(new RegExp(oldUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"), newUrl);
 
     console.log(`✅ Updated hero image URL: ${oldUrl} → ${newUrl}`);
   } else {

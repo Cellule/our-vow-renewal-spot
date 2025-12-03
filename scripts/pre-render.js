@@ -12,10 +12,7 @@ async function preRender() {
     const { html } = await render("/");
 
     // Insert the rendered HTML into the template
-    const finalHtml = template.replace(
-      '<div id="root"></div>',
-      `<div id="root">${html}</div>`
-    );
+    const finalHtml = template.replace('<div id="root"></div>', `<div id="root">${html}</div>`);
 
     // Write the pre-rendered HTML back to the file
     fs.writeFileSync(templatePath, finalHtml);

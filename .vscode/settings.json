@@ -1,0 +1,29 @@
+{
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  // Uncomment the line below to enable the TypeScript-Go Native Preview - View more info here: https://github.com/microsoft/typescript-go
+  // "typescript.experimental.useTsgo": true,
+  // Use the installed version of typescript instead of the built-in one
+  // This allows for ts plugins like typescript-plugin-css-modules to work
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.trimAutoWhitespace": true,
+  "prettier.requireConfig": true,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "cssVariables.languages": ["css"],
+  "cssVariables.blacklistFolders": [
+    "**/.git",
+    "**/node_modules",
+    "**/dist",
+    "**/build",
+    "**/tests"
+  ],
+  "css.lint.validProperties": ["composes"],
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true
+  }
+}

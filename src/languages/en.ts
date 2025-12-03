@@ -10,19 +10,15 @@ export const en = {
   "hero.datesValue": "September 19th-20th, 2026",
   "hero.datesValueWeekend": "September 18th-20th, 2026",
   "hero.location": "The Location",
-  "hero.locationValue":
-    "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
+  "hero.locationValue": "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.viewOnGoogleMaps": "View on Google Maps",
   "hero.formalInvitation": "Formal invitation to follow",
-  "hero.addressCallout":
-    "Important: Please ensure you've shared your postal address with us.",
-  "hero.googleFormLink":
-    "Fill out our Google Form to share your postal address",
+  "hero.addressCallout": "Important: Please ensure you've shared your postal address with us.",
+  "hero.googleFormLink": "Fill out our Google Form to share your postal address",
 
   // Our Story Section
   "story.title": "Our Journey",
-  "story.subtitle":
-    "Celebrating the love that has grown stronger with each passing year",
+  "story.subtitle": "Celebrating the love that has grown stronger with each passing year",
   "story.then": "Then",
   "story.thenText":
     "We got married humbly. We were freshly graduated, full of hope, with a life waiting for us in another country. Ready to build our life together, far from home, after a small “yes” filled with big dreams.",
@@ -60,11 +56,9 @@ export const en = {
   "event.presenceText":
     "We are so grateful for the love and support you've shown us throughout our marriage. Your presence at our vow renewal celebration would make this day even more special.",
   "event.gettingThere": "Getting There",
-  "event.gettingThereText":
-    "[Include parking information, transportation options, or any special instructions]",
+  "event.gettingThereText": "[Include parking information, transportation options, or any special instructions]",
   "event.accommodations": "Accommodations",
-  "event.accommodationsText":
-    "[Include nearby hotel recommendations or accommodation details if needed]",
+  "event.accommodationsText": "[Include nearby hotel recommendations or accommodation details if needed]",
   "event.accommodationsMealsTitle": "Accommodations & Meals",
   "event.accommodationsProvided": "Accommodations will be provided",
   "event.meals": "Meals",

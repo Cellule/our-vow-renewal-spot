@@ -11,16 +11,19 @@ This project now supports server-side rendering to enable proper link previews w
 ## Build Commands
 
 ### For Production with SSR:
+
 ```bash
 npm run build:preview
 ```
 
 This command:
+
 1. Builds the client bundle (`npm run build`)
 2. Builds the server bundle (`npm run build:server`)
 3. Pre-renders the content (`npm run pre-render`)
 
 ### Individual Commands:
+
 - `npm run build` - Build client bundle only
 - `npm run build:server` - Build server bundle only
 - `npm run pre-render` - Pre-render content into index.html

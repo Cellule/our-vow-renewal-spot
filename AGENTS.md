@@ -1,17 +1,20 @@
 # AGENTS.md
 
 ## Setup commands
+
 - Install deps: `npm install`
 - Start dev server: `npm run dev`
 - Web page running on: `http://localhost:5173`
 
 ## Code style
+
 - TypeScript strict mode
-- React 
+- React
 - radix-ui for components
 - tailwindcss for styling
 
 ## Language
+
 - English and French
 - Use the `useLanguage` hook to get the current language
 - Use the `t` function to translate text

@@ -13,15 +13,17 @@ A beautiful, responsive website for Andréanne & Michaël's vow renewal celebrat
 ## 🛠️ Development
 
 ### Prerequisites
-- Node.js 18+ 
-- npm or bun
+
+- Node.js 24+
 
 ### Installation
+
 ```bash
 npm install
 ```
 
 ### Development Server
+
 ```bash
 npm run dev
 ```
@@ -29,21 +31,25 @@ npm run dev
 ### Building for Production
 
 #### Standard Build
+
 ```bash
 npm run build
 ```
 
 #### Build with SSR (Recommended for Production)
+
 ```bash
 npm run build:preview
 ```
 
 This command:
+
 1. Builds the client bundle
 2. Builds the server bundle for SSR
 3. Pre-renders the content into `index.html`
 
 #### Testing Pre-rendered Content
+
 ```bash
 npm run test:preview
 ```
@@ -79,12 +85,15 @@ Deploy the entire `dist/` folder to your hosting provider.
 ## 🔧 Customization
 
 ### Update Domain URLs
+
 Replace `https://your-domain.com/` in `index.html` with your actual domain.
 
 ### Update Hero Image
+
 Replace the hero image path in the meta tags with your actual image URL.
 
 ### Modify Content
+
 Update the content in `src/languages/en.ts` and `src/languages/fr.ts` as needed.
 
 ## 📚 Documentation
@@ -94,6 +103,7 @@ For detailed information about the SSR setup, see [SSR_SETUP.md](./SSR_SETUP.md)
 ## 🎨 Design
 
 Built with:
+
 - React 18
 - TypeScript
 - Tailwind CSS

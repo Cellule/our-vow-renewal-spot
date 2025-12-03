@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    // Code linting/formatting extensions
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "oxc.oxc-vscode",
+    // CSS extensions
+    "vunguyentuan.vscode-css-variables"
+  ]
+}

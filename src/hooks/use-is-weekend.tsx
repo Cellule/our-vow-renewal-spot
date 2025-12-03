@@ -6,6 +6,5 @@ import { useSearchParams } from "react-router-dom";
  */
 export function useIsWeekend() {
   const [searchParams] = useSearchParams();
-  return searchParams.get('type') === 'weekend';
+  return searchParams.get("type") === "weekend";
 }
-

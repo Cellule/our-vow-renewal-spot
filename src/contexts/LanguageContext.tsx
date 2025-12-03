@@ -1,5 +1,5 @@
-import { createContext, useContext } from "react";
 import { Language, TranslationKeys } from "@/languages/translations";
+import { createContext, useContext } from "react";
 
 interface LanguageContextType {
   language: Language;
@@ -7,15 +7,11 @@ interface LanguageContextType {
   t: (key: TranslationKeys) => string;
 }
 
-export const LanguageContext = createContext<LanguageContextType | undefined>(
-  undefined
-);
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 function getLocales() {
   try {
-    const theLanguages = window.navigator.languages || [
-      window.navigator.language,
-    ];
+    const theLanguages = window.navigator.languages || [window.navigator.language];
     return [...theLanguages, getLocaleEquivalentFromDateString()];
   } catch (err) {
     // ...

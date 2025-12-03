@@ -11,14 +11,11 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "hero.datesValue": "19-20 septembre 2026",
   "hero.datesValueWeekend": "18-20 septembre 2026",
   "hero.location": "Le lieu",
-  "hero.locationValue":
-    "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
+  "hero.locationValue": "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.viewOnGoogleMaps": "Voir sur Google Maps",
   "hero.formalInvitation": "Invitation officielle à suivre",
-  "hero.addressCallout":
-    "Important : Assurez-vous d'avoir partagé votre adresse postale avec nous.",
-  "hero.googleFormLink":
-    "Remplissez notre formulaire Google pour partager votre adresse postale",
+  "hero.addressCallout": "Important : Assurez-vous d'avoir partagé votre adresse postale avec nous.",
+  "hero.googleFormLink": "Remplissez notre formulaire Google pour partager votre adresse postale",
 
   // Our Story Section
   "story.title": "Notre parcours",
@@ -41,8 +38,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
 
   // Event Details Section
   "event.title": "Détails de la célébration",
-  "event.subtitle":
-    "Joignez-vous à nous pour une soirée d'amour, de renouveau et de célébration",
+  "event.subtitle": "Joignez-vous à nous pour une soirée d'amour, de renouveau et de célébration",
   "event.date": "Date",
   "event.dateValue": "19-20 septembre 2026",
   "event.dateValueWeekend": "18-20 septembre 2026",
@@ -61,11 +57,9 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "event.presenceText":
     "Nous sommes si reconnaissants pour l'amour et le soutien que vous nous avez témoignés tout au long de notre mariage. Votre présence à notre célébration de renouvellement de vœux rendrait cette journée encore plus spéciale.",
   "event.gettingThere": "Comment s'y rendre",
-  "event.gettingThereText":
-    "[Inclure les informations de stationnement, les options de transport, ou toute instruction spéciale]",
+  "event.gettingThereText": "[Inclure les informations de stationnement, les options de transport, ou toute instruction spéciale]",
   "event.accommodations": "Hébergement",
-  "event.accommodationsText":
-    "[Inclure les recommandations d'hôtels à proximité ou les détails d'hébergement si nécessaire]",
+  "event.accommodationsText": "[Inclure les recommandations d'hôtels à proximité ou les détails d'hébergement si nécessaire]",
   "event.accommodationsMealsTitle": "Hébergement et Repas",
   "event.accommodationsProvided": "L'hébergement sera fourni",
   "event.meals": "Repas",

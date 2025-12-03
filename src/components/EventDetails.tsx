@@ -1,18 +1,16 @@
-import { Home, UtensilsCrossed, BedDoubleIcon } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsWeekend } from "@/hooks/use-is-weekend";
+import { BedDoubleIcon, Home, UtensilsCrossed } from "lucide-react";
 
 const EventDetails = () => {
   const { t } = useLanguage();
   const isWeekend = useIsWeekend();
 
   return (
-    <section >
+    <section>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-script text-5xl md:text-6xl text-burgundy mb-6">
-            {t("event.title")}
-          </h2>
+          <h2 className="font-script text-5xl md:text-6xl text-burgundy mb-6">{t("event.title")}</h2>
           <div className="w-24 h-px bg-gradient-primary mx-auto mb-8"></div>
           {/* <p className="font-serif text-xl text-navy/80 max-w-2xl mx-auto">
             {t('event.subtitle')}
@@ -93,9 +91,7 @@ const EventDetails = () => {
               <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
                 <Home className="w-8 h-8 text-cream" />
               </div>
-              <h3 className="font-script text-4xl md:text-5xl text-burgundy mb-4">
-                {t("event.accommodationsMealsTitle")}
-              </h3>
+              <h3 className="font-script text-4xl md:text-5xl text-burgundy mb-4">{t("event.accommodationsMealsTitle")}</h3>
               <div className="w-24 h-px bg-gradient-primary mx-auto mb-6"></div>
             </div>
 
@@ -107,12 +103,8 @@ const EventDetails = () => {
                     <BedDoubleIcon className="w-6 h-6 text-cream" />
                   </div>
                   <div>
-                    <h4 className="font-serif text-xl text-burgundy mb-2">
-                      {t("event.accommodations")}
-                    </h4>
-                    <p className="font-sans text-foreground">
-                      {t("event.accommodationsProvided")}
-                    </p>
+                    <h4 className="font-serif text-xl text-burgundy mb-2">{t("event.accommodations")}</h4>
+                    <p className="font-sans text-foreground">{t("event.accommodationsProvided")}</p>
                   </div>
                 </div>
               </div>
@@ -124,9 +116,7 @@ const EventDetails = () => {
                     <UtensilsCrossed className="w-6 h-6 text-cream" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-serif text-xl text-emerald mb-3">
-                      {t("event.meals")}
-                    </h4>
+                    <h4 className="font-serif text-xl text-emerald mb-3">{t("event.meals")}</h4>
                     <ul className="space-y-2 font-sans text-foreground">
                       {isWeekend && (
                         <li className="flex items-center gap-2">
@@ -151,9 +141,7 @@ const EventDetails = () => {
         </div>
         {/* More details coming note */}
         <div className="mt-8 text-center">
-          <p className="font-sans text-sm text-muted-foreground italic">
-            {t("event.moreDetailsComing")}
-          </p>
+          <p className="font-sans text-sm text-muted-foreground italic">{t("event.moreDetailsComing")}</p>
         </div>
       </div>
     </section>
