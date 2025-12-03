@@ -23,7 +23,8 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "story.title": "Notre parcours",
   "story.subtitle": "Célébrant l'amour qui s'est renforcé au fil des années",
   "story.then": "Au commencement",
-  "story.thenText": "Nous nous sommes mariés humblement. Nous étions fraîchement diplômés, remplis d'espoir, avec une vie qui nous attendait dans un autre pays. Prêts à bâtir notre vie commune, loin de chez nous, après un petit “oui” chargé de grands rêves.",
+  "story.thenText":
+    "Nous nous sommes mariés humblement. Nous étions fraîchement diplômés, remplis d'espoir, avec une vie qui nous attendait dans un autre pays. Prêts à bâtir notre vie commune, loin de chez nous, après un petit “oui” chargé de grands rêves.",
   "story.now": "Maintenant",
   "story.nowText":
     "Depuis, notre couple a grandi à travers la distance, la parentalité, et le retour chez nous. Cette célébration est notre façon de mettre à l’honneur tout ce que nous avons partagé et créé au fil des années, et cela—entourés de ceux qu’on aime.",
@@ -64,6 +65,13 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "event.accommodations": "Hébergement",
   "event.accommodationsText":
     "[Inclure les recommandations d'hôtels à proximité ou les détails d'hébergement si nécessaire]",
+  "event.accommodationsMealsTitle": "Hébergement et Repas",
+  "event.accommodationsProvided": "L'hébergement sera fourni",
+  "event.meals": "Repas",
+  "event.fridayBarbecue": "Barbecue le vendredi soir",
+  "event.saturdayDinner": "Souper le samedi soir",
+  "event.sundayBrunch": "Brunch le dimanche matin",
+  "event.moreDetailsComing": "Plus de détails à venir",
 
   // Contact Section
   "contact.title": "Restons en Contact",

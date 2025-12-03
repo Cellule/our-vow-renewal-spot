@@ -64,6 +64,13 @@ export const en = {
   "event.accommodations": "Accommodations",
   "event.accommodationsText":
     "[Include nearby hotel recommendations or accommodation details if needed]",
+  "event.accommodationsMealsTitle": "Accommodations & Meals",
+  "event.accommodationsProvided": "Accommodations will be provided",
+  "event.meals": "Meals",
+  "event.fridayBarbecue": "Barbecue on Friday night",
+  "event.saturdayDinner": "Dinner on Saturday night",
+  "event.sundayBrunch": "Brunch on Sunday morning",
+  "event.moreDetailsComing": "More details to come",
 
   // Contact Section
   "contact.title": "Let's Connect",
