@@ -5,7 +5,7 @@ const OurStory = () => {
   const { t } = useLanguage();
   
   return (
-    <section className="py-20 bg-gradient-to-b from-cream to-champagne">
+    <section >
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-script text-5xl md:text-6xl text-burgundy mb-6">

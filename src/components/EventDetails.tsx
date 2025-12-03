@@ -5,20 +5,20 @@ import { useIsWeekend } from "@/hooks/use-is-weekend";
 const EventDetails = () => {
   const { t } = useLanguage();
   const isWeekend = useIsWeekend();
-  
+
   return (
-    <section className="py-20 bg-gradient-to-b from-champagne to-background">
+    <section >
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-script text-5xl md:text-6xl text-burgundy mb-6">
-            {t('event.title')}
+            {t("event.title")}
           </h2>
           <div className="w-24 h-px bg-gradient-primary mx-auto mb-8"></div>
           {/* <p className="font-serif text-xl text-navy/80 max-w-2xl mx-auto">
             {t('event.subtitle')}
           </p> */}
         </div>
-        
+
         {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-card rounded-2xl p-8 text-center shadow-soft border border-burgundy/10 hover:shadow-elegant transition-all duration-300">
             <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
@@ -60,7 +60,7 @@ const EventDetails = () => {
             <p className="font-sans text-muted-foreground text-sm">{t('event.jewelTones')}</p>
           </div>
         </div> */}
-        
+
         {/* <div className="mt-16 bg-gradient-elegant rounded-2xl p-12 text-center shadow-elegant">
           <div className="max-w-3xl mx-auto text-cream">
             <h3 className="font-script text-4xl md:text-5xl mb-6">
@@ -94,11 +94,11 @@ const EventDetails = () => {
                 <Home className="w-8 h-8 text-cream" />
               </div>
               <h3 className="font-script text-4xl md:text-5xl text-burgundy mb-4">
-                {t('event.accommodationsMealsTitle')}
+                {t("event.accommodationsMealsTitle")}
               </h3>
               <div className="w-24 h-px bg-gradient-primary mx-auto mb-6"></div>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-8">
               {/* Accommodations */}
               <div className="bg-gradient-elegant/50 rounded-xl p-6 border border-cream/20">
@@ -108,10 +108,10 @@ const EventDetails = () => {
                   </div>
                   <div>
                     <h4 className="font-serif text-xl text-burgundy mb-2">
-                      {t('event.accommodations')}
+                      {t("event.accommodations")}
                     </h4>
                     <p className="font-sans text-foreground">
-                      {t('event.accommodationsProvided')}
+                      {t("event.accommodationsProvided")}
                     </p>
                   </div>
                 </div>
@@ -125,36 +125,35 @@ const EventDetails = () => {
                   </div>
                   <div className="flex-1">
                     <h4 className="font-serif text-xl text-emerald mb-3">
-                      {t('event.meals')}
+                      {t("event.meals")}
                     </h4>
                     <ul className="space-y-2 font-sans text-foreground">
                       {isWeekend && (
                         <li className="flex items-center gap-2">
                           <span className="text-emerald">•</span>
-                          <span>{t('event.fridayBarbecue')}</span>
+                          <span>{t("event.fridayBarbecue")}</span>
                         </li>
                       )}
                       <li className="flex items-center gap-2">
                         <span className="text-emerald">•</span>
-                        <span>{t('event.saturdayDinner')}</span>
+                        <span>{t("event.saturdayDinner")}</span>
                       </li>
                       <li className="flex items-center gap-2">
                         <span className="text-emerald">•</span>
-                        <span>{t('event.sundayBrunch')}</span>
+                        <span>{t("event.sundayBrunch")}</span>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
-            
-            {/* More details coming note */}
-            <div className="mt-8 text-center">
-              <p className="font-sans text-sm text-muted-foreground italic">
-                {t('event.moreDetailsComing')}
-              </p>
-            </div>
           </div>
+        </div>
+        {/* More details coming note */}
+        <div className="mt-8 text-center">
+          <p className="font-sans text-sm text-muted-foreground italic">
+            {t("event.moreDetailsComing")}
+          </p>
         </div>
       </div>
     </section>

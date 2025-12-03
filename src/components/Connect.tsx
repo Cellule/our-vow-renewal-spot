@@ -1,4 +1,3 @@
-import { Mail, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { createEvent, EventAttributes } from "ics";
@@ -9,10 +8,9 @@ const organizerEmail = "mike.ferris@hotmail.com";
 
 const Connect = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-champagne">
+    <section >
       <div className="max-w-4xl mx-auto px-6">
-        {/* <ContactInfo /> */}
-        <RSVPInfo />
+        <AddToCalendar />
       </div>
     </section>
   );
@@ -20,62 +18,7 @@ const Connect = () => {
 
 export default Connect;
 
-function ContactInfo() {
-  const { t } = useLanguage();
-  return (
-    <>
-      <div className="text-center mb-16">
-        <h2 className="font-script text-5xl md:text-6xl text-burgundy mb-6">
-          {t("contact.title")}
-        </h2>
-        <div className="w-24 h-px bg-gradient-primary mx-auto mb-8"></div>
-        <p className="font-serif text-xl text-navy/80 max-w-2xl mx-auto">
-          {t("contact.subtitle")}
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-8 mb-12">
-        <div className="bg-card rounded-2xl p-8 text-center shadow-soft border border-burgundy/10 hover:shadow-elegant transition-all duration-300">
-          <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
-            <Mail className="w-8 h-8 text-cream" />
-          </div>
-          <h3 className="font-serif text-xl text-burgundy mb-4">
-            {t("contact.email")}
-          </h3>
-          <p className="font-sans text-foreground font-semibold">
-            {t("contact.emailValue")}
-          </p>
-        </div>
-
-        <div className="bg-card rounded-2xl p-8 text-center shadow-soft border border-emerald/10 hover:shadow-elegant transition-all duration-300">
-          <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-6">
-            <Phone className="w-8 h-8 text-cream" />
-          </div>
-          <h3 className="font-serif text-xl text-emerald mb-4">
-            {t("contact.call")}
-          </h3>
-          <p className="font-sans text-foreground font-semibold">
-            {t("contact.callValue")}
-          </p>
-        </div>
-
-        <div className="bg-card rounded-2xl p-8 text-center shadow-soft border border-navy/10 hover:shadow-elegant transition-all duration-300">
-          <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-6">
-            <MessageCircle className="w-8 h-8 text-cream" />
-          </div>
-          <h3 className="font-serif text-xl text-navy mb-4">
-            {t("contact.text")}
-          </h3>
-          <p className="font-sans text-foreground font-semibold">
-            {t("contact.textValue")}
-          </p>
-        </div>
-      </div>
-    </>
-  );
-}
-
-function RSVPInfo() {
+function AddToCalendar() {
   const { t } = useLanguage();
   const isWeekend = useIsWeekend();
 
