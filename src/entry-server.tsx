@@ -5,7 +5,7 @@ import AppServer from './App-server'
 export function render(url: string) {
   const html = ReactDOMServer.renderToString(
     <React.StrictMode>
-      <AppServer />
+      <AppServer url={url} />
     </React.StrictMode>
   )
   
