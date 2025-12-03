@@ -172,32 +172,10 @@ function RSVPInfo() {
   return (
     <div className="bg-gradient-elegant rounded-2xl p-12 text-center shadow-elegant">
       <div className="text-cream">
-        <h3 className="font-script text-4xl md:text-5xl mb-6">
-          {t("contact.rsvpTitle")}
-        </h3>
-        <p className="font-serif text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto">
-          {t("contact.rsvpText")}
-        </p>
-        {/* <div className="space-y-4 font-sans max-w-md mx-auto">
-          <div className="flex justify-between items-center py-3 px-6 bg-cream/10 rounded-lg border border-cream/20">
-            <span>{t("contact.formalInvitations")}</span>
-            <span className="font-semibold">
-              {t("contact.formalInvitationsValue")}
-            </span>
-          </div>
-          <div className="flex justify-between items-center py-3 px-6 bg-cream/10 rounded-lg border border-cream/20">
-            <span>{t("contact.rsvpDeadline")}</span>
-            <span className="font-semibold">
-              {t("contact.rsvpDeadlineValue")}
-            </span>
-          </div>
-        </div> */}
-
         {/* Add to Calendar Section */}
-        <div className="mt-8">
-          <h4 className="font-serif text-2xl mb-6 text-cream">
+          <h3 className="font-serif text-4xl mb-6 text-cream">
             {t("contact.addToCalendar")}
-          </h4>
+          </h3>
           <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto">
             {/* Google Calendar Button */}
             <Button
@@ -261,7 +239,6 @@ function RSVPInfo() {
               </svg>
               <span>Apple Calendar (.ics)</span>
             </Button>
-          </div>
         </div>
       </div>
     </div>

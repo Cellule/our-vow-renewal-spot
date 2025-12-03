@@ -83,9 +83,6 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   // "contact.callValue": "[Votre Numéro de Téléphone]",
   "contact.text": "Textez-nous",
   // "contact.textValue": "[Votre Numéro de Téléphone]",
-  "contact.rsvpTitle": "Information RSVP",
-  "contact.rsvpText":
-    "Les invitations officielles avec les détails RSVP seront envoyées plus près de la date. Cette réservation de date est pour vous assurer de pouvoir marquer vos calendriers!",
   "contact.formalInvitations": "Invitations Officielles",
   "contact.formalInvitationsValue": "[Date d'envoi]",
   "contact.rsvpDeadline": "Date Limite RSVP",

@@ -82,9 +82,6 @@ export const en = {
   "contact.callValue": "[Your Phone Number]",
   "contact.text": "Text Us",
   "contact.textValue": "[Your Phone Number]",
-  "contact.rsvpTitle": "RSVP Information",
-  "contact.rsvpText":
-    "Formal invitations with RSVP details will be sent closer to the date. This save the date is to ensure you can mark your calendars!",
   "contact.formalInvitations": "Formal Invitations",
   "contact.formalInvitationsValue": "[Date to be sent]",
   "contact.rsvpDeadline": "RSVP Deadline",
