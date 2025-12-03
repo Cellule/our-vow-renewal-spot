@@ -84,7 +84,7 @@ function RSVPInfo() {
     description: `${t("event.subtitle")}`,
     location: t("hero.locationValue"),
     startTime: isWeekend ? "2026-09-18T15:00:00" : "2026-09-19T09:00:00", // September 18th at 15:00 (weekend) or 19th (regular) at 9:00 AM
-    endTime: "2026-09-20T11:00:00", // September 20th, 2026 at 11:00 AM
+    endTime: "2026-09-20T11:00:00", // September 20th, 2026 at 11:00 AM (brunch for everyone)
   };
   const addToGoogleCalendar = () => {
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
