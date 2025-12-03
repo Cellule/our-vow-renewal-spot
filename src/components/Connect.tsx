@@ -113,15 +113,34 @@ function RSVPInfo() {
 
   const downloadICSFile = () => {
     // Create and download .ics file using the ics package
-    // Calculate duration: from start to end time
     const startDate = new Date(eventDetails.startTime);
     const endDate = new Date(eventDetails.endTime);
     
+    // Convert Date objects to DateArray format [year, month, day, hour, minute]
+    // Note: month is 1-12 in DateArray (not 0-11 like JavaScript Date)
+    const start: [number, number, number, number, number] = [
+      startDate.getFullYear(),
+      startDate.getMonth() + 1,
+      startDate.getDate(),
+      startDate.getHours(),
+      startDate.getMinutes(),
+    ];
+    
+    const end: [number, number, number, number, number] = [
+      endDate.getFullYear(),
+      endDate.getMonth() + 1,
+      endDate.getDate(),
+      endDate.getHours(),
+      endDate.getMinutes(),
+    ];
+    
     const event: EventAttributes = {
-      start: startDate.getTime(),
-      end: endDate.getTime(),
+      start,
+      end,
       startInputType: 'local' as const,
       startOutputType: 'local' as const,
+      endInputType: 'local' as const,
+      endOutputType: 'local' as const,
       title: eventDetails.title,
       description: eventDetails.description,
       location: eventDetails.location.replace(/\n/g, ", "),
