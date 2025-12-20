@@ -21,10 +21,10 @@ export const en = {
   "story.subtitle": "Celebrating the love that has grown stronger with each passing year",
   "story.then": "Then",
   "story.thenText":
-    "We got married humbly. We were freshly graduated, full of hope, with a life waiting for us in another country. Ready to build our life together, far from home, after a small “yes” filled with big dreams.",
+    "Our story began simply! We were freshly graduated, with the promise of a life waiting for us in another country. We set out to build our married life together, far from home, after a small ceremony filled with hope and dreams.",
   "story.now": "Now",
   "story.nowText":
-    "Since then, our relationship has grown through distance, parenthood, and our return home. This celebration is our way of honoring everything we’ve shared and created over the years—surrounded by the people we love.",
+    "Since that day, our relationship has grown through distance, parenthood, and our daily commute. We haven't yet grown tired of each other! This celebration is our way of honoring everything we’ve shared and created over the years, surrounded by the people we love.",
   "story.yearsTitle": `${yearsMarried} Years`,
   "story.yearsSubtitle": "of love, laughter & experiences",
   "story.yearsMarried": "Years Married",
