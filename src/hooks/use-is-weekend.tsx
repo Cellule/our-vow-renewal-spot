@@ -22,12 +22,10 @@ export function useIsWeekend() {
     }
   }, [location.pathname]);
 
-  // Check both React Router location and window.location as fallback
-  const routerIsWeekend = location.pathname === "/weekend" || searchParams.get("type") === "weekend";
-  const windowIsWeekend = windowPathname === "/weekend";
-  const queryIsWeekend = searchParams.get("type") === "weekend";
+  const isPathWeekend = (path: string) => path === "/weekend" || path === "/weekend/";
 
-  const isWeekend = routerIsWeekend || windowIsWeekend || queryIsWeekend;
+  // Check both React Router location and window.location as fallback
+  const isWeekend = isPathWeekend(location.pathname) || isPathWeekend(windowPathname) || searchParams.get("type") === "weekend";
 
   return isWeekend;
 }
