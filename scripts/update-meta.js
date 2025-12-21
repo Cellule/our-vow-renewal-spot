@@ -14,12 +14,20 @@ try {
     console.log(`🖼️  Found built hero image: ${heroImageFile}`);
 
     // Replace the placeholder URL with the actual built filename
-    const oldUrl = "/assets/hero-image.jpg";
-    const newUrl = `/assets/${heroImageFile}`;
+    // Handle both relative and absolute URLs
+    const oldUrlRelative = "/assets/hero-image.jpg";
+    const oldUrlAbsolute = "https://wedding.dd-mike.ca/assets/hero-image.jpg";
+    const newUrlRelative = `/assets/${heroImageFile}`;
+    const newUrlAbsolute = `https://wedding.dd-mike.ca/assets/${heroImageFile}`;
 
-    html = html.replace(new RegExp(oldUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"), newUrl);
+    // Replace relative URLs
+    html = html.replace(new RegExp(oldUrlRelative.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"), newUrlRelative);
 
-    console.log(`✅ Updated hero image URL: ${oldUrl} → ${newUrl}`);
+    // Replace absolute URLs
+    html = html.replace(new RegExp(oldUrlAbsolute.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"), newUrlAbsolute);
+
+    console.log(`✅ Updated hero image URL: ${oldUrlRelative} → ${newUrlRelative}`);
+    console.log(`✅ Updated hero image URL: ${oldUrlAbsolute} → ${newUrlAbsolute}`);
   } else {
     console.log("⚠️  No built hero image found in assets folder");
   }
