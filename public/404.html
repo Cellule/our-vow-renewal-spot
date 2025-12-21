@@ -1,20 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting...</title>
     <script>
-      // GitHub Pages SPA workaround: redirect to index.html while preserving the path
-      const path = window.location.pathname;
-      const search = window.location.search;
-      const hash = window.location.hash;
-      const redirectUrl = '/index.html' + path + search + hash;
-      window.location.replace(redirectUrl);
+      // GitHub Pages SPA workaround: store the path and redirect to root
+      (function () {
+        try {
+          const path = window.location.pathname;
+          const search = window.location.search;
+          const hash = window.location.hash;
+
+          console.log("404.html: Current path:", path);
+
+          // Prevent infinite loop: if we're already at root or index.html, don't redirect
+          if (path === "/" || path === "/index.html") {
+            console.log("404.html: Already at root, skipping redirect");
+            return;
+          }
+
+          // Store the original path in sessionStorage
+          const fullPath = path + search + hash;
+          console.log("404.html: Storing redirect path:", fullPath);
+          sessionStorage.setItem("redirectPath", fullPath);
+
+          // Verify it was stored
+          const stored = sessionStorage.getItem("redirectPath");
+          console.log("404.html: Verified stored path:", stored);
+
+          // Redirect to root - React Router will pick up the stored path
+          console.log("404.html: Redirecting to /");
+          window.location.replace("/");
+        } catch (error) {
+          console.error("404.html: Error during redirect:", error);
+          // Fallback: try to redirect anyway
+          window.location.replace("/");
+        }
+      })();
     </script>
   </head>
   <body>
     <p>Redirecting...</p>
   </body>
 </html>
-
