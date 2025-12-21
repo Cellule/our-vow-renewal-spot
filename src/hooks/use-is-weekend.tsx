@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 
 /**
@@ -10,5 +11,23 @@ export function useIsWeekend() {
   const location = useLocation();
   const [searchParams] = useSearchParams();
 
-  return location.pathname === "/weekend" || searchParams.get("type") === "weekend";
+  // Also check window.location.pathname directly as a fallback
+  // This is important for GitHub Pages where React Router might not have initialized yet
+  const [windowPathname, setWindowPathname] = useState<string>(typeof window !== "undefined" ? window.location.pathname : "/");
+
+  // Update window pathname on mount and when location changes
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowPathname(window.location.pathname);
+    }
+  }, [location.pathname]);
+
+  // Check both React Router location and window.location as fallback
+  const routerIsWeekend = location.pathname === "/weekend" || searchParams.get("type") === "weekend";
+  const windowIsWeekend = windowPathname === "/weekend";
+  const queryIsWeekend = searchParams.get("type") === "weekend";
+
+  const isWeekend = routerIsWeekend || windowIsWeekend || queryIsWeekend;
+
+  return isWeekend;
 }
