@@ -6,7 +6,8 @@ function updateMetaTags(htmlPath, isWeekend = false) {
     let html = fs.readFileSync(htmlPath, "utf-8");
 
     // Find the actual built hero image filename from the assets folder
-    const distDir = path.dirname(htmlPath);
+    // Assets are always in dist/assets/, not relative to the HTML file location
+    const distDir = path.join(import.meta.dirname, "../dist");
     const assetsPath = path.join(distDir, "assets");
     const files = fs.existsSync(assetsPath) ? fs.readdirSync(assetsPath) : [];
     const heroImageFile = files.find((file) => file.startsWith("hero-image-") && file.endsWith(".jpg"));
@@ -18,14 +19,19 @@ function updateMetaTags(htmlPath, isWeekend = false) {
       // Handle both relative and absolute URLs
       const oldUrlRelative = "/assets/hero-image.jpg";
       const oldUrlAbsolute = "https://wedding.dd-mike.ca/assets/hero-image.jpg";
-      const newUrlRelative = `/assets/${heroImageFile}`;
+
+      // For weekend version, use relative path that goes up one level to access assets
+      // For root version, use direct path
+      const newUrlRelative = isWeekend ? `../assets/${heroImageFile}` : `/assets/${heroImageFile}`;
       const newUrlAbsolute = `https://wedding.dd-mike.ca/assets/${heroImageFile}`;
 
-      // Replace relative URLs
+      // Replace relative URLs (for regular img tags, use relative paths)
       html = html.replace(new RegExp(oldUrlRelative.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"), newUrlRelative);
 
-      // Replace absolute URLs
-      html = html.replace(new RegExp(oldUrlAbsolute.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"), newUrlAbsolute);
+      // Replace absolute URLs in Open Graph and Twitter meta tags (always use absolute for social media)
+      // This ensures Facebook, Twitter, etc. can fetch the image correctly
+      html = html.replace(/<meta property="og:image" content="[^"]*" \/>/g, `<meta property="og:image" content="${newUrlAbsolute}" />`);
+      html = html.replace(/<meta property="twitter:image" content="[^"]*" \/>/g, `<meta property="twitter:image" content="${newUrlAbsolute}" />`);
 
       console.log(`✅ Updated hero image URL: ${oldUrlRelative} → ${newUrlRelative}`);
       console.log(`✅ Updated hero image URL: ${oldUrlAbsolute} → ${newUrlAbsolute}`);
