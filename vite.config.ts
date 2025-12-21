@@ -22,13 +22,22 @@ function githubPages404Plugin(): Plugin {
           return next();
         }
 
-        // Check if the requested path exists as a file in dist
+        // Check if the requested path exists as a file or directory with index.html in dist
         const distDir = resolve(__dirname, "dist");
-        const filePath = resolve(distDir, url.slice(1));
+        const urlPath = url.slice(1); // Remove leading slash
+        const filePath = resolve(distDir, urlPath);
 
+        // First check if it's a directory with index.html (like weekend/index.html)
+        const indexPath = resolve(filePath, "index.html");
+        if (fs.existsSync(indexPath)) {
+          // Directory has index.html, let Vite serve it
+          return next();
+        }
+
+        // Check if it's a file
         fs.stat(filePath, (err, stats) => {
-          if (err || !stats.isFile()) {
-            // Path doesn't exist or isn't a file - serve 404.html (mimicking GitHub Pages)
+          if (err) {
+            // Path doesn't exist - serve 404.html (mimicking GitHub Pages)
             const notFoundPath = resolve(distDir, "404.html");
             if (fs.existsSync(notFoundPath)) {
               const notFoundHtml = fs.readFileSync(notFoundPath, "utf-8");
@@ -38,8 +47,20 @@ function githubPages404Plugin(): Plugin {
             } else {
               next();
             }
-          } else {
+          } else if (stats.isFile()) {
+            // It's a file - let Vite serve it
             next();
+          } else {
+            // It's a directory but no index.html - serve 404.html
+            const notFoundPath = resolve(distDir, "404.html");
+            if (fs.existsSync(notFoundPath)) {
+              const notFoundHtml = fs.readFileSync(notFoundPath, "utf-8");
+              res.statusCode = 404;
+              res.setHeader("Content-Type", "text/html");
+              res.end(notFoundHtml);
+            } else {
+              next();
+            }
           }
         });
       });
