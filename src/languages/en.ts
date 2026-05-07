@@ -85,5 +85,5 @@ export const en = {
 
   // Footer
   "footer.withLove": "With all our love",
-  "footer.names": "Andréanne & Michaël • 2025",
+  "footer.names": "Andréanne & Michaël • 2026",
 };
