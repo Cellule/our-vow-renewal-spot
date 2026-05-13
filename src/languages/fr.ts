@@ -22,10 +22,10 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "story.subtitle": "Célébrant l'amour qui s'est renforcé au fil des années",
   "story.then": "Au commencement",
   "story.thenText":
-    "Notre histoire a commencé bien simplement! Nous étions fraîchement diplômés, avec la promesse d'une vie qui, déjà, nous attendait dans un autre pays. Nous sommes partis bâtir notre petite vie de couple marié, loin de tous nos proches, après une cérémonie sans prétention qui nous a nourris d'espoir et de rêves.",
+    "Notre histoire a commencé bien simplement! Nous étions fraîchement diplômés, avec la promesse d'une vie qui, déjà, nous attendait dans un autre pays. Nous sommes partis bâlir notre petite vie de couple marié, loin de tous nos proches, après une cérémonie sans prétention qui nous a nourris d'espoir et de rêves.",
   "story.now": "Maintenant",
   "story.nowText":
-    "Depuis ce jour-là, notre couple a grandi à travers la distance, la parentalité et le train train quotidien. On ne s’est pas encore tannés! Cette célébration est donc notre façon de souligner tout ce que nous avons partagé et créé au fil des années, et cela, entourés de ceux qu’on aime.",
+    "Depuis ce jour-là, notre couple a grandi à travers la distance, la parentalité et le train train quotidien. On ne s'est pas encore tannés! Cette célébration est donc notre façon de souligner tout ce que nous avons partagé et créé au fil des années, et cela, entourés de ceux qu'on aime.",
   "story.yearsTitle": `${yearsMarried} Années`,
   "story.yearsSubtitle": "d'amour, de rire et d'expériences",
   "story.yearsMarried": "Années mariés",
@@ -51,8 +51,16 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "event.locationValue": "[Nom du Lieu]",
   "event.address": "[Adresse]",
   "event.dressCode": "Code Vestimentaire",
-  "event.dressCodeValue": "[Code Vestimentaire]",
+  "event.dressCodeValue": "Tenue cocktail avec une touche de fantaisie",
+  "event.dressCodeTheme": "Thème « Whimsigoth »",
+  "event.dressCodeDetails":
+    "Si vous avez en tête une robe ou un habit un peu extravagant pour lequel vous n'avez jamais eu d'occasion spéciale, c'est celle-ci! Le thème visuel du mariage étant inspiré de la voûte céleste, vous pourriez incorporer des étoiles, des accessoires de lune ou de soleil à votre look!",
   "event.jewelTones": "Tons de bijoux encouragés",
+  "event.colorPaletteTitle": "Palette de couleurs",
+  "event.colorPaletteText":
+    "La palette est ce qu'on appelle « jewel toned », c'est-à-dire des teintes plus saturées, dans des couleurs foncées (pierre précieuses ou semi-précieuses : saphir, rubis, grenat, émeraude, topaze, améthyste, etc.)",
+  "event.colorPaletteAvoid": "Évitez le noir",
+  "event.colorPaletteContact": "Si vous avez des doutes, envoyez-moi des photos au 438-509-1989!",
   "event.presenceTitle": "Votre Présence est Notre Cadeau",
   "event.presenceText":
     "Nous sommes si reconnaissants pour l'amour et le soutien que vous nous avez témoignés tout au long de notre mariage. Votre présence à notre célébration de renouvellement de vœux rendrait cette journée encore plus spéciale.",
@@ -68,15 +76,86 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "event.sundayBrunch": "Brunch le dimanche matin",
   "event.moreDetailsComing": "Plus de détails à venir",
 
+  // Menu Section
+  "menu.title": "Menu",
+  "menu.appetizers": "Bouchées",
+  "menu.salad": "Salade",
+  "menu.entry": "Entrée",
+  "menu.mainCourse": "Repas principal",
+  "menu.chicken": "Suprême de volaille",
+  "menu.beef": "Macreuse de bœuf braisé",
+  "menu.vegetarian": "Risotto aux asperges (végétarien)",
+  "menu.dessertTable": "Table de desserts",
+
+  // Activities Section
+  "activities.title": "Activités",
+  "activities.subtitle": "Des installations pour tous les goûts",
+  "activities.gamesRoom": "Salle de jeux",
+  "activities.karaoke": "Karaoké",
+  "activities.spa": "Spa",
+  "activities.privateBeach": "Plage privée",
+
+  // Schedule Section
+  "schedule.title": "Horaire",
+  "schedule.fridayTitle": "Vendredi 18 septembre",
+  "schedule.fridayArrival": "Arrivée à partir de 15h",
+  "schedule.saturdayTitle": "Samedi 19 septembre",
+  "schedule.saturdayArrival": "Arrivée à partir de midi",
+  "schedule.sundayTitle": "Dimanche 20 septembre",
+  "schedule.sundayDeparture": "Départ à 13h",
+
+  // Children Section
+  "children.title": "Enfants",
+  "children.welcome": "Les enfants sont les bienvenus pour la journée du mariage et le brunch du dimanche matin.",
+  "children.friday":
+    "Pour les invités du vendredi, nous ne prévoyons aucun arrangement particulier pour les enfants (les nôtres arrivent le lendemain). C'est la soirée VIP avant le mariage, on relaxe, on boire un verre (ou deux, ou trois…), donc, le choix vous revient!",
+  "children.saturday": "À partir d'un certain nombre d'enfants présents le samedi, nous auront la possibilité de réserver le service de gardiennage / animation.",
+
+  // Accommodations Details Section
+  "accommodations.title": "Chambres",
+  "accommodations.quadRooms": "Chambres à occupation quadruple (2 lits queen)",
+  "accommodations.queenRooms": "Chambres queen",
+  "accommodations.kingRooms": "Chambre king",
+  "accommodations.details": "Toutes les chambres sont équipées de salles de bain privées.",
+
+  // Room Sharing Section
+  "roomSharing.title": "Hébergement",
+  "roomSharing.question": "Seriez-vous disposé(e) à partager une chambre avec une autre personne seule, le cas échéant?",
+  "roomSharing.note":
+    "Évidemment, cela sera considéré uniquement advenant que nous n'ayons d'autre choix, et nous nous assurerons de vous placer avec une personne que vous connaissez!",
+  "roomSharing.yes": "Oui, je partage",
+  "roomSharing.no": "Non, je preferère avoir une chambre seul",
+
+  // Packing List Section
+  "packing.title": "Quoi apporter dans votre sac de voyage?",
+  "packing.soap": "Savon",
+  "packing.shampoo": "Shampoing",
+  "packing.swimsuit": "Maillot de bain",
+  "packing.towel": "Serviette",
+  "packing.spaNote": "Si vous comptez profiter du spa et/ou de la plage",
+  "packing.other": "Vos effets personnels",
+
+  // Gift Section
+  "gift.title": "Suggestion de cadeau",
+  "gift.text": "Nous ne souhaitons pas recevoir de cadeau particulier, mais si le cœur vous en dit, une contribution à notre voyage de noces serait appréciée 😊",
+  "gift.thankYou": "Merci pour votre générosité!",
+
+  // Address Section
+  "address.title": "Adresse du manoir",
+  "address.location": "Manoir Montpellier",
+  "address.street": "533 QC-315",
+  "address.city": "Montpellier, QC J0V 1M0",
+  "address.viewMap": "Voir sur Google Maps",
+
   // Contact Section
   "contact.title": "Restons en Contact",
   "contact.subtitle": "Des questions? Nous aimerions avoir de vos nouvelles",
   "contact.email": "Envoyez-nous un Courriel",
-  // "contact.emailValue": "[votre-email@email.com]",
+  "contact.emailValue": "andreanne.et.michael@gmail.com",
   "contact.call": "Appelez-nous",
-  // "contact.callValue": "[Votre Numéro de Téléphone]",
+  "contact.callValue": "438-509-1989",
   "contact.text": "Textez-nous",
-  // "contact.textValue": "[Votre Numéro de Téléphone]",
+  "contact.textValue": "438-509-1989",
   "contact.formalInvitations": "Invitations Officielles",
   "contact.formalInvitationsValue": "[Date d'envoi]",
   "contact.rsvpDeadline": "Date Limite RSVP",
@@ -84,8 +163,29 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "contact.addToCalendar": "Ajouter au Calendrier",
   "contact.addToCalendarTitle": "Mariage Andréanne & Michaël",
 
+  // RSVP Form Section
+  "rsvp.title": "Confirmation de présence",
+  "rsvp.subtitle": "Veuillez nous confirmer votre présence",
+  "rsvp.adults": "Nombre d'adultes",
+  "rsvp.children": "Nombre d'enfants",
+  "rsvp.overnightStay": "Nombre de personnes qui resteront à coucher samedi soir",
+  "rsvp.fridayGuests": "Pour les invités du vendredi seulement",
+  "rsvp.roomSharing": "Seriez-vous disposé(e) à partager une chambre avec une autre personne seule, le cas échéant?",
+  "rsvp.mealChoice": "Choix de repas",
+  "rsvp.mealAdults": "Repas pour adultes",
+  "rsvp.mealChildren": "Repas pour enfants",
+  "rsvp.mealChicken": "Suprême de volaille",
+  "rsvp.mealBeef": "Macreuse de bœuf braisé",
+  "rsvp.mealVegetarian": "Risotto aux asperges (végétarien)",
+  "rsvp.mealKids": "Menu enfants",
+  "rsvp.songRequest": "C'est quoi votre « toune » de mariage / party?",
+  "rsvp.songRequestOptional": "(optionnel)",
+  "rsvp.submit": "Soumettre ma réponse",
+  "rsvp.thankYou": "Merci de votre réponse! Nous avons hâte de vous voir!",
+
   // Footer
   "footer.withLove": "Avec tout notre amour",
+  "footer.names": undefined,
 
   // Translation not required
   "contact.emailValue": undefined,

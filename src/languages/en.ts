@@ -24,7 +24,7 @@ export const en = {
     "Our story began simply! We were freshly graduated, with the promise of a life waiting for us in another country. We set out to build our married life together, far from home, after a small ceremony filled with hope and dreams.",
   "story.now": "Now",
   "story.nowText":
-    "Since that day, our relationship has grown through distance, parenthood, and our daily commute. We haven't yet grown tired of each other! This celebration is our way of honoring everything we’ve shared and created over the years, surrounded by the people we love.",
+    "Since that day, our relationship has grown through distance, parenthood, and our daily commute. We haven't yet grown tired of each other! This celebration is our way of honoring everything we've shared and created over the years, surrounded by the people we love.",
   "story.yearsTitle": `${yearsMarried} Years`,
   "story.yearsSubtitle": "of love, laughter & experiences",
   "story.yearsMarried": "Years Married",
@@ -50,8 +50,16 @@ export const en = {
   "event.locationValue": "[Venue Name]",
   "event.address": "[Address]",
   "event.dressCode": "Dress Code",
-  "event.dressCodeValue": "[Dress Code]",
+  "event.dressCodeValue": "Cocktail attire with a touch of flair",
+  "event.dressCodeTheme": "Whimsigoth Theme",
+  "event.dressCodeDetails":
+    "If you have an extravagant dress or outfit you've been waiting for the right occasion to wear, this is it! Since the wedding's visual theme is inspired by the celestial vault, you could incorporate stars, moon or sun accessories into your look!",
   "event.jewelTones": "Jewel tones encouraged",
+  "event.colorPaletteTitle": "Color Palette",
+  "event.colorPaletteText":
+    "The palette is what's called 'jewel toned', meaning more saturated shades in dark colors (think precious or semi-precious stones: sapphire, ruby, garnet, emerald, topaz, amethyst, etc.)",
+  "event.colorPaletteAvoid": "Avoid black",
+  "event.colorPaletteContact": "If you're unsure, send me photos at 438-509-1989!",
   "event.presenceTitle": "Your Presence is Our Present",
   "event.presenceText":
     "We are so grateful for the love and support you've shown us throughout our marriage. Your presence at our vow renewal celebration would make this day even more special.",
@@ -67,21 +75,111 @@ export const en = {
   "event.sundayBrunch": "Brunch on Sunday morning",
   "event.moreDetailsComing": "More details to come",
 
+  // Menu Section
+  "menu.title": "Menu",
+  "menu.appetizers": "Appetizers",
+  "menu.salad": "Salad",
+  "menu.entry": "Entry",
+  "menu.mainCourse": "Main Course",
+  "menu.chicken": "Chicken Supreme",
+  "menu.beef": "Braised Beef Tenderloin",
+  "menu.vegetarian": "Asparagus Risotto (vegetarian)",
+  "menu.dessertTable": "Dessert Table",
+
+  // Activities Section
+  "activities.title": "Activities",
+  "activities.subtitle": "Facilities for all tastes",
+  "activities.gamesRoom": "Game Room",
+  "activities.karaoke": "Karaoke",
+  "activities.spa": "Spa",
+  "activities.privateBeach": "Private Beach",
+
+  // Schedule Section
+  "schedule.title": "Schedule",
+  "schedule.fridayTitle": "Friday, September 18th",
+  "schedule.fridayArrival": "Arrival starting at 3pm",
+  "schedule.saturdayTitle": "Saturday, September 19th",
+  "schedule.saturdayArrival": "Arrival starting at noon",
+  "schedule.sundayTitle": "Sunday, September 20th",
+  "schedule.sundayDeparture": "Departure at 1pm",
+
+  // Children Section
+  "children.title": "Children",
+  "children.welcome": "Children are welcome for the wedding day and Sunday morning brunch.",
+  "children.friday":
+    "For Friday guests, we don't have any special arrangements for children (ours arrive the next day). It's the VIP evening before the wedding, we relax, have a drink (or two, or three...), so the choice is yours!",
+  "children.saturday": "Depending on the number of children present on Saturday, we may be able to arrange childcare/entertainment services.",
+
+  // Accommodations Details Section
+  "accommodations.title": "Rooms",
+  "accommodations.quadRooms": "Quad occupancy rooms (2 queen beds)",
+  "accommodations.queenRooms": "Queen rooms",
+  "accommodations.kingRooms": "King room",
+  "accommodations.details": "All rooms have private bathrooms.",
+
+  // Room Sharing Section
+  "roomSharing.title": "Accommodations",
+  "roomSharing.question": "Would you be willing to share a room with another single guest, if necessary?",
+  "roomSharing.note": "Of course, this will only be considered if we have no other choice, and we'll make sure to pair you with someone you know!",
+  "roomSharing.yes": "Yes, I'll share",
+  "roomSharing.no": "No, I prefer a private room",
+
+  // Packing List Section
+  "packing.title": "What to bring in your travel bag?",
+  "packing.soap": "Soap",
+  "packing.shampoo": "Shampoo",
+  "packing.swimsuit": "Swimsuit",
+  "packing.towel": "Towel",
+  "packing.spaNote": "If you plan to enjoy the spa and/or beach",
+  "packing.other": "Your personal effects",
+
+  // Gift Section
+  "gift.title": "Gift Suggestion",
+  "gift.text": "We don't need any particular gifts, but if you feel like it, a contribution to our honeymoon would be appreciated 😊",
+  "gift.thankYou": "Thank you for your generosity!",
+
+  // Address Section
+  "address.title": "Manor Address",
+  "address.location": "Manoir Montpellier",
+  "address.street": "533 QC-315",
+  "address.city": "Montpellier, QC J0V 1M0",
+  "address.viewMap": "View on Google Maps",
+
   // Contact Section
   "contact.title": "Let's Connect",
   "contact.subtitle": "Questions? We'd love to hear from you",
   "contact.email": "Email Us",
-  "contact.emailValue": "[your-email@email.com]",
+  "contact.emailValue": "andreanne.et.michael@gmail.com",
   "contact.call": "Call Us",
-  "contact.callValue": "[Your Phone Number]",
+  "contact.callValue": "438-509-1989",
   "contact.text": "Text Us",
-  "contact.textValue": "[Your Phone Number]",
+  "contact.textValue": "438-509-1989",
   "contact.formalInvitations": "Formal Invitations",
   "contact.formalInvitationsValue": "[Date to be sent]",
   "contact.rsvpDeadline": "RSVP Deadline",
   "contact.rsvpDeadlineValue": "[RSVP Date]",
   "contact.addToCalendar": "Add to Calendar",
   "contact.addToCalendarTitle": "Andréanne & Michaël's Wedding",
+
+  // RSVP Form Section
+  "rsvp.title": "RSVP",
+  "rsvp.subtitle": "Please confirm your attendance",
+  "rsvp.adults": "Number of adults",
+  "rsvp.children": "Number of children",
+  "rsvp.overnightStay": "Number of people staying overnight Saturday",
+  "rsvp.fridayGuests": "For Friday guests only",
+  "rsvp.roomSharing": "Would you be willing to share a room with another single guest, if necessary?",
+  "rsvp.mealChoice": "Meal choice",
+  "rsvp.mealAdults": "Adult meals",
+  "rsvp.mealChildren": "Children's meals",
+  "rsvp.mealChicken": "Chicken Supreme",
+  "rsvp.mealBeef": "Braised Beef Tenderloin",
+  "rsvp.mealVegetarian": "Asparagus Risotto (vegetarian)",
+  "rsvp.mealKids": "Kids menu",
+  "rsvp.songRequest": "What's your wedding/party song?",
+  "rsvp.songRequestOptional": "(optional)",
+  "rsvp.submit": "Submit response",
+  "rsvp.thankYou": "Thank you for your response! We can't wait to see you!",
 
   // Footer
   "footer.withLove": "With all our love",
