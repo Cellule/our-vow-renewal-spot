@@ -12,7 +12,7 @@ const PackingListAndGifts = () => {
   ] as const;
 
   return (
-    <section className="py-16 bg-gradient-to-b from-champagne to-cream">
+    <section className="py-16">
       <div className="max-w-6xl mx-auto px-6">
         {/* Packing List Section */}
         <div className="mb-16">

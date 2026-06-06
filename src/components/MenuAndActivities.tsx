@@ -26,7 +26,7 @@ const MenuAndActivities = () => {
   ] as const;
 
   return (
-    <section className="py-16 bg-cream">
+    <section className="py-16">
       <div className="max-w-6xl mx-auto px-6">
         {/* Menu Section */}
         <div className="mb-20">

@@ -7,7 +7,7 @@ const Schedule = () => {
   const isWeekend = useIsWeekend();
 
   return (
-    <section className="py-16 bg-gradient-to-b from-cream to-champagne">
+    <section className="py-16">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-6">

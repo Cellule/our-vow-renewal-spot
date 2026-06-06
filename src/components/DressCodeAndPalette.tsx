@@ -5,7 +5,7 @@ const DressCodeAndPalette = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-16 bg-gradient-to-b from-champagne to-cream">
+    <section className="py-16">
       <div className="max-w-6xl mx-auto px-6">
         {/* Dress Code Section */}
         <div className="mb-16">
