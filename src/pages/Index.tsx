@@ -1,10 +1,14 @@
-import ChildrenAndRooms from "@/components/ChildrenAndRooms";
+import { Activities } from "@/components/Activities";
+import { Children } from "@/components/Children";
 import Connect from "@/components/Connect";
-import DressCodeAndPalette from "@/components/DressCodeAndPalette";
+import { DressCode } from "@/components/DressCode";
+import { Gifts } from "@/components/Gifts";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import MenuAndActivities from "@/components/MenuAndActivities";
-import OurStory from "@/components/OurStory";
-import PackingListAndGifts from "@/components/PackingListAndGifts";
+import { Menu } from "@/components/Menu";
+import { OurStory } from "@/components/OurStory";
+import { PackingList } from "@/components/PackingList";
+import { Palette } from "@/components/Palette";
+import { Rooms } from "@/components/Rooms";
 import SaveTheDateHero from "@/components/SaveTheDateHero";
 import Schedule from "@/components/Schedule";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -12,19 +16,31 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Index = () => {
   const { t } = useLanguage();
 
+  const sections = [
+    { key: "ourStory", component: <OurStory /> },
+    // { key: "eventDetails", component: <EventDetails /> },
+    { key: "schedule", component: <Schedule /> },
+    { key: "dressCode", component: <DressCode /> },
+    { key: "palette", component: <Palette /> },
+    { key: "menu", component: <Menu /> },
+    { key: "activities", component: <Activities /> },
+    { key: "children", component: <Children /> },
+    { key: "rooms", component: <Rooms /> },
+    { key: "packingList", component: <PackingList /> },
+    { key: "gifts", component: <Gifts /> },
+    { key: "connect", component: <Connect /> },
+  ];
+
   return (
     <main className="min-h-screen">
       <LanguageSwitcher />
       <SaveTheDateHero />
       <div className="py-20 bg-gradient-to-b from-cream to-champagne">
-        <OurStory />
-        {/* <EventDetails /> */}
-        <Schedule />
-        <DressCodeAndPalette />
-        <MenuAndActivities />
-        <ChildrenAndRooms />
-        <PackingListAndGifts />
-        <Connect />
+        {sections.map((Section) => (
+          <section key={Section.key} className="py-2">
+            <div className="max-w-6xl mx-auto px-6 mb-16">{Section.component}</div>
+          </section>
+        ))}
       </div>
 
       {/* Footer */}
