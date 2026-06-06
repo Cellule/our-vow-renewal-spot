@@ -28,7 +28,7 @@ export function Menu() {
         <div className="w-24 h-px bg-gradient-primary mx-auto"></div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-8">
         {/* Menu Items */}
         <div className="bg-card rounded-2xl p-8 shadow-soft border border-burgundy/10">
           <ul className="space-y-4">

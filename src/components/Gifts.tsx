@@ -13,7 +13,7 @@ export function Gifts() {
         <h2 className="font-script text-4xl md:text-5xl text-burgundy mb-4">{t("gift.title")}</h2>
       </div>
 
-      <div className="bg-gradient-elegant rounded-2xl p-10 shadow-elegant max-w-2xl mx-auto">
+      <div className="bg-gradient-elegant rounded-2xl p-10 shadow-elegant">
         <p className="font-serif text-xl text-champagne text-center leading-relaxed">{t("gift.text")}</p>
       </div>
     </div>

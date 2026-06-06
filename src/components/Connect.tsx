@@ -6,19 +6,7 @@ import { createEvent, EventAttributes } from "ics";
 const coupleNames = "Andréanne & Michaël";
 const organizerEmail = "mike.ferris@hotmail.com";
 
-const Connect = () => {
-  return (
-    <section>
-      <div className="max-w-4xl mx-auto px-6">
-        <AddToCalendar />
-      </div>
-    </section>
-  );
-};
-
-export default Connect;
-
-function AddToCalendar() {
+export function AddToCalendar() {
   const { t } = useLanguage();
   const isWeekend = useIsWeekend();
 

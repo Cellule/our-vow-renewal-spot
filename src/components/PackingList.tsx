@@ -21,7 +21,7 @@ export function PackingList() {
         <div className="w-24 h-px bg-gradient-secondary mx-auto"></div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-6">
         {packingItems.map((item) => {
           const Icon = item.icon;
           return (

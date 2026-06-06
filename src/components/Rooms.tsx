@@ -20,7 +20,7 @@ export function Rooms() {
         <div className="w-24 h-px bg-gradient-primary mx-auto"></div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-6">
         {rooms.map((room) => (
           <div key={room.key} className="bg-card rounded-2xl p-6 text-center shadow-soft border border-burgundy/10">
             <span className="text-4xl block mb-4">{room.icon}</span>

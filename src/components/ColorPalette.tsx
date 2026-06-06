@@ -1,20 +1,20 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Palette as PaletteIcon, Phone } from "lucide-react";
+import { Palette, Phone } from "lucide-react";
 
-export function Palette() {
+export function ColorPalette() {
   const { t } = useLanguage();
 
   return (
     <div>
       <div className="text-center mb-12">
         <div className="w-16 h-16 bg-gradient-accent rounded-full flex items-center justify-center mx-auto mb-6">
-          <PaletteIcon className="w-8 h-8 text-cream" />
+          <Palette className="w-8 h-8 text-cream" />
         </div>
         <h2 className="font-script text-4xl md:text-5xl text-emerald mb-4">{t("event.colorPaletteTitle")}</h2>
         <div className="w-24 h-px bg-gradient-accent mx-auto mb-6"></div>
       </div>
 
-      <div className="bg-gradient-elegant rounded-2xl p-8 shadow-elegant max-w-3xl mx-auto">
+      <div className="bg-gradient-elegant rounded-2xl p-8 shadow-elegant">
         <div className="text-champagne">
           <p className="font-sans text-lg leading-relaxed mb-4">{t("event.colorPaletteText")}</p>
           <p className="font-serif text-gold text-lg mb-4">{t("event.colorPaletteAvoid")}</p>

@@ -1,13 +1,13 @@
 import { Activities } from "@/components/Activities";
 import { Children } from "@/components/Children";
-import Connect from "@/components/Connect";
+import { ColorPalette } from "@/components/ColorPalette";
+import { AddToCalendar } from "@/components/Connect";
 import { DressCode } from "@/components/DressCode";
 import { Gifts } from "@/components/Gifts";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Menu } from "@/components/Menu";
 import { OurStory } from "@/components/OurStory";
 import { PackingList } from "@/components/PackingList";
-import { Palette } from "@/components/Palette";
 import { Rooms } from "@/components/Rooms";
 import SaveTheDateHero from "@/components/SaveTheDateHero";
 import Schedule from "@/components/Schedule";
@@ -21,14 +21,14 @@ const Index = () => {
     // { key: "eventDetails", component: <EventDetails /> },
     { key: "schedule", component: <Schedule /> },
     { key: "dressCode", component: <DressCode /> },
-    { key: "palette", component: <Palette /> },
+    { key: "palette", component: <ColorPalette /> },
     { key: "menu", component: <Menu /> },
     { key: "activities", component: <Activities /> },
     { key: "children", component: <Children /> },
     { key: "rooms", component: <Rooms /> },
     { key: "packingList", component: <PackingList /> },
     { key: "gifts", component: <Gifts /> },
-    { key: "connect", component: <Connect /> },
+    { key: "connect", component: <AddToCalendar /> },
   ];
 
   return (
@@ -38,7 +38,7 @@ const Index = () => {
       <div className="py-20 bg-gradient-to-b from-cream to-champagne">
         {sections.map((Section) => (
           <section key={Section.key} className="py-2">
-            <div className="max-w-6xl mx-auto px-6 mb-16">{Section.component}</div>
+            <div className="max-w-4xl mx-auto px-6 mb-16">{Section.component}</div>
           </section>
         ))}
       </div>

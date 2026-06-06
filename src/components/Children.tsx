@@ -16,7 +16,7 @@ export function Children() {
         <div className="w-24 h-px bg-gradient-accent mx-auto"></div>
       </div>
 
-      <div className="bg-gradient-elegant rounded-2xl p-8 shadow-elegant max-w-3xl mx-auto">
+      <div className="bg-gradient-elegant rounded-2xl p-8 shadow-elegant">
         <div className="text-champagne space-y-4">
           <p className="font-sans text-lg leading-relaxed">{t("children.welcome")}</p>
           {isWeekend && (
