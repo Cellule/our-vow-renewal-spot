@@ -23,11 +23,7 @@ const SaveTheDateHero = () => {
         </div>
 
         <div className="bg-cream/10 backdrop-blur-md rounded-2xl p-4 md:p-8 lg:p-12 border border-cream/20 shadow-elegant mb-4 md:mb-8">
-          <div className="grid md:grid-cols-2 gap-4 md:gap-8 text-cream">
-            {/* <div>
-              <h3 className="font-serif text-lg md:text-xl lg:text-2xl mb-2 md:mb-4 text-gold">{t("hero.couple")}</h3>
-              <p className="font-sans text-base md:text-lg lg:text-xl font-medium whitespace-pre-line">{t("hero.coupleNames")}</p>
-            </div> */}
+          <div className="text-cream">
             <div>
               <h3 className="font-serif text-lg md:text-xl lg:text-2xl mb-2 md:mb-4 text-gold">{t("hero.dates")}</h3>
               <p className="font-sans text-base md:text-lg lg:text-xl font-medium">{isWeekend ? t("hero.datesValueWeekend") : t("hero.datesValue")}</p>
