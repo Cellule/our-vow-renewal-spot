@@ -3,19 +3,18 @@ import type { TranslationKeys } from "./translations";
 
 export const fr: Record<TranslationKeys, string | undefined> = {
   // Hero Section
-  "hero.saveDate": "Réservez la date",
+  "hero.saveDate": "Mariage",
   "hero.renewingVows": "Nous renouvelons nos vœux",
   "hero.couple": "Le couple",
-  "hero.coupleNames": "Andréanne Salvas\nMichaël Ferris",
+  "hero.coupleNames": undefined,
   "hero.dates": "La date",
   "hero.datesValue": "19-20 septembre 2026",
   "hero.datesValueWeekend": "18-20 septembre 2026",
   "hero.location": "Le lieu",
   "hero.locationValue": "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.viewOnGoogleMaps": "Voir sur Google Maps",
-  "hero.formalInvitation": "Invitation officielle à suivre",
   "hero.addressCallout": "Important : Assurez-vous d'avoir partagé votre adresse postale avec nous.",
-  "hero.googleFormLink": "Remplissez notre formulaire Google pour partager votre adresse postale",
+  "hero.googleFormLink": "Répondez à l'invitation !",
 
   // Our Story Section
   "story.title": "Notre parcours",
@@ -60,7 +59,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "event.colorPaletteText":
     "La palette est ce qu'on appelle « jewel toned », c'est-à-dire des teintes plus saturées, dans des couleurs foncées (pierre précieuses ou semi-précieuses : saphir, rubis, grenat, émeraude, topaze, améthyste, etc.)",
   "event.colorPaletteAvoid": "Évitez le noir",
-  "event.colorPaletteContact": "Si vous avez des doutes, envoyez-moi des photos au 438-509-1989!",
+  "event.colorPaletteContact": "Si vous avez des doutes, envoyez-moi des photos!",
   "event.presenceTitle": "Votre Présence est Notre Cadeau",
   "event.presenceText":
     "Nous sommes si reconnaissants pour l'amour et le soutien que vous nous avez témoignés tout au long de notre mariage. Votre présence à notre célébration de renouvellement de vœux rendrait cette journée encore plus spéciale.",
@@ -79,12 +78,12 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   // Menu Section
   "menu.title": "Menu",
   "menu.appetizers": "Bouchées",
-  "menu.salad": "Salade",
-  "menu.entry": "Entrée",
+  "menu.salad": "Salade verte, vinaigrette balsamique à l’érable et tuile de bacon",
+  "menu.entry": "Entrée - Chèvre chaud de la ferme Floralpe, poires, noix et érable",
   "menu.mainCourse": "Repas principal",
-  "menu.chicken": "Suprême de volaille",
-  "menu.beef": "Macreuse de bœuf braisé",
-  "menu.vegetarian": "Risotto aux asperges (végétarien)",
+  "menu.chicken": "Suprême de volaille aux fines herbes et citron, riz au jasmin et légumes de saison",
+  "menu.beef": "Macreuse bœuf braisé de la Ferme Brylee, sauce au romarin, mousseline de pommes de terre et légumes de saison",
+  "menu.vegetarian": "Poké bowl végétarien",
   "menu.dessertTable": "Table de desserts",
 
   // Activities Section
@@ -148,18 +147,6 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "address.viewMap": "Voir sur Google Maps",
 
   // Contact Section
-  "contact.title": "Restons en Contact",
-  "contact.subtitle": "Des questions? Nous aimerions avoir de vos nouvelles",
-  "contact.email": "Envoyez-nous un Courriel",
-  "contact.emailValue": "andreanne.et.michael@gmail.com",
-  "contact.call": "Appelez-nous",
-  "contact.callValue": "438-509-1989",
-  "contact.text": "Textez-nous",
-  "contact.textValue": "438-509-1989",
-  "contact.formalInvitations": "Invitations Officielles",
-  "contact.formalInvitationsValue": "[Date d'envoi]",
-  "contact.rsvpDeadline": "Date Limite RSVP",
-  "contact.rsvpDeadlineValue": "[Date RSVP]",
   "contact.addToCalendar": "Ajouter au Calendrier",
   "contact.addToCalendarTitle": "Mariage Andréanne & Michaël",
 
@@ -185,11 +172,5 @@ export const fr: Record<TranslationKeys, string | undefined> = {
 
   // Footer
   "footer.withLove": "Avec tout notre amour",
-  "footer.names": undefined,
-
-  // Translation not required
-  "contact.emailValue": undefined,
-  "contact.callValue": undefined,
-  "contact.textValue": undefined,
   "footer.names": undefined,
 };

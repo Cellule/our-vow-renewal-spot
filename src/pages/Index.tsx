@@ -1,7 +1,6 @@
 import ChildrenAndRooms from "@/components/ChildrenAndRooms";
 import Connect from "@/components/Connect";
 import DressCodeAndPalette from "@/components/DressCodeAndPalette";
-import EventDetails from "@/components/EventDetails";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import MenuAndActivities from "@/components/MenuAndActivities";
 import OurStory from "@/components/OurStory";
@@ -19,10 +18,10 @@ const Index = () => {
       <SaveTheDateHero />
       <div className="space-y-16 py-20 bg-gradient-to-b from-cream to-champagne">
         <OurStory />
-        <EventDetails />
+        {/* <EventDetails /> */}
+        <Schedule />
         <DressCodeAndPalette />
         <MenuAndActivities />
-        <Schedule />
         <ChildrenAndRooms />
         <PackingListAndGifts />
         <Connect />

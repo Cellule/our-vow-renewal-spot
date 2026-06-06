@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsWeekend } from "@/hooks/use-is-weekend";
-import { Baby, BedDouble, Users } from "lucide-react";
+import { Baby, BedDouble } from "lucide-react";
 
 const ChildrenAndRooms = () => {
   const { t } = useLanguage();
@@ -33,7 +33,7 @@ const ChildrenAndRooms = () => {
                   <p className="font-sans text-lg leading-relaxed">{t("children.friday")}</p>
                 </>
               )}
-              <p className="font-sans text-lg leading-relaxed">{t("children.saturday")}</p>
+              {/* <p className="font-sans text-lg leading-relaxed">{t("children.saturday")}</p> */}
             </div>
           </div>
         </div>
@@ -58,21 +58,6 @@ const ChildrenAndRooms = () => {
           </div>
 
           <p className="font-sans text-center text-muted-foreground mt-6 max-w-2xl mx-auto">{t("accommodations.details")}</p>
-        </div>
-
-        {/* Room Sharing Section */}
-        <div>
-          <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
-              <Users className="w-8 h-8 text-burgundy" />
-            </div>
-            <h2 className="font-script text-4xl md:text-5xl text-navy mb-4">{t("roomSharing.title")}</h2>
-          </div>
-
-          <div className="bg-card rounded-2xl p-8 shadow-soft border border-gold/20 max-w-2xl mx-auto">
-            <p className="font-serif text-xl text-burgundy text-center mb-4">{t("roomSharing.question")}</p>
-            <p className="font-sans text-muted-foreground text-center">{t("roomSharing.note")}</p>
-          </div>
         </div>
       </div>
     </section>

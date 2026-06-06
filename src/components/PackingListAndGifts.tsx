@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Briefcase, Gift, Droplets, Shirt, Waves as WavesIcon } from "lucide-react";
+import { Briefcase, Droplets, Gift, Shirt, Waves as WavesIcon } from "lucide-react";
 
 const PackingListAndGifts = () => {
   const { t } = useLanguage();
@@ -9,7 +9,7 @@ const PackingListAndGifts = () => {
     { key: "shampoo", icon: Shirt },
     { key: "swimsuit", icon: WavesIcon },
     { key: "towel", icon: WavesIcon },
-  ];
+  ] as const;
 
   return (
     <section className="py-16 bg-gradient-to-b from-champagne to-cream">
@@ -28,24 +28,17 @@ const PackingListAndGifts = () => {
             {packingItems.map((item) => {
               const Icon = item.icon;
               return (
-                <div
-                  key={item.key}
-                  className="bg-card rounded-xl p-4 shadow-soft border border-burgundy/10 flex items-center gap-4"
-                >
+                <div key={item.key} className="bg-card rounded-xl p-4 shadow-soft border border-burgundy/10 flex items-center gap-4">
                   <div className="w-10 h-10 bg-gradient-accent rounded-full flex items-center justify-center flex-shrink-0">
                     <Icon className="w-5 h-5 text-cream" />
                   </div>
-                  <span className="font-sans text-foreground">
-                    {t(`packing.${item.key}`)}
-                  </span>
+                  <span className="font-sans text-foreground">{t(`packing.${item.key}`)}</span>
                 </div>
               );
             })}
           </div>
 
-          <p className="font-sans text-center text-muted-foreground mt-6 italic">
-            {t("packing.spaNote")}
-          </p>
+          {/* <p className="font-sans text-center text-muted-foreground mt-6 italic">{t("packing.spaNote")}</p> */}
         </div>
 
         {/* Gift Section */}
@@ -58,9 +51,7 @@ const PackingListAndGifts = () => {
           </div>
 
           <div className="bg-gradient-elegant rounded-2xl p-10 shadow-elegant max-w-2xl mx-auto">
-            <p className="font-serif text-xl text-champagne text-center leading-relaxed">
-              {t("gift.text")}
-            </p>
+            <p className="font-serif text-xl text-champagne text-center leading-relaxed">{t("gift.text")}</p>
           </div>
         </div>
       </div>

@@ -2,19 +2,18 @@ import { yearsMarried } from "@/lib/first-celebration";
 
 export const en = {
   // Hero Section
-  "hero.saveDate": "Save the Date",
+  "hero.saveDate": "Wedding",
   "hero.renewingVows": "We're Renewing Our Vows",
   "hero.couple": "The Couple",
-  "hero.coupleNames": "Andréanne Salvas\nMichaël Ferris",
+  "hero.coupleNames": "Andréanne Salvas & Michaël Ferris",
   "hero.dates": "The Date",
   "hero.datesValue": "September 19th-20th, 2026",
   "hero.datesValueWeekend": "September 18th-20th, 2026",
-  "hero.location": "The Location",
+  "hero.location": "The Venue",
   "hero.locationValue": "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.viewOnGoogleMaps": "View on Google Maps",
-  "hero.formalInvitation": "Formal invitation to follow",
   "hero.addressCallout": "Important: Please ensure you've shared your postal address with us.",
-  "hero.googleFormLink": "Fill out our Google Form to share your postal address",
+  "hero.googleFormLink": "Respond to the invitation!",
 
   // Our Story Section
   "story.title": "Our Journey",
@@ -59,7 +58,7 @@ export const en = {
   "event.colorPaletteText":
     "The palette is what's called 'jewel toned', meaning more saturated shades in dark colors (think precious or semi-precious stones: sapphire, ruby, garnet, emerald, topaz, amethyst, etc.)",
   "event.colorPaletteAvoid": "Avoid black",
-  "event.colorPaletteContact": "If you're unsure, send me photos at 438-509-1989!",
+  "event.colorPaletteContact": "If you're unsure, send me photos!",
   "event.presenceTitle": "Your Presence is Our Present",
   "event.presenceText":
     "We are so grateful for the love and support you've shown us throughout our marriage. Your presence at our vow renewal celebration would make this day even more special.",
@@ -78,12 +77,12 @@ export const en = {
   // Menu Section
   "menu.title": "Menu",
   "menu.appetizers": "Appetizers",
-  "menu.salad": "Salad",
-  "menu.entry": "Entry",
+  "menu.salad": "Green salad with maple balsamic vinaigrette and bacon tuile",
+  "menu.entry": "Starter - Warm goat cheese from Floralpe farm, pears, walnuts, and maple",
   "menu.mainCourse": "Main Course",
-  "menu.chicken": "Chicken Supreme",
-  "menu.beef": "Braised Beef Tenderloin",
-  "menu.vegetarian": "Asparagus Risotto (vegetarian)",
+  "menu.chicken": "Chicken Supreme with herbs and lemon, jasmine rice and seasonal vegetables",
+  "menu.beef": "Braised Beef Tenderloin with rosemary sauce, mashed potatoes and seasonal vegetables",
+  "menu.vegetarian": "Vegetarian Poké Bowl",
   "menu.dessertTable": "Dessert Table",
 
   // Activities Section
@@ -146,18 +145,6 @@ export const en = {
   "address.viewMap": "View on Google Maps",
 
   // Contact Section
-  "contact.title": "Let's Connect",
-  "contact.subtitle": "Questions? We'd love to hear from you",
-  "contact.email": "Email Us",
-  "contact.emailValue": "andreanne.et.michael@gmail.com",
-  "contact.call": "Call Us",
-  "contact.callValue": "438-509-1989",
-  "contact.text": "Text Us",
-  "contact.textValue": "438-509-1989",
-  "contact.formalInvitations": "Formal Invitations",
-  "contact.formalInvitationsValue": "[Date to be sent]",
-  "contact.rsvpDeadline": "RSVP Deadline",
-  "contact.rsvpDeadlineValue": "[RSVP Date]",
   "contact.addToCalendar": "Add to Calendar",
   "contact.addToCalendarTitle": "Andréanne & Michaël's Wedding",
 
