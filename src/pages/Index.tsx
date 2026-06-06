@@ -16,7 +16,7 @@ const Index = () => {
     <main className="min-h-screen">
       <LanguageSwitcher />
       <SaveTheDateHero />
-      <div className="space-y-16 py-20 bg-gradient-to-b from-cream to-champagne">
+      <div className="py-20 bg-gradient-to-b from-cream to-champagne">
         <OurStory />
         {/* <EventDetails /> */}
         <Schedule />
