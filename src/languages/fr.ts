@@ -217,6 +217,8 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.validation.formInvalid": "Veuillez corriger les erreurs dans le formulaire avant de soumettre.",
   "rsvp.validation.fridayWelcomeGathering": "Veuillez indiquer si vous assisterez au rassemblement de bienvenue du vendredi",
   "rsvp.validation.sundayBrunch": "Veuillez indiquer si vous assisterez au brunch du dimanche",
+  "rsvp.validation.guestsInRoom": "Veuillez entrer le nombre d'invités dans votre chambre si vous avez besoin d'hébergement",
+  "rsvp.validation.nightsStaying": "Veuillez sélectionner les nuits où vous séjournerez si vous avez besoin d'hébergement",
 
   // Footer
   "footer.withLove": "Avec tout notre amour",

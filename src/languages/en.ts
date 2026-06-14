@@ -215,6 +215,8 @@ export const en = {
   "rsvp.validation.formInvalid": "Please fix the errors in the form before submitting.",
   "rsvp.validation.fridayWelcomeGathering": "Please select whether you will attend the Friday welcome gathering",
   "rsvp.validation.sundayBrunch": "Please select whether you will attend the Sunday brunch",
+  "rsvp.validation.guestsInRoom": "Please enter the number of guests in your room if you require accommodations",
+  "rsvp.validation.nightsStaying": "Please select which nights you'll be staying if you require accommodations",
 
   // Footer
   "footer.withLove": "With all our love",

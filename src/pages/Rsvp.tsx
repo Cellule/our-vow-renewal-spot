@@ -19,20 +19,30 @@ import { useIsWeekend } from "@/hooks/use-is-weekend";
 import { TranslationKeys } from "@/languages/translations";
 import { GOOGLE_APPS_SCRIPT_URL } from "@/lib/config";
 
-const guestSchema = z.object({
-  name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
-  meal: z.enum(["chicken", "beef", "vegetarian", "kids"], {
-    required_error: "rsvp.validation.meal" satisfies TranslationKeys,
-  }),
-  dietaryRestriction: z.string().optional().or(z.literal("")),
-});
-
-const rsvpFormSchema = z.object({
+const rsvpAttendingSchema = z.object({
   attending: z.enum(["yes", "no"], {
     required_error: "rsvp.validation.attending" satisfies TranslationKeys,
   }),
   name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
-  guests: z.array(guestSchema).min(1, { message: "rsvp.validation.guests" satisfies TranslationKeys }),
+});
+
+const rsvpFormSchema = rsvpAttendingSchema.extend({
+  guests: z
+    .array(
+      z.object({
+        name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
+        meal: z.enum(["chicken", "beef", "vegetarian", "kids"], {
+          required_error: "rsvp.validation.meal" satisfies TranslationKeys,
+        }),
+        dietaryRestriction: z.string().optional().or(z.literal("")),
+      }),
+    )
+    .min(1, {
+      message: "rsvp.validation.guests" satisfies TranslationKeys,
+    }),
+  sundayBrunch: z.enum(["yes", "no"], {
+    required_error: "rsvp.validation.sundayBrunch" satisfies TranslationKeys,
+  }),
   requireAccommodations: z.enum(["yes", "no"], {
     required_error: "rsvp.validation.requireAccommodations" satisfies TranslationKeys,
   }),
@@ -40,22 +50,47 @@ const rsvpFormSchema = z.object({
   nightsStaying: z.array(z.string()).optional(),
   adultsOvernight: z.coerce.number().optional(),
   childrenOvernight: z.coerce.number().optional(),
-  specialArrangements: z.string().optional().or(z.literal("")),
-  roomSharing: z.enum(["yes", "no"], {
-    required_error: "rsvp.validation.roomSharing" satisfies TranslationKeys,
-  }),
-  sundayBrunch: z.enum(["yes", "no"], {
-    required_error: "rsvp.validation.sundayBrunch" satisfies TranslationKeys,
-  }),
-  songRequest: z.string().optional().or(z.literal("")),
-  guestQuestions: z.string().optional().or(z.literal("")),
-  guestNote: z.string().optional().or(z.literal("")),
+  specialArrangements: z.string().optional(),
+  roomSharing: z.enum(["yes", "no"]).optional(),
+  songRequest: z.string().optional(),
+  guestQuestions: z.string().optional(),
+  guestNote: z.string().optional(),
+});
+rsvpFormSchema.superRefine((data, ctx) => {
+  if (data.requireAccommodations === "yes") {
+    if (!data.guestsInRoom) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "rsvp.validation.guestsInRoom" satisfies TranslationKeys,
+        path: ["guestsInRoom"],
+      });
+    }
+    if (!data.roomSharing) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "rsvp.validation.roomSharing" satisfies TranslationKeys,
+        path: ["roomSharing"],
+      });
+    }
+  }
 });
 
 const rsvpWeekendFormSchema = rsvpFormSchema.extend({
   fridayWelcomeGathering: z.enum(["yes", "no"], {
     required_error: "rsvp.validation.fridayWelcomeGathering" satisfies TranslationKeys,
   }),
+});
+
+rsvpWeekendFormSchema.superRefine((data, ctx) => {
+  if (data.requireAccommodations === "yes") {
+    if (data.fridayWelcomeGathering && (!data.nightsStaying || data.nightsStaying.length === 0)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "rsvp.validation.nightsStaying" satisfies TranslationKeys,
+        path: ["nightsStaying"],
+      });
+    }
+  }
 });
 
 type RsvpFormValues = z.infer<typeof rsvpWeekendFormSchema>;
@@ -78,18 +113,32 @@ const defaultValues = {
   guestNote: "",
 };
 
+function getSchema(isWeekend: boolean, isAttending: string | undefined) {
+  if (isAttending === "no") {
+    return rsvpAttendingSchema;
+  }
+  if (isWeekend) {
+    return rsvpWeekendFormSchema;
+  }
+  return rsvpFormSchema;
+}
+
 const Rsvp = () => {
   const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const isWeekend = useIsWeekend();
+  const [isAttending, setIsAttending] = useState<string | undefined>(undefined);
 
   const form = useForm<RsvpFormValues>({
-    resolver: zodResolver(isWeekend ? rsvpWeekendFormSchema : rsvpFormSchema),
+    resolver: zodResolver(getSchema(isWeekend, isAttending)),
     defaultValues,
   });
 
   const attending = form.watch("attending");
+  if (isAttending !== attending) {
+    setIsAttending(attending);
+  }
 
   const { fields, append, remove } = useFieldArray({
     control: form.control,
