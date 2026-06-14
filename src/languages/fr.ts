@@ -189,6 +189,11 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.removeGuest": "Retirer",
   "rsvp.validation.name": "Veuillez entrer votre nom",
   "rsvp.validation.guests": "Veuillez ajouter au moins un invité",
+  "rsvp.mealPlaceholder": "Sélectionnez un repas...",
+  "rsvp.validation.attending": "Veuillez indiquer si vous serez présent",
+  "rsvp.validation.meal": "Veuillez sélectionner un choix de repas",
+  "rsvp.validation.roomSharing": "Veuillez indiquer si vous souhaitez partager une chambre",
+  "rsvp.validation.formInvalid": "Veuillez corriger les erreurs dans le formulaire avant de soumettre.",
 
   // Footer
   "footer.withLove": "Avec tout notre amour",

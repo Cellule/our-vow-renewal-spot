@@ -19,27 +19,33 @@ import { GOOGLE_APPS_SCRIPT_URL } from "@/lib/config";
 
 const guestSchema = z.object({
   name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
-  meal: z.enum(["chicken", "beef", "vegetarian", "kids"]),
+  meal: z.enum(["chicken", "beef", "vegetarian", "kids"], {
+    required_error: "rsvp.validation.meal" satisfies TranslationKeys,
+  }),
   dietaryRestriction: z.string().optional().or(z.literal("")),
 });
 
 const rsvpFormSchema = z.object({
-  attending: z.enum(["yes", "no"]).optional(),
+  attending: z.enum(["yes", "no"], {
+    required_error: "rsvp.validation.attending" satisfies TranslationKeys,
+  }),
   name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
   guests: z.array(guestSchema).min(1, { message: "rsvp.validation.guests" satisfies TranslationKeys }),
   overnightStay: z.coerce.number().min(0),
-  roomSharing: z.enum(["yes", "no"]),
+  roomSharing: z.enum(["yes", "no"], {
+    required_error: "rsvp.validation.roomSharing" satisfies TranslationKeys,
+  }),
   songRequest: z.string().optional().or(z.literal("")),
 });
 
 type RsvpFormValues = z.infer<typeof rsvpFormSchema>;
 
-const defaultValues: RsvpFormValues = {
+const defaultValues = {
   attending: undefined,
   name: "",
-  guests: [{ name: "", meal: "chicken", dietaryRestriction: "" }],
+  guests: [{ name: "", meal: undefined, dietaryRestriction: "" }],
   overnightStay: 0,
-  roomSharing: "no",
+  roomSharing: undefined,
   songRequest: "",
 };
 
@@ -62,9 +68,7 @@ const Rsvp = () => {
 
   const respondentName = form.watch("name");
   const firstName = form.watch("guests.0.name");
-
-  const currentFirstName = form.getValues("guests.0.name");
-  if (fields.length > 0 && currentFirstName !== respondentName) {
+  if (fields.length > 0 && firstName !== respondentName) {
     form.setValue("guests.0.name", respondentName);
   }
 
@@ -95,6 +99,10 @@ const Rsvp = () => {
     } finally {
       setSubmitting(false);
     }
+  };
+
+  const onInvalid = () => {
+    toast.error(t("rsvp.validation.formInvalid"));
   };
 
   if (submitted) {
@@ -135,7 +143,21 @@ const Rsvp = () => {
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <form onSubmit={form.handleSubmit(onSubmit, onInvalid)} className="space-y-8">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="font-serif text-lg text-cream">{t("rsvp.name")}</FormLabel>
+                      <FormControl>
+                        <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
                 <FormField
                   control={form.control}
                   name="attending"
@@ -162,22 +184,6 @@ const Rsvp = () => {
                     </FormItem>
                   )}
                 />
-
-                {!!attending && (
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="font-serif text-lg text-cream">{t("rsvp.name")}</FormLabel>
-                        <FormControl>
-                          <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                )}
 
                 {attending === "yes" && (
                   <>
@@ -224,7 +230,7 @@ const Rsvp = () => {
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                   <FormControl>
                                     <SelectTrigger className="bg-cream/20 border-cream/30 text-cream">
-                                      <SelectValue />
+                                      <SelectValue placeholder={t("rsvp.mealPlaceholder")} />
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
@@ -259,11 +265,11 @@ const Rsvp = () => {
 
                       <Button
                         type="button"
-                        variant="outline"
-                        onClick={() => append({ name: "", meal: "chicken", dietaryRestriction: "" })}
+                        variant="ghost"
+                        onClick={() => append({ name: "", meal: undefined as unknown as "chicken" | "beef" | "vegetarian" | "kids", dietaryRestriction: "" })}
                         className="w-full border-dashed border-cream/30 text-cream/70 hover:text-cream hover:border-cream/50"
                       >
-                        <Plus className="w-4 h-4 mr-2" />
+                        <Plus className="w-4 h-4" />
                         {t("rsvp.addGuest")}
                       </Button>
                     </div>

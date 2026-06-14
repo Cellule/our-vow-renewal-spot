@@ -187,6 +187,11 @@ export const en = {
   "rsvp.removeGuest": "Remove",
   "rsvp.validation.name": "Please enter your name",
   "rsvp.validation.guests": "Please add at least one guest",
+  "rsvp.mealPlaceholder": "Select a meal...",
+  "rsvp.validation.attending": "Please select whether you will attend",
+  "rsvp.validation.meal": "Please select a meal preference",
+  "rsvp.validation.roomSharing": "Please select whether you want to share a room",
+  "rsvp.validation.formInvalid": "Please fix the errors in the form before submitting.",
 
   // Footer
   "footer.withLove": "With all our love",
