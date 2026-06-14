@@ -176,7 +176,17 @@ export const en = {
   "rsvp.thankYou": "Thank you for your response! We can't wait to see you!",
   "rsvp.yes": "Yes",
   "rsvp.no": "No",
+  "rsvp.guestsTitle": "Your guests",
+  "rsvp.guestsDescription": "Add each guest and their meal preference",
+  "rsvp.guest": "Guest",
+  "rsvp.guestName": "Full name",
+  "rsvp.guestMeal": "Meal choice",
+  "rsvp.dietaryRestriction": "Dietary restrictions",
+  "rsvp.dietaryRestrictionOptional": "(optional)",
+  "rsvp.addGuest": "Add a guest",
+  "rsvp.removeGuest": "Remove",
   "rsvp.validation.name": "Please enter your name",
+  "rsvp.validation.guests": "Please add at least one guest",
 
   // Footer
   "footer.withLove": "With all our love",

@@ -178,7 +178,17 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.thankYou": "Merci de votre réponse! Nous avons hâte de vous voir!",
   "rsvp.yes": "Oui",
   "rsvp.no": "Non",
+  "rsvp.guestsTitle": "Vos invités",
+  "rsvp.guestsDescription": "Ajoutez chaque invité et son choix de repas",
+  "rsvp.guest": "Invité",
+  "rsvp.guestName": "Nom complet",
+  "rsvp.guestMeal": "Choix de repas",
+  "rsvp.dietaryRestriction": "Restrictions alimentaires",
+  "rsvp.dietaryRestrictionOptional": "(optionnel)",
+  "rsvp.addGuest": "Ajouter un invité",
+  "rsvp.removeGuest": "Retirer",
   "rsvp.validation.name": "Veuillez entrer votre nom",
+  "rsvp.validation.guests": "Veuillez ajouter au moins un invité",
 
   // Footer
   "footer.withLove": "Avec tout notre amour",

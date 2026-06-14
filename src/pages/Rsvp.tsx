@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowLeft, Heart } from "lucide-react";
+import { ArrowLeft, Heart, Plus, X } from "lucide-react";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -17,43 +17,27 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { TranslationKeys } from "@/languages/translations";
 import { GOOGLE_APPS_SCRIPT_URL } from "@/lib/config";
 
-const rsvpFormSchema = z
-  .object({
-    attending: z.enum(["yes", "no"]).optional(),
-    name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
-    adults: z.coerce.number().min(0).max(20),
-    chickenMeals: z.coerce.number().min(0),
-    beefMeals: z.coerce.number().min(0),
-    vegetarianMeals: z.coerce.number().min(0),
-    children: z.coerce.number().min(0).max(20),
-    childrenMeals: z.coerce.number().min(0),
-    overnightStay: z.coerce.number().min(0),
-    roomSharing: z.enum(["yes", "no"]),
-    songRequest: z.string().optional().or(z.literal("")),
-  })
-  .superRefine((data, ctx) => {
-    if (data.attending === "no") return;
-    const totalMeals = data.chickenMeals + data.beefMeals + data.vegetarianMeals;
-    if (totalMeals !== data.adults) {
-      ctx.addIssue({
-        code: z.ZodIssueCode.custom,
-        message: totalMeals > data.adults ? "Meal count exceeds number of adults" : "Meal count doesn't match number of adults",
-        path: ["chickenMeals"],
-      });
-    }
-  });
+const guestSchema = z.object({
+  name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
+  meal: z.enum(["chicken", "beef", "vegetarian", "kids"]),
+  dietaryRestriction: z.string().optional().or(z.literal("")),
+});
+
+const rsvpFormSchema = z.object({
+  attending: z.enum(["yes", "no"]).optional(),
+  name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
+  guests: z.array(guestSchema).min(1, { message: "rsvp.validation.guests" satisfies TranslationKeys }),
+  overnightStay: z.coerce.number().min(0),
+  roomSharing: z.enum(["yes", "no"]),
+  songRequest: z.string().optional().or(z.literal("")),
+});
 
 type RsvpFormValues = z.infer<typeof rsvpFormSchema>;
 
 const defaultValues: RsvpFormValues = {
   attending: undefined,
   name: "",
-  adults: 1,
-  chickenMeals: 0,
-  beefMeals: 0,
-  vegetarianMeals: 0,
-  children: 0,
-  childrenMeals: 0,
+  guests: [{ name: "", meal: "chicken", dietaryRestriction: "" }],
   overnightStay: 0,
   roomSharing: "no",
   songRequest: "",
@@ -70,7 +54,19 @@ const Rsvp = () => {
   });
 
   const attending = form.watch("attending");
-  const adults = form.watch("adults");
+
+  const { fields, append, remove } = useFieldArray({
+    control: form.control,
+    name: "guests",
+  });
+
+  const respondentName = form.watch("name");
+  const firstName = form.watch("guests.0.name");
+
+  const currentFirstName = form.getValues("guests.0.name");
+  if (fields.length > 0 && currentFirstName !== respondentName) {
+    form.setValue("guests.0.name", respondentName);
+  }
 
   const onSubmit = async (data: RsvpFormValues) => {
     if (submitting) return;
@@ -185,114 +181,92 @@ const Rsvp = () => {
 
                 {attending === "yes" && (
                   <>
-                    <FormField
-                      control={form.control}
-                      name="adults"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-serif text-lg text-cream">{t("rsvp.adults")}</FormLabel>
-                          <FormControl>
-                            <Select onValueChange={field.onChange} defaultValue={String(field.value)}>
-                              <SelectTrigger className="bg-cream/20 border-cream/30 text-cream">
-                                <SelectValue />
-                              </SelectTrigger>
-                              <SelectContent>
-                                {Array.from({ length: 20 }, (_, i) => i + 1).map((n) => (
-                                  <SelectItem key={n} value={String(n)}>
-                                    {n}
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <div className="space-y-4 p-4 rounded-lg bg-cream/5 border border-cream/10">
-                      <p className="font-serif text-lg text-gold">{t("rsvp.mealAdults")}</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <FormField
-                          control={form.control}
-                          name="chickenMeals"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="text-cream/80">{t("rsvp.mealChicken")}</FormLabel>
-                              <FormControl>
-                                <Input {...field} type="number" min={0} max={adults} className="bg-cream/20 border-cream/30 text-cream" />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="beefMeals"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="text-cream/80">{t("rsvp.mealBeef")}</FormLabel>
-                              <FormControl>
-                                <Input {...field} type="number" min={0} max={adults} className="bg-cream/20 border-cream/30 text-cream" />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        <FormField
-                          control={form.control}
-                          name="vegetarianMeals"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel className="text-cream/80">{t("rsvp.mealVegetarian")}</FormLabel>
-                              <FormControl>
-                                <Input {...field} type="number" min={0} max={adults} className="bg-cream/20 border-cream/30 text-cream" />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                    <div className="space-y-4">
+                      <div>
+                        <p className="font-serif text-lg text-gold">{t("rsvp.guestsTitle")}</p>
+                        <p className="text-cream/60 text-sm">{t("rsvp.guestsDescription")}</p>
                       </div>
+
+                      {fields.map((field, index) => (
+                        <div key={field.id} className="p-4 rounded-lg bg-cream/5 border border-cream/10 space-y-4">
+                          <div className="flex items-center justify-between">
+                            <p className="font-serif text-cream/80 text-sm">
+                              {t("rsvp.guest")} {index + 1}
+                            </p>
+                            {fields.length > 1 && index !== 0 && (
+                              <Button type="button" variant="ghost" size="sm" onClick={() => remove(index)} className="text-red-400 hover:text-red-300 hover:bg-red-400/10">
+                                <X className="w-4 h-4 mr-1" />
+                                {t("rsvp.removeGuest")}
+                              </Button>
+                            )}
+                          </div>
+
+                          <FormField
+                            control={form.control}
+                            name={`guests.${index}.name`}
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel className="text-cream/80">{t("rsvp.guestName")}</FormLabel>
+                                <FormControl>
+                                  <Input {...field} readOnly={index === 0} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name={`guests.${index}.meal`}
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel className="text-cream/80">{t("rsvp.guestMeal")}</FormLabel>
+                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                  <FormControl>
+                                    <SelectTrigger className="bg-cream/20 border-cream/30 text-cream">
+                                      <SelectValue />
+                                    </SelectTrigger>
+                                  </FormControl>
+                                  <SelectContent>
+                                    <SelectItem value="chicken">{t("rsvp.mealChicken")}</SelectItem>
+                                    <SelectItem value="beef">{t("rsvp.mealBeef")}</SelectItem>
+                                    <SelectItem value="vegetarian">{t("rsvp.mealVegetarian")}</SelectItem>
+                                    <SelectItem value="kids">{t("rsvp.mealKids")}</SelectItem>
+                                  </SelectContent>
+                                </Select>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name={`guests.${index}.dietaryRestriction`}
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel className="text-cream/80">
+                                  {t("rsvp.dietaryRestriction")} <span className="text-cream/50 text-xs">{t("rsvp.dietaryRestrictionOptional")}</span>
+                                </FormLabel>
+                                <FormControl>
+                                  <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
+                      ))}
+
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => append({ name: "", meal: "chicken", dietaryRestriction: "" })}
+                        className="w-full border-dashed border-cream/30 text-cream/70 hover:text-cream hover:border-cream/50"
+                      >
+                        <Plus className="w-4 h-4 mr-2" />
+                        {t("rsvp.addGuest")}
+                      </Button>
                     </div>
-
-                    <FormField
-                      control={form.control}
-                      name="children"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-serif text-lg text-cream">{t("rsvp.children")}</FormLabel>
-                          <FormControl>
-                            <Select onValueChange={field.onChange} defaultValue={String(field.value)}>
-                              <SelectTrigger className="bg-cream/20 border-cream/30 text-cream">
-                                <SelectValue />
-                              </SelectTrigger>
-                              <SelectContent>
-                                {Array.from({ length: 21 }, (_, i) => i).map((n) => (
-                                  <SelectItem key={n} value={String(n)}>
-                                    {n}
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="childrenMeals"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-serif text-lg text-cream">{t("rsvp.mealChildren")}</FormLabel>
-                          <FormControl>
-                            <Input {...field} type="number" min={0} className="bg-cream/20 border-cream/30 text-cream" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
 
                     <FormField
                       control={form.control}
