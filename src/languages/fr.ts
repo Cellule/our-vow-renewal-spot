@@ -4,8 +4,7 @@ import type { TranslationKeys } from "./translations";
 export const fr: Record<TranslationKeys, string | undefined> = {
   // Hero Section
   "hero.saveDate": "Mariage",
-  "hero.renewingVows": "Nous renouvelons nos vœux",
-  "hero.couple": "Le couple",
+
   "hero.coupleNames": undefined,
   "hero.dates": "La date",
   "hero.datesValue": "19-20 septembre 2026",
@@ -13,7 +12,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "hero.location": "Le lieu",
   "hero.locationValue": "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.viewOnGoogleMaps": "Voir sur Google Maps",
-  "hero.addressCallout": "Important : Assurez-vous d'avoir partagé votre adresse postale avec nous.",
+
   "hero.googleFormLink": "Répondez à l'invitation !",
 
   // Our Story Section
@@ -117,14 +116,6 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "accommodations.kingRooms": "Chambre king",
   "accommodations.details": "Toutes les chambres sont équipées de salles de bain privées.",
 
-  // Room Sharing Section
-  "roomSharing.title": "Hébergement",
-  "roomSharing.question": "Seriez-vous disposé(e) à partager une chambre avec une autre personne seule, le cas échéant?",
-  "roomSharing.note":
-    "Évidemment, cela sera considéré uniquement advenant que nous n'ayons d'autre choix, et nous nous assurerons de vous placer avec une personne que vous connaissez!",
-  "roomSharing.yes": "Oui, je partage",
-  "roomSharing.no": "Non, je préfère avoir une chambre seul(e)",
-
   // Packing List Section
   "packing.title": "Quoi apporter dans votre sac de voyage?",
   "packing.soap": "Savon",
@@ -132,19 +123,14 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "packing.swimsuit": "Maillot de bain",
   "packing.towel": "Serviette",
   "packing.spaNote": "Si vous comptez profiter du spa et/ou de la plage",
-  "packing.other": "Vos effets personnels",
+
 
   // Gift Section
   "gift.title": "Suggestion de cadeau",
   "gift.text": "Nous ne souhaitons pas recevoir de cadeau particulier, mais si le cœur vous en dit, une contribution à notre voyage de noces serait appréciée 😊",
-  "gift.thankYou": "Merci pour votre générosité!",
+  "gift.note":
+    "Ce n'est en aucun cas une attente, alors ne vous sentez surtout pas obligé(e)! Votre présence à notre célébration est le plus beau cadeau que nous puissions recevoir.",
 
-  // Address Section
-  "address.title": "Adresse du manoir",
-  "address.location": "Manoir Montpellier",
-  "address.street": "533 QC-315",
-  "address.city": "Montpellier, QC J0V 1M0",
-  "address.viewMap": "Voir sur Google Maps",
 
   // Contact Section
   "contact.addToCalendar": "Ajouter au Calendrier",
@@ -153,8 +139,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   // RSVP Form Section
   "rsvp.title": "Confirmation de présence",
   "rsvp.subtitle": "Veuillez nous confirmer votre présence",
-  "rsvp.adults": "Nombre d'adultes",
-  "rsvp.children": "Nombre d'enfants",
+
   "rsvp.requireAccommodations": "Aurez-vous besoin d'hébergement?",
   "rsvp.accommodationsFreeNote": "L'hébergement est fourni gratuitement pour tous les invités.",
   "rsvp.guestsInRoom": "Combien d'invités séjourneront dans votre chambre?",
@@ -164,12 +149,11 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.adultsOvernight": "Combien d'adultes séjourneront à coucher?",
   "rsvp.childrenOvernight": "Combien d'enfants séjourneront à coucher?",
   "rsvp.specialArrangements": "Avez-vous besoin d'arrangements spéciaux pour le sommeil?",
-  "rsvp.fridayGuests": "Pour les invités du vendredi seulement",
+
   "rsvp.roomSharing": "Seriez-vous disposé(e) à partager une chambre avec une autre personne seule, le cas échéant?",
-  "rsvp.mealChoice": "Choix de repas",
+
   "rsvp.mealPlaceholder": "Sélectionnez un repas...",
-  "rsvp.mealAdults": "Repas pour adultes",
-  "rsvp.mealChildren": "Repas pour enfants",
+
   "rsvp.mealChicken": "Suprême de volaille",
   "rsvp.mealBeef": "Macreuse de bœuf braisé",
   "rsvp.mealVegetarian": "Bol Poké (végétarien)",
@@ -177,7 +161,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.songRequest": "C'est quoi votre « toune » de mariage / party?",
   "rsvp.songRequestOptional": "(optionnel)",
   "rsvp.name": "Votre nom",
-  "rsvp.email": "Courriel (optionnel)",
+
   "rsvp.attending": "Serez-vous présent(e) à la célébration?",
   "rsvp.attendingYes": "Oui, je serai là!",
   "rsvp.attendingNo": "Désolé, je ne peux pas venir",
@@ -191,7 +175,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.goBackToResubmit": "Vous vous êtes trompé? Retour au formulaire",
   "rsvp.yes": "Oui",
   "rsvp.no": "Non",
-  "rsvp.notSure": "Pas sûr(e)",
+
   "rsvp.guestsTitle": "Vos invités",
   "rsvp.guestsDescription": "Ajoutez chaque invité et son choix de repas",
   "rsvp.guest": "Invité",

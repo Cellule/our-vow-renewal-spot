@@ -3,8 +3,7 @@ import { yearsMarried } from "@/lib/first-celebration";
 export const en = {
   // Hero Section
   "hero.saveDate": "Wedding",
-  "hero.renewingVows": "We're Renewing Our Vows",
-  "hero.couple": "The Couple",
+
   "hero.coupleNames": "Andréanne Salvas & Michaël Ferris",
   "hero.dates": "The Date",
   "hero.datesValue": "September 19th-20th, 2026",
@@ -12,7 +11,7 @@ export const en = {
   "hero.location": "The Venue",
   "hero.locationValue": "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.viewOnGoogleMaps": "View on Google Maps",
-  "hero.addressCallout": "Important: Please ensure you've shared your postal address with us.",
+
   "hero.googleFormLink": "Respond to the invitation!",
 
   // Our Story Section
@@ -116,13 +115,6 @@ export const en = {
   "accommodations.kingRooms": "King room",
   "accommodations.details": "All rooms have private bathrooms.",
 
-  // Room Sharing Section
-  "roomSharing.title": "Accommodations",
-  "roomSharing.question": "Would you be willing to share a room with another single guest, if necessary?",
-  "roomSharing.note": "Of course, this will only be considered if we have no other choice, and we'll make sure to pair you with someone you know!",
-  "roomSharing.yes": "Yes, I'll share",
-  "roomSharing.no": "No, I prefer a private room",
-
   // Packing List Section
   "packing.title": "What to bring in your travel bag?",
   "packing.soap": "Soap",
@@ -130,19 +122,13 @@ export const en = {
   "packing.swimsuit": "Swimsuit",
   "packing.towel": "Towel",
   "packing.spaNote": "If you plan to enjoy the spa and/or beach",
-  "packing.other": "Your personal effects",
+
 
   // Gift Section
   "gift.title": "Gift Suggestion",
   "gift.text": "We don't need any particular gifts, but if you feel like it, a contribution to our honeymoon would be appreciated 😊",
-  "gift.thankYou": "Thank you for your generosity!",
+  "gift.note": "This is by no means expected, so please don't feel any pressure! Your presence at our celebration is the greatest gift we could ask for.",
 
-  // Address Section
-  "address.title": "Manor Address",
-  "address.location": "Manoir Montpellier",
-  "address.street": "533 QC-315",
-  "address.city": "Montpellier, QC J0V 1M0",
-  "address.viewMap": "View on Google Maps",
 
   // Contact Section
   "contact.addToCalendar": "Add to Calendar",
@@ -151,8 +137,7 @@ export const en = {
   // RSVP Form Section
   "rsvp.title": "RSVP",
   "rsvp.subtitle": "Please confirm your attendance",
-  "rsvp.adults": "Number of adults",
-  "rsvp.children": "Number of children",
+
   "rsvp.requireAccommodations": "Will you require accommodations?",
   "rsvp.accommodationsFreeNote": "Accommodations are provided free of charge for all guests.",
   "rsvp.guestsInRoom": "How many guests will be staying in your room?",
@@ -162,12 +147,11 @@ export const en = {
   "rsvp.adultsOvernight": "How many adults will be staying overnight?",
   "rsvp.childrenOvernight": "How many children will be staying overnight?",
   "rsvp.specialArrangements": "Do you require any special sleeping arrangements?",
-  "rsvp.fridayGuests": "For Friday guests only",
+
   "rsvp.roomSharing": "Would you be willing to share a room with another single guest, if necessary?",
-  "rsvp.mealChoice": "Meal choice",
+
   "rsvp.mealPlaceholder": "Select a meal...",
-  "rsvp.mealAdults": "Adult meals",
-  "rsvp.mealChildren": "Children's meals",
+
   "rsvp.mealChicken": "Chicken Supreme",
   "rsvp.mealBeef": "Braised Beef Tenderloin",
   "rsvp.mealVegetarian": "Poké bowl (vegetarian)",
@@ -175,7 +159,7 @@ export const en = {
   "rsvp.songRequest": "What's your wedding/party song?",
   "rsvp.songRequestOptional": "(optional)",
   "rsvp.name": "Your name",
-  "rsvp.email": "Email (optional)",
+
   "rsvp.attending": "Will you be attending the wedding?",
   "rsvp.attendingYes": "Yes, excited to celebrate with you!",
   "rsvp.attendingNo": "No, sadly unable to attend.",
@@ -189,7 +173,7 @@ export const en = {
   "rsvp.goBackToResubmit": "Made a mistake? Go back to the form",
   "rsvp.yes": "Yes",
   "rsvp.no": "No",
-  "rsvp.notSure": "Not sure yet",
+
   "rsvp.guestsTitle": "Your guests",
   "rsvp.guestsDescription": "Add each guest and their meal preference",
   "rsvp.guest": "Guest",

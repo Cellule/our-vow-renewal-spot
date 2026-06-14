@@ -15,6 +15,7 @@ export function Gifts() {
 
       <div className="bg-gradient-elegant rounded-2xl p-10 shadow-elegant">
         <p className="font-serif text-xl text-champagne text-center leading-relaxed">{t("gift.text")}</p>
+        <p className="font-serif text-xl text-champagne text-center leading-relaxed">{t("gift.note")}</p>
       </div>
     </div>
   );
