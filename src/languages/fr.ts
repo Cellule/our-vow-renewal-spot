@@ -188,6 +188,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.declineParagraph": "Vous nous manquerez!",
   "rsvp.thankYou": "Merci de votre réponse!",
   "rsvp.cantWaitToSeeYou": "Nous avons hâte de vous voir!",
+  "rsvp.goBackToResubmit": "Vous vous êtes trompé? Retour au formulaire",
   "rsvp.yes": "Oui",
   "rsvp.no": "Non",
   "rsvp.notSure": "Pas sûr(e)",

@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowLeft, Heart, Plus, X } from "lucide-react";
+import { ArrowLeft, Heart, Pencil, Plus, X } from "lucide-react";
 import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -14,6 +14,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsWeekend } from "@/hooks/use-is-weekend";
 import { TranslationKeys } from "@/languages/translations";
@@ -176,6 +177,11 @@ const Rsvp = () => {
     }
   };
 
+  const handleGoBack = () => {
+    setSubmitted(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const onInvalid = () => {
     toast.error(t("rsvp.validation.formInvalid"));
   };
@@ -202,7 +208,12 @@ const Rsvp = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <Link to={isWeekend ? "/weekend" : "/"} className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mt-6">
+            <button onClick={handleGoBack} className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mb-4">
+              <Pencil className="w-4 h-4" />
+              {t("rsvp.goBackToResubmit")}
+            </button>
+            <br />
+            <Link to={isWeekend ? "/weekend" : "/"} className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200">
               <ArrowLeft className="w-4 h-4" />
               {t("rsvp.backToHome")}
             </Link>
@@ -541,7 +552,7 @@ const Rsvp = () => {
                             <FormItem>
                               <FormLabel className="font-serif text-lg text-cream">{t("rsvp.specialArrangements")}</FormLabel>
                               <FormControl>
-                                <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                                <Textarea {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -605,7 +616,7 @@ const Rsvp = () => {
                             {t("rsvp.guestQuestions")} <span className="text-cream/50 text-sm">{t("rsvp.songRequestOptional")}</span>
                           </FormLabel>
                           <FormControl>
-                            <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                            <Textarea {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -621,7 +632,7 @@ const Rsvp = () => {
                             {t("rsvp.guestNote")} <span className="text-cream/50 text-sm">{t("rsvp.songRequestOptional")}</span>
                           </FormLabel>
                           <FormControl>
-                            <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                            <Textarea {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>

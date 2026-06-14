@@ -186,6 +186,7 @@ export const en = {
   "rsvp.declineParagraph": "We'll miss you!",
   "rsvp.thankYou": "Thank you for your response!",
   "rsvp.cantWaitToSeeYou": "We can't wait to see you!",
+  "rsvp.goBackToResubmit": "Made a mistake? Go back to the form",
   "rsvp.yes": "Yes",
   "rsvp.no": "No",
   "rsvp.notSure": "Not sure yet",
