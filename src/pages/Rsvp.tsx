@@ -47,9 +47,9 @@ const rsvpFormSchema = z.object({
   sundayBrunch: z.enum(["yes", "no"], {
     required_error: "rsvp.validation.sundayBrunch" satisfies TranslationKeys,
   }),
+  songRequest: z.string().optional().or(z.literal("")),
   guestQuestions: z.string().optional().or(z.literal("")),
   guestNote: z.string().optional().or(z.literal("")),
-  songRequest: z.string().optional().or(z.literal("")),
 });
 
 const rsvpWeekendFormSchema = rsvpFormSchema.extend({
@@ -73,9 +73,9 @@ const defaultValues = {
   roomSharing: undefined,
   fridayWelcomeGathering: undefined,
   sundayBrunch: undefined,
+  songRequest: "",
   guestQuestions: "",
   guestNote: "",
-  songRequest: "",
 };
 
 const Rsvp = () => {
