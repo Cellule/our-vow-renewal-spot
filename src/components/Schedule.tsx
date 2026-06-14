@@ -30,6 +30,9 @@ const Schedule = () => {
               <li className="font-sans text-foreground">
                 <span className="font-semibold">•</span> {t("schedule.fridayArrival")}
               </li>
+              <li className="font-sans text-foreground">
+                <span className="font-semibold">•</span> {t("schedule.fridayParty")}
+              </li>
             </ul>
           </div>
         )}
@@ -46,6 +49,18 @@ const Schedule = () => {
             <li className="font-sans text-foreground">
               <span className="font-semibold">•</span> {t("schedule.saturdayArrival")}
             </li>
+            <li className="font-sans text-foreground">
+              <span className="font-semibold">•</span> {t("schedule.saturdayCeremony")}
+            </li>
+            <li className="font-sans text-foreground">
+              <span className="font-semibold">•</span> {t("schedule.saturdayCocktail")}
+            </li>
+            <li className="font-sans text-foreground">
+              <span className="font-semibold">•</span> {t("schedule.saturdayDinner")}
+            </li>
+            <li className="font-sans text-foreground">
+              <span className="font-semibold">•</span> {t("schedule.saturdayParty")}
+            </li>
           </ul>
         </div>
 
@@ -58,6 +73,9 @@ const Schedule = () => {
             <h3 className="font-script text-2xl text-navy">{t("schedule.sundayTitle")}</h3>
           </div>
           <ul className="space-y-3 ml-16">
+            <li className="font-sans text-foreground">
+              <span className="font-semibold">•</span> {t("schedule.sundayBrunch")}
+            </li>
             <li className="font-sans text-foreground">
               <span className="font-semibold">•</span> {t("schedule.sundayDeparture")}
             </li>

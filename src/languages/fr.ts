@@ -84,6 +84,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "menu.beef": "Macreuse bœuf braisé de la Ferme Brylee, sauce au romarin, mousseline de pommes de terre et légumes de saison",
   "menu.vegetarian": "Bol Poké végétarien",
   "menu.dessertTable": "Table de desserts",
+  "menu.seeBelow": "(voir ci-dessous)",
 
   // Activities Section
   "activities.title": "Activités",
@@ -97,9 +98,15 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "schedule.title": "Horaire",
   "schedule.fridayTitle": "Vendredi 18 septembre",
   "schedule.fridayArrival": "Arrivée à partir de 15h",
+  "schedule.fridayParty": "Soirée de bienvenue décontractée — comme une soirée BBQ/jeux à la maison!",
   "schedule.saturdayTitle": "Samedi 19 septembre",
-  "schedule.saturdayArrival": "Arrivée à partir de midi",
+  "schedule.saturdayArrival": "Arrivée à partir de 13h",
+  "schedule.saturdayCeremony": "Cérémonie à 16h",
+  "schedule.saturdayCocktail": "Cocktail à 17h",
+  "schedule.saturdayDinner": "Souper à 19h",
+  "schedule.saturdayParty": "Fête... toute la nuit!",
   "schedule.sundayTitle": "Dimanche 20 septembre",
+  "schedule.sundayBrunch": "Brunch de 10h à 12h",
   "schedule.sundayDeparture": "Départ à 13h",
 
   // Children Section
@@ -124,13 +131,11 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "packing.towel": "Serviette",
   "packing.spaNote": "Si vous comptez profiter du spa et/ou de la plage",
 
-
   // Gift Section
   "gift.title": "Suggestion de cadeau",
   "gift.text": "Nous ne souhaitons pas recevoir de cadeau particulier, mais si le cœur vous en dit, une contribution à notre voyage de noces serait appréciée 😊",
   "gift.note":
     "Ce n'est en aucun cas une attente, alors ne vous sentez surtout pas obligé(e)! Votre présence à notre célébration est le plus beau cadeau que nous puissions recevoir.",
-
 
   // Contact Section
   "contact.addToCalendar": "Ajouter au Calendrier",

@@ -83,6 +83,7 @@ export const en = {
   "menu.beef": "Braised Beef Tenderloin with rosemary sauce, mashed potatoes and seasonal vegetables",
   "menu.vegetarian": "Vegetarian Poké Bowl",
   "menu.dessertTable": "Dessert Table",
+  "menu.seeBelow": "(see below)",
 
   // Activities Section
   "activities.title": "Activities",
@@ -96,9 +97,15 @@ export const en = {
   "schedule.title": "Schedule",
   "schedule.fridayTitle": "Friday, September 18th",
   "schedule.fridayArrival": "Arrival starting at 3pm",
+  "schedule.fridayParty": "Casual welcome party — think regular BBQ/Game Night at our place!",
   "schedule.saturdayTitle": "Saturday, September 19th",
-  "schedule.saturdayArrival": "Arrival starting at noon",
+  "schedule.saturdayArrival": "Arrival starting at 1pm",
+  "schedule.saturdayCeremony": "Ceremony at 4pm",
+  "schedule.saturdayCocktail": "Cocktail hour at 5pm",
+  "schedule.saturdayDinner": "Dinner at 7pm",
+  "schedule.saturdayParty": "Party... all night!",
   "schedule.sundayTitle": "Sunday, September 20th",
+  "schedule.sundayBrunch": "Brunch from 10am to 12pm",
   "schedule.sundayDeparture": "Departure at 1pm",
 
   // Children Section
@@ -123,12 +130,10 @@ export const en = {
   "packing.towel": "Towel",
   "packing.spaNote": "If you plan to enjoy the spa and/or beach",
 
-
   // Gift Section
   "gift.title": "Gift Suggestion",
   "gift.text": "We don't need any particular gifts, but if you feel like it, a contribution to our honeymoon would be appreciated 😊",
   "gift.note": "This is by no means expected, so please don't feel any pressure! Your presence at our celebration is the greatest gift we could ask for.",
-
 
   // Contact Section
   "contact.addToCalendar": "Add to Calendar",

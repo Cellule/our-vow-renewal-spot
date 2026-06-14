@@ -35,7 +35,12 @@ export function Menu() {
             {menuItems.map((item) => (
               <li key={item.key} className="flex items-center gap-3">
                 <span className="text-2xl">{item.icon}</span>
-                <span className="font-sans text-foreground text-lg">{t(`menu.${item.key}`)}</span>
+                <span className="font-sans text-foreground text-lg">
+                  {t(`menu.${item.key}`)}
+                  {item.key === "mainCourse" && (
+                    <span className="text-gray-400 text-sm md:hidden ml-2">{t("menu.seeBelow")}</span>
+                  )}
+                </span>
               </li>
             ))}
           </ul>
