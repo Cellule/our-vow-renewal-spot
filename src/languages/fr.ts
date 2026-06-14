@@ -167,7 +167,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.mealKids": "Menu enfants",
   "rsvp.songRequest": "C'est quoi votre « toune » de mariage / party?",
   "rsvp.songRequestOptional": "(optionnel)",
-  "rsvp.name": "Votre(vos) nom(s)",
+  "rsvp.name": "Votre nom",
   "rsvp.email": "Courriel (optionnel)",
   "rsvp.attending": "Serez-vous présent?",
   "rsvp.attendingYes": "Oui, je serai là!",
@@ -176,6 +176,9 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.submitting": "Envoi en cours...",
   "rsvp.submit": "Soumettre ma réponse",
   "rsvp.thankYou": "Merci de votre réponse! Nous avons hâte de vous voir!",
+  "rsvp.yes": "Oui",
+  "rsvp.no": "Non",
+  "rsvp.validation.name": "Veuillez entrer votre nom",
 
   // Footer
   "footer.withLove": "Avec tout notre amour",

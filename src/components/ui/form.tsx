@@ -4,6 +4,8 @@ import * as React from "react";
 import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useFormContext } from "react-hook-form";
 
 import { Label } from "@/components/ui/label";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { TranslationKeys } from "@/languages/translations";
 import { cn } from "@/lib/utils";
 
 const Form = FormProvider;
@@ -86,8 +88,9 @@ const FormDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttribu
 FormDescription.displayName = "FormDescription";
 
 const FormMessage = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(({ className, children, ...props }, ref) => {
+  const { t } = useLanguage();
   const { error, formMessageId } = useFormField();
-  const body = error ? String(error?.message) : children;
+  const body = error ? t(error?.message as unknown as TranslationKeys) : children;
 
   if (!body) {
     return null;

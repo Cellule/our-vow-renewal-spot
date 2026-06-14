@@ -165,7 +165,7 @@ export const en = {
   "rsvp.mealKids": "Kids menu",
   "rsvp.songRequest": "What's your wedding/party song?",
   "rsvp.songRequestOptional": "(optional)",
-  "rsvp.name": "Your name(s)",
+  "rsvp.name": "Your name",
   "rsvp.email": "Email (optional)",
   "rsvp.attending": "Will you attend?",
   "rsvp.attendingYes": "Yes, I'll be there!",
@@ -174,6 +174,9 @@ export const en = {
   "rsvp.submitting": "Submitting...",
   "rsvp.submit": "Submit response",
   "rsvp.thankYou": "Thank you for your response! We can't wait to see you!",
+  "rsvp.yes": "Yes",
+  "rsvp.no": "No",
+  "rsvp.validation.name": "Please enter your name",
 
   // Footer
   "footer.withLove": "With all our love",

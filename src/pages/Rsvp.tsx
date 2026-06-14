@@ -6,21 +6,21 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
 
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { TranslationKeys } from "@/languages/translations";
 import { GOOGLE_APPS_SCRIPT_URL } from "@/lib/config";
 
 const rsvpFormSchema = z
   .object({
-    attending: z.enum(["yes", "no"]),
-    name: z.string().min(1),
-    email: z.string().optional().or(z.literal("")),
+    attending: z.enum(["yes", "no"]).optional(),
+    name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
     adults: z.coerce.number().min(0).max(20),
     chickenMeals: z.coerce.number().min(0),
     beefMeals: z.coerce.number().min(0),
@@ -46,9 +46,8 @@ const rsvpFormSchema = z
 type RsvpFormValues = z.infer<typeof rsvpFormSchema>;
 
 const defaultValues: RsvpFormValues = {
-  attending: "yes",
+  attending: undefined,
   name: "",
-  email: "",
   adults: 1,
   chickenMeals: 0,
   beefMeals: 0,
@@ -63,6 +62,7 @@ const defaultValues: RsvpFormValues = {
 const Rsvp = () => {
   const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const form = useForm<RsvpFormValues>({
     resolver: zodResolver(rsvpFormSchema),
@@ -73,6 +73,8 @@ const Rsvp = () => {
   const adults = form.watch("adults");
 
   const onSubmit = async (data: RsvpFormValues) => {
+    if (submitting) return;
+    setSubmitting(true);
     const payload = {
       ...data,
       submittedAt: new Date().toISOString(),
@@ -86,10 +88,16 @@ const Rsvp = () => {
         body: JSON.stringify(payload),
       });
 
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
       toast.error("Failed to submit. Please try again.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -105,10 +113,7 @@ const Rsvp = () => {
             <CardTitle className="font-script text-4xl md:text-5xl text-cream">{t("rsvp.thankYou")}</CardTitle>
           </CardHeader>
           <CardContent>
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mt-6"
-            >
+            <Link to="/" className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mt-6">
               <ArrowLeft className="w-4 h-4" />
               {t("rsvp.backToHome")}
             </Link>
@@ -122,10 +127,7 @@ const Rsvp = () => {
     <main className="min-h-screen bg-gradient-to-b from-burgundy via-navy to-burgundy">
       <LanguageSwitcher />
       <div className="max-w-2xl mx-auto px-4 py-8 md:py-16">
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mb-8"
-        >
+        <Link to="/" className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mb-8">
           <ArrowLeft className="w-4 h-4" />
           {t("rsvp.backToHome")}
         </Link>
@@ -148,11 +150,15 @@ const Rsvp = () => {
                         <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col sm:flex-row gap-4">
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="yes" id="attending-yes" className="border-gold text-gold" />
-                            <label htmlFor="attending-yes" className="text-cream cursor-pointer">{t("rsvp.attendingYes")}</label>
+                            <label htmlFor="attending-yes" className="text-cream cursor-pointer">
+                              {t("rsvp.attendingYes")}
+                            </label>
                           </div>
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="no" id="attending-no" className="border-gold text-gold" />
-                            <label htmlFor="attending-no" className="text-cream cursor-pointer">{t("rsvp.attendingNo")}</label>
+                            <label htmlFor="attending-no" className="text-cream cursor-pointer">
+                              {t("rsvp.attendingNo")}
+                            </label>
                           </div>
                         </RadioGroup>
                       </FormControl>
@@ -161,40 +167,21 @@ const Rsvp = () => {
                   )}
                 />
 
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-serif text-lg text-cream">{t("rsvp.name")}</FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-serif text-lg text-cream">{t("rsvp.email")}</FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          type="email"
-                          className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                {!!attending && (
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="font-serif text-lg text-cream">{t("rsvp.name")}</FormLabel>
+                        <FormControl>
+                          <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                )}
 
                 {attending === "yes" && (
                   <>
@@ -211,7 +198,9 @@ const Rsvp = () => {
                               </SelectTrigger>
                               <SelectContent>
                                 {Array.from({ length: 20 }, (_, i) => i + 1).map((n) => (
-                                  <SelectItem key={n} value={String(n)}>{n}</SelectItem>
+                                  <SelectItem key={n} value={String(n)}>
+                                    {n}
+                                  </SelectItem>
                                 ))}
                               </SelectContent>
                             </Select>
@@ -231,13 +220,7 @@ const Rsvp = () => {
                             <FormItem>
                               <FormLabel className="text-cream/80">{t("rsvp.mealChicken")}</FormLabel>
                               <FormControl>
-                                <Input
-                                  {...field}
-                                  type="number"
-                                  min={0}
-                                  max={adults}
-                                  className="bg-cream/20 border-cream/30 text-cream"
-                                />
+                                <Input {...field} type="number" min={0} max={adults} className="bg-cream/20 border-cream/30 text-cream" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -250,13 +233,7 @@ const Rsvp = () => {
                             <FormItem>
                               <FormLabel className="text-cream/80">{t("rsvp.mealBeef")}</FormLabel>
                               <FormControl>
-                                <Input
-                                  {...field}
-                                  type="number"
-                                  min={0}
-                                  max={adults}
-                                  className="bg-cream/20 border-cream/30 text-cream"
-                                />
+                                <Input {...field} type="number" min={0} max={adults} className="bg-cream/20 border-cream/30 text-cream" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -269,13 +246,7 @@ const Rsvp = () => {
                             <FormItem>
                               <FormLabel className="text-cream/80">{t("rsvp.mealVegetarian")}</FormLabel>
                               <FormControl>
-                                <Input
-                                  {...field}
-                                  type="number"
-                                  min={0}
-                                  max={adults}
-                                  className="bg-cream/20 border-cream/30 text-cream"
-                                />
+                                <Input {...field} type="number" min={0} max={adults} className="bg-cream/20 border-cream/30 text-cream" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
@@ -297,7 +268,9 @@ const Rsvp = () => {
                               </SelectTrigger>
                               <SelectContent>
                                 {Array.from({ length: 21 }, (_, i) => i).map((n) => (
-                                  <SelectItem key={n} value={String(n)}>{n}</SelectItem>
+                                  <SelectItem key={n} value={String(n)}>
+                                    {n}
+                                  </SelectItem>
                                 ))}
                               </SelectContent>
                             </Select>
@@ -314,12 +287,7 @@ const Rsvp = () => {
                         <FormItem>
                           <FormLabel className="font-serif text-lg text-cream">{t("rsvp.mealChildren")}</FormLabel>
                           <FormControl>
-                            <Input
-                              {...field}
-                              type="number"
-                              min={0}
-                              className="bg-cream/20 border-cream/30 text-cream"
-                            />
+                            <Input {...field} type="number" min={0} className="bg-cream/20 border-cream/30 text-cream" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -333,12 +301,7 @@ const Rsvp = () => {
                         <FormItem>
                           <FormLabel className="font-serif text-lg text-cream">{t("rsvp.overnightStay")}</FormLabel>
                           <FormControl>
-                            <Input
-                              {...field}
-                              type="number"
-                              min={0}
-                              className="bg-cream/20 border-cream/30 text-cream"
-                            />
+                            <Input {...field} type="number" min={0} className="bg-cream/20 border-cream/30 text-cream" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -355,11 +318,15 @@ const Rsvp = () => {
                             <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col sm:flex-row gap-4">
                               <div className="flex items-center space-x-2">
                                 <RadioGroupItem value="yes" id="share-yes" className="border-gold text-gold" />
-                                <label htmlFor="share-yes" className="text-cream cursor-pointer">{t("rsvp.yes")}</label>
+                                <label htmlFor="share-yes" className="text-cream cursor-pointer">
+                                  {t("rsvp.yes")}
+                                </label>
                               </div>
                               <div className="flex items-center space-x-2">
                                 <RadioGroupItem value="no" id="share-no" className="border-gold text-gold" />
-                                <label htmlFor="share-no" className="text-cream cursor-pointer">{t("rsvp.no")}</label>
+                                <label htmlFor="share-no" className="text-cream cursor-pointer">
+                                  {t("rsvp.no")}
+                                </label>
                               </div>
                             </RadioGroup>
                           </FormControl>
@@ -377,10 +344,7 @@ const Rsvp = () => {
                             {t("rsvp.songRequest")} <span className="text-cream/50 text-sm">{t("rsvp.songRequestOptional")}</span>
                           </FormLabel>
                           <FormControl>
-                            <Input
-                              {...field}
-                              className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50"
-                            />
+                            <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -389,13 +353,15 @@ const Rsvp = () => {
                   </>
                 )}
 
-                <Button
-                  type="submit"
-                  disabled={form.formState.isSubmitting}
-                  className="w-full bg-gold/50 hover:bg-gold/60 text-cream font-semibold text-lg py-6 border-2 border-gold/70 hover:border-gold shadow-lg hover:shadow-xl transition-all duration-200"
-                >
-                  {form.formState.isSubmitting ? t("rsvp.submitting") : t("rsvp.submit")}
-                </Button>
+                {!!attending && (
+                  <Button
+                    type="submit"
+                    disabled={form.formState.isSubmitting}
+                    className="w-full bg-gold/50 hover:bg-gold/60 text-cream font-semibold text-lg py-6 border-2 border-gold/70 hover:border-gold shadow-lg hover:shadow-xl transition-all duration-200"
+                  >
+                    {form.formState.isSubmitting ? t("rsvp.submitting") : t("rsvp.submit")}
+                  </Button>
+                )}
               </form>
             </Form>
           </CardContent>
