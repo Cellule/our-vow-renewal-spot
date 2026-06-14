@@ -94,16 +94,12 @@ const Rsvp = () => {
     };
 
     try {
-      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      await fetch(GOOGLE_APPS_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
 
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -130,7 +126,7 @@ const Rsvp = () => {
             <CardTitle className="font-script text-4xl md:text-5xl text-cream">{t("rsvp.thankYou")}</CardTitle>
           </CardHeader>
           <CardContent>
-            <Link to="/" className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mt-6">
+            <Link to={isWeekend ? "/weekend" : "/"} className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mt-6">
               <ArrowLeft className="w-4 h-4" />
               {t("rsvp.backToHome")}
             </Link>
@@ -144,7 +140,7 @@ const Rsvp = () => {
     <main className="min-h-screen bg-gradient-to-b from-burgundy via-navy to-burgundy">
       <LanguageSwitcher />
       <div className="max-w-2xl mx-auto px-4 py-8 md:py-16">
-        <Link to="/" className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mb-8">
+        <Link to={isWeekend ? "/weekend" : "/"} className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mb-8">
           <ArrowLeft className="w-4 h-4" />
           {t("rsvp.backToHome")}
         </Link>
