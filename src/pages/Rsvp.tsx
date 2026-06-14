@@ -9,6 +9,7 @@ import { z } from "zod";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -32,7 +33,14 @@ const rsvpFormSchema = z.object({
   }),
   name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
   guests: z.array(guestSchema).min(1, { message: "rsvp.validation.guests" satisfies TranslationKeys }),
-  overnightStay: z.coerce.number().min(0),
+  requireAccommodations: z.enum(["yes", "no"], {
+    required_error: "rsvp.validation.requireAccommodations" satisfies TranslationKeys,
+  }),
+  guestsInRoom: z.coerce.number().optional(),
+  nightsStaying: z.array(z.string()).optional(),
+  adultsOvernight: z.coerce.number().optional(),
+  childrenOvernight: z.coerce.number().optional(),
+  specialArrangements: z.string().optional().or(z.literal("")),
   roomSharing: z.enum(["yes", "no"], {
     required_error: "rsvp.validation.roomSharing" satisfies TranslationKeys,
   }),
@@ -54,7 +62,12 @@ const defaultValues = {
   attending: undefined,
   name: "",
   guests: [{ name: "", meal: undefined, dietaryRestriction: "" }],
-  overnightStay: 0,
+  requireAccommodations: undefined,
+  guestsInRoom: undefined,
+  nightsStaying: [],
+  adultsOvernight: undefined,
+  childrenOvernight: undefined,
+  specialArrangements: "",
   roomSharing: undefined,
   fridayWelcomeGathering: undefined,
   sundayBrunch: undefined,
@@ -356,35 +369,22 @@ const Rsvp = () => {
 
                     <FormField
                       control={form.control}
-                      name="overnightStay"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-serif text-lg text-cream">{t("rsvp.overnightStay")}</FormLabel>
-                          <FormControl>
-                            <Input {...field} type="number" min={0} className="bg-cream/20 border-cream/30 text-cream" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="roomSharing"
+                      name="requireAccommodations"
                       render={({ field }) => (
                         <FormItem className="space-y-3">
-                          <FormLabel className="font-serif text-lg text-cream">{t("rsvp.roomSharing")}</FormLabel>
+                          <FormLabel className="font-serif text-lg text-cream">{t("rsvp.requireAccommodations")}</FormLabel>
+                          <p className="font-sans text-sm text-cream/60">{t("rsvp.accommodationsFreeNote")}</p>
                           <FormControl>
                             <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col sm:flex-row gap-4">
                               <div className="flex items-center space-x-2">
-                                <RadioGroupItem value="yes" id="share-yes" className="border-gold text-gold" />
-                                <label htmlFor="share-yes" className="text-cream cursor-pointer">
+                                <RadioGroupItem value="yes" id="accommodations-yes" className="border-gold text-gold" />
+                                <label htmlFor="accommodations-yes" className="text-cream cursor-pointer">
                                   {t("rsvp.yes")}
                                 </label>
                               </div>
                               <div className="flex items-center space-x-2">
-                                <RadioGroupItem value="no" id="share-no" className="border-gold text-gold" />
-                                <label htmlFor="share-no" className="text-cream cursor-pointer">
+                                <RadioGroupItem value="no" id="accommodations-no" className="border-gold text-gold" />
+                                <label htmlFor="accommodations-no" className="text-cream cursor-pointer">
                                   {t("rsvp.no")}
                                 </label>
                               </div>
@@ -394,6 +394,125 @@ const Rsvp = () => {
                         </FormItem>
                       )}
                     />
+
+                    {form.watch("requireAccommodations") === "yes" && (
+                      <>
+                        <FormField
+                          control={form.control}
+                          name="guestsInRoom"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="font-serif text-lg text-cream">{t("rsvp.guestsInRoom")}</FormLabel>
+                              <FormControl>
+                                <Input {...field} type="number" min={0} className="bg-cream/20 border-cream/30 text-cream" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        {isWeekend && (
+                          <FormField
+                            control={form.control}
+                            name="nightsStaying"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel className="font-serif text-lg text-cream">{t("rsvp.nightsStaying")}</FormLabel>
+                                <div className="space-y-2">
+                                  {(["friday", "saturday"] as const).map((night) => (
+                                    <div key={night} className="flex items-center gap-2">
+                                      <Checkbox
+                                        checked={field.value?.includes(night)}
+                                        onCheckedChange={(checked) => {
+                                          const current = field.value ?? [];
+                                          if (checked) {
+                                            field.onChange([...current, night]);
+                                          } else {
+                                            field.onChange(current.filter((n) => n !== night));
+                                          }
+                                        }}
+                                        className="border-gold data-[state=checked]:bg-gold data-[state=checked]:text-navy"
+                                      />
+                                      <label className="text-cream cursor-pointer font-sans font-normal">{t(night === "friday" ? "rsvp.nightFriday" : "rsvp.nightSaturday")}</label>
+                                    </div>
+                                  ))}
+                                </div>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        )}
+
+                        <FormField
+                          control={form.control}
+                          name="adultsOvernight"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="font-serif text-lg text-cream">{t("rsvp.adultsOvernight")}</FormLabel>
+                              <FormControl>
+                                <Input {...field} type="number" min={0} className="bg-cream/20 border-cream/30 text-cream" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <FormField
+                          control={form.control}
+                          name="childrenOvernight"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="font-serif text-lg text-cream">{t("rsvp.childrenOvernight")}</FormLabel>
+                              <FormControl>
+                                <Input {...field} type="number" min={0} className="bg-cream/20 border-cream/30 text-cream" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <FormField
+                          control={form.control}
+                          name="specialArrangements"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="font-serif text-lg text-cream">{t("rsvp.specialArrangements")}</FormLabel>
+                              <FormControl>
+                                <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <FormField
+                          control={form.control}
+                          name="roomSharing"
+                          render={({ field }) => (
+                            <FormItem className="space-y-3">
+                              <FormLabel className="font-serif text-lg text-cream">{t("rsvp.roomSharing")}</FormLabel>
+                              <FormControl>
+                                <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col sm:flex-row gap-4">
+                                  <div className="flex items-center space-x-2">
+                                    <RadioGroupItem value="yes" id="share-yes" className="border-gold text-gold" />
+                                    <label htmlFor="share-yes" className="text-cream cursor-pointer">
+                                      {t("rsvp.yes")}
+                                    </label>
+                                  </div>
+                                  <div className="flex items-center space-x-2">
+                                    <RadioGroupItem value="no" id="share-no" className="border-gold text-gold" />
+                                    <label htmlFor="share-no" className="text-cream cursor-pointer">
+                                      {t("rsvp.no")}
+                                    </label>
+                                  </div>
+                                </RadioGroup>
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </>
+                    )}
 
                     <div>
                       <p className="font-serif text-lg text-gold">{t("rsvp.finalNotes")}</p>
