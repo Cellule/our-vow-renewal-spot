@@ -185,6 +185,13 @@ const Rsvp = () => {
                   )}
                 />
 
+                {attending === "no" && (
+                  <div className="p-6 rounded-lg bg-cream/5 border border-cream/10 text-center space-y-3">
+                    <p className="font-script text-3xl text-gold">{t("rsvp.declineTitle")}</p>
+                    <p className="font-serif text-lg text-cream/80">{t("rsvp.declineParagraph")}</p>
+                  </div>
+                )}
+
                 {attending === "yes" && (
                   <>
                     <div className="space-y-4">
