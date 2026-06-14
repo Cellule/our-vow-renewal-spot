@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageProvider";
 import Index from "./pages/Index";
+import Rsvp from "./pages/Rsvp";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -64,6 +65,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/weekend" element={<Index />} />
+            <Route path="/rsvp" element={<Rsvp />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

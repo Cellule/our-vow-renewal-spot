@@ -2,6 +2,7 @@ import heroImage from "@/assets/hero-image.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsWeekend } from "@/hooks/use-is-weekend";
 import { HouseHeart, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SaveTheDateHero = () => {
   const { t } = useLanguage();
@@ -55,17 +56,15 @@ const SaveTheDateHero = () => {
           </div>
 
           <div className="mt-4 md:mt-8 pt-4 md:pt-8 border-t border-cream/20">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScJ-25Zw3FPnANJ4ktoPVl57bvBwpDfR0WfHFqJ5sIseeVJTA/viewform?usp=dialog"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/rsvp"
               className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-gold/50 hover:bg-gold/60 text-cream font-semibold text-base md:text-lg rounded-lg border-2 border-gold/70 hover:border-gold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
             >
               {t("hero.googleFormLink")}
               <svg className="w-4 md:w-5 h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
