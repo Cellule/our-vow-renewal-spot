@@ -202,6 +202,8 @@ export const en = {
   "rsvp.sundayBrunch": "Will you attend the Sunday brunch from 10AM to 12PM?",
   "rsvp.travelAndAccommodations": "Travel & Accommodations",
   "rsvp.finalNotes": "Final Notes",
+  "rsvp.guestQuestions": "Do you have any questions or additional information you'd like us to know?",
+  "rsvp.guestNote": "Lastly, leave us a note, love letter, piece of advice, or whatever your heart desires!",
 
   // Validation Messages
   "rsvp.validation.name": "Please enter your name",

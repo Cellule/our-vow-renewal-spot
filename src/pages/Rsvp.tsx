@@ -48,6 +48,8 @@ const rsvpFormSchema = z.object({
     required_error: "rsvp.validation.sundayBrunch" satisfies TranslationKeys,
   }),
   songRequest: z.string().optional().or(z.literal("")),
+  guestQuestions: z.string().optional().or(z.literal("")),
+  guestNote: z.string().optional().or(z.literal("")),
 });
 
 const rsvpWeekendFormSchema = rsvpFormSchema.extend({
@@ -72,6 +74,8 @@ const defaultValues = {
   fridayWelcomeGathering: undefined,
   sundayBrunch: undefined,
   songRequest: "",
+  guestQuestions: "",
+  guestNote: "",
 };
 
 const Rsvp = () => {
@@ -524,6 +528,38 @@ const Rsvp = () => {
                         <FormItem>
                           <FormLabel className="font-serif text-lg text-cream">
                             {t("rsvp.songRequest")} <span className="text-cream/50 text-sm">{t("rsvp.songRequestOptional")}</span>
+                          </FormLabel>
+                          <FormControl>
+                            <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="guestQuestions"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-serif text-lg text-cream">
+                            {t("rsvp.guestQuestions")} <span className="text-cream/50 text-sm">{t("rsvp.songRequestOptional")}</span>
+                          </FormLabel>
+                          <FormControl>
+                            <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="guestNote"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-serif text-lg text-cream">
+                            {t("rsvp.guestNote")} <span className="text-cream/50 text-sm">{t("rsvp.songRequestOptional")}</span>
                           </FormLabel>
                           <FormControl>
                             <Input {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />

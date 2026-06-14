@@ -204,6 +204,8 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.sundayBrunch": "Assisterez-vous au brunch du dimanche de 10h à 12h?",
   "rsvp.travelAndAccommodations": "Voyage et hébergement",
   "rsvp.finalNotes": "Notes finales",
+  "rsvp.guestQuestions": "Avez-vous des questions ou des informations supplémentaires à nous communiquer?",
+  "rsvp.guestNote": "Enfin, laissez-nous un mot, une lettre d'amour, un conseil, ou tout ce que votre coeur désire!",
 
   // RSVP Form Validation Messages
   "rsvp.validation.name": "Veuillez entrer votre nom",
