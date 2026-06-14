@@ -46,9 +46,9 @@ const rsvpFormSchema = rsvpAttendingSchema.extend({
   requireAccommodations: z.enum(["yes", "no"], {
     required_error: "rsvp.validation.requireAccommodations" satisfies TranslationKeys,
   }),
-  guestsInRoom: z.coerce.number().optional(),
+  guestsInRoom: z.coerce.number().min(1).optional(),
   nightsStaying: z.array(z.string()).optional(),
-  adultsOvernight: z.coerce.number().optional(),
+  adultsOvernight: z.coerce.number().min(1).optional(),
   childrenOvernight: z.coerce.number().optional(),
   specialArrangements: z.string().optional(),
   roomSharing: z.enum(["yes", "no"]).optional(),
@@ -83,7 +83,7 @@ const rsvpWeekendFormSchema = rsvpFormSchema.extend({
 
 rsvpWeekendFormSchema.superRefine((data, ctx) => {
   if (data.requireAccommodations === "yes") {
-    if (data.fridayWelcomeGathering && (!data.nightsStaying || data.nightsStaying.length === 0)) {
+    if (!data.nightsStaying || data.nightsStaying.length === 0) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: "rsvp.validation.nightsStaying" satisfies TranslationKeys,
