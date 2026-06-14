@@ -168,7 +168,7 @@ export const en = {
   "rsvp.songRequestOptional": "(optional)",
   "rsvp.name": "Your name",
   "rsvp.email": "Email (optional)",
-  "rsvp.attending": "Will you attend?",
+  "rsvp.attending": "Will you be attending the wedding?",
   "rsvp.attendingYes": "Yes, excited to celebrate with you!",
   "rsvp.attendingNo": "No, sadly unable to attend.",
   "rsvp.backToHome": "Back to home",
@@ -179,6 +179,7 @@ export const en = {
   "rsvp.thankYou": "Thank you for your response! We can't wait to see you!",
   "rsvp.yes": "Yes",
   "rsvp.no": "No",
+  "rsvp.notSure": "Not sure yet",
   "rsvp.guestsTitle": "Your guests",
   "rsvp.guestsDescription": "Add each guest and their meal preference",
   "rsvp.guest": "Guest",
@@ -188,12 +189,21 @@ export const en = {
   "rsvp.dietaryRestrictionOptional": "(optional)",
   "rsvp.addGuest": "Add a guest",
   "rsvp.removeGuest": "Remove",
+  "rsvp.weekendEvents": "Weekend Events",
+  "rsvp.fridayWelcomeGathering": "Will you attend the Friday welcome gathering?",
+  "rsvp.sundayBrunch": "Will you attend the Sunday brunch from 10AM to 12PM?",
+  "rsvp.travelAndAccommodations": "Travel & Accommodations",
+  "rsvp.finalNotes": "Final Notes",
+
+  // Validation Messages
   "rsvp.validation.name": "Please enter your name",
   "rsvp.validation.guests": "Please add at least one guest",
   "rsvp.validation.attending": "Please select whether you will attend",
   "rsvp.validation.meal": "Please select a meal preference",
   "rsvp.validation.roomSharing": "Please select whether you want to share a room",
   "rsvp.validation.formInvalid": "Please fix the errors in the form before submitting.",
+  "rsvp.validation.fridayWelcomeGathering": "Please select whether you will attend the Friday welcome gathering",
+  "rsvp.validation.sundayBrunch": "Please select whether you will attend the Sunday brunch",
 
   // Footer
   "footer.withLove": "With all our love",

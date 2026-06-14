@@ -57,7 +57,7 @@ const SaveTheDateHero = () => {
 
           <div className="mt-4 md:mt-8 pt-4 md:pt-8 border-t border-cream/20">
             <Link
-              to="/rsvp"
+              to={isWeekend ? "/weekend/rsvp" : "/rsvp"}
               className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-gold/50 hover:bg-gold/60 text-cream font-semibold text-base md:text-lg rounded-lg border-2 border-gold/70 hover:border-gold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
             >
               {t("hero.googleFormLink")}

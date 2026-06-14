@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useIsWeekend } from "@/hooks/use-is-weekend";
 import { TranslationKeys } from "@/languages/translations";
 import { GOOGLE_APPS_SCRIPT_URL } from "@/lib/config";
 
@@ -35,10 +36,19 @@ const rsvpFormSchema = z.object({
   roomSharing: z.enum(["yes", "no"], {
     required_error: "rsvp.validation.roomSharing" satisfies TranslationKeys,
   }),
+  sundayBrunch: z.enum(["yes", "no"], {
+    required_error: "rsvp.validation.sundayBrunch" satisfies TranslationKeys,
+  }),
   songRequest: z.string().optional().or(z.literal("")),
 });
 
-type RsvpFormValues = z.infer<typeof rsvpFormSchema>;
+const rsvpWeekendFormSchema = rsvpFormSchema.extend({
+  fridayWelcomeGathering: z.enum(["yes", "no"], {
+    required_error: "rsvp.validation.fridayWelcomeGathering" satisfies TranslationKeys,
+  }),
+});
+
+type RsvpFormValues = z.infer<typeof rsvpWeekendFormSchema>;
 
 const defaultValues = {
   attending: undefined,
@@ -46,6 +56,8 @@ const defaultValues = {
   guests: [{ name: "", meal: undefined, dietaryRestriction: "" }],
   overnightStay: 0,
   roomSharing: undefined,
+  fridayWelcomeGathering: undefined,
+  sundayBrunch: undefined,
   songRequest: "",
 };
 
@@ -53,9 +65,10 @@ const Rsvp = () => {
   const { t } = useLanguage();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const isWeekend = useIsWeekend();
 
   const form = useForm<RsvpFormValues>({
-    resolver: zodResolver(rsvpFormSchema),
+    resolver: zodResolver(isWeekend ? rsvpWeekendFormSchema : rsvpFormSchema),
     defaultValues,
   });
 
@@ -281,6 +294,70 @@ const Rsvp = () => {
                       </Button>
                     </div>
 
+                    <div>
+                      <p className="font-serif text-lg text-gold">{t("rsvp.weekendEvents")}</p>
+                    </div>
+
+                    {isWeekend && (
+                      <FormField
+                        control={form.control}
+                        name="fridayWelcomeGathering"
+                        render={({ field }) => (
+                          <FormItem className="space-y-3">
+                            <FormLabel className="font-serif text-lg text-cream">{t("rsvp.fridayWelcomeGathering")}</FormLabel>
+                            <FormControl>
+                              <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col sm:flex-row gap-4">
+                                <div className="flex items-center space-x-2">
+                                  <RadioGroupItem value="yes" id="friday-yes" className="border-gold text-gold" />
+                                  <label htmlFor="friday-yes" className="text-cream cursor-pointer">
+                                    {t("rsvp.yes")}
+                                  </label>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                  <RadioGroupItem value="no" id="friday-no" className="border-gold text-gold" />
+                                  <label htmlFor="friday-no" className="text-cream cursor-pointer">
+                                    {t("rsvp.no")}
+                                  </label>
+                                </div>
+                              </RadioGroup>
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    )}
+
+                    <FormField
+                      control={form.control}
+                      name="sundayBrunch"
+                      render={({ field }) => (
+                        <FormItem className="space-y-3">
+                          <FormLabel className="font-serif text-lg text-cream">{t("rsvp.sundayBrunch")}</FormLabel>
+                          <FormControl>
+                            <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col sm:flex-row gap-4">
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="yes" id="sunday-yes" className="border-gold text-gold" />
+                                <label htmlFor="sunday-yes" className="text-cream cursor-pointer">
+                                  {t("rsvp.yes")}
+                                </label>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="no" id="sunday-no" className="border-gold text-gold" />
+                                <label htmlFor="sunday-no" className="text-cream cursor-pointer">
+                                  {t("rsvp.no")}
+                                </label>
+                              </div>
+                            </RadioGroup>
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <div>
+                      <p className="font-serif text-lg text-gold">{t("rsvp.travelAndAccommodations")}</p>
+                    </div>
+
                     <FormField
                       control={form.control}
                       name="overnightStay"
@@ -322,6 +399,9 @@ const Rsvp = () => {
                       )}
                     />
 
+                    <div>
+                      <p className="font-serif text-lg text-gold">{t("rsvp.finalNotes")}</p>
+                    </div>
                     <FormField
                       control={form.control}
                       name="songRequest"

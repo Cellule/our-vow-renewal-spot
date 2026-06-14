@@ -22,7 +22,7 @@ export function useIsWeekend() {
     }
   }, [location.pathname]);
 
-  const isPathWeekend = (path: string) => path === "/weekend" || path === "/weekend/";
+  const isPathWeekend = (path: string) => path.startsWith("/weekend") || path.startsWith("/weekend/");
 
   // Check both React Router location and window.location as fallback
   const isWeekend = isPathWeekend(location.pathname) || isPathWeekend(windowPathname) || searchParams.get("type") === "weekend";

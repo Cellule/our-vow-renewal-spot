@@ -123,7 +123,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "roomSharing.note":
     "Évidemment, cela sera considéré uniquement advenant que nous n'ayons d'autre choix, et nous nous assurerons de vous placer avec une personne que vous connaissez!",
   "roomSharing.yes": "Oui, je partage",
-  "roomSharing.no": "Non, je preferère avoir une chambre seul",
+  "roomSharing.no": "Non, je préfère avoir une chambre seul(e)",
 
   // Packing List Section
   "packing.title": "Quoi apporter dans votre sac de voyage?",
@@ -170,7 +170,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.songRequestOptional": "(optionnel)",
   "rsvp.name": "Votre nom",
   "rsvp.email": "Courriel (optionnel)",
-  "rsvp.attending": "Serez-vous présent?",
+  "rsvp.attending": "Serez-vous présent(e) à la célébration?",
   "rsvp.attendingYes": "Oui, je serai là!",
   "rsvp.attendingNo": "Désolé, je ne peux pas venir",
   "rsvp.backToHome": "Retour à l'accueil",
@@ -181,6 +181,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.thankYou": "Merci de votre réponse! Nous avons hâte de vous voir!",
   "rsvp.yes": "Oui",
   "rsvp.no": "Non",
+  "rsvp.notSure": "Pas sûr(e)",
   "rsvp.guestsTitle": "Vos invités",
   "rsvp.guestsDescription": "Ajoutez chaque invité et son choix de repas",
   "rsvp.guest": "Invité",
@@ -190,12 +191,21 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.dietaryRestrictionOptional": "(optionnel)",
   "rsvp.addGuest": "Ajouter un invité",
   "rsvp.removeGuest": "Retirer",
+  "rsvp.weekendEvents": "Événements du weekend",
+  "rsvp.fridayWelcomeGathering": "Assisterez-vous au rassemblement de bienvenue du vendredi?",
+  "rsvp.sundayBrunch": "Assisterez-vous au brunch du dimanche de 10h à 12h?",
+  "rsvp.travelAndAccommodations": "Voyage et hébergement",
+  "rsvp.finalNotes": "Notes finales",
+
+  // RSVP Form Validation Messages
   "rsvp.validation.name": "Veuillez entrer votre nom",
   "rsvp.validation.guests": "Veuillez ajouter au moins un invité",
   "rsvp.validation.attending": "Veuillez indiquer si vous serez présent",
   "rsvp.validation.meal": "Veuillez sélectionner un choix de repas",
   "rsvp.validation.roomSharing": "Veuillez indiquer si vous souhaitez partager une chambre",
   "rsvp.validation.formInvalid": "Veuillez corriger les erreurs dans le formulaire avant de soumettre.",
+  "rsvp.validation.fridayWelcomeGathering": "Veuillez indiquer si vous assisterez au rassemblement de bienvenue du vendredi",
+  "rsvp.validation.sundayBrunch": "Veuillez indiquer si vous assisterez au brunch du dimanche",
 
   // Footer
   "footer.withLove": "Avec tout notre amour",
