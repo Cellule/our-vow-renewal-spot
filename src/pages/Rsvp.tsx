@@ -189,7 +189,17 @@ const Rsvp = () => {
             <div className="flex justify-center mb-4">
               <Heart className="w-16 h-16 text-gold" fill="currentColor" />
             </div>
-            <CardTitle className="font-script text-4xl md:text-5xl text-cream">{t("rsvp.thankYou")}</CardTitle>
+            <CardTitle className="font-script text-3xl sm:text-4xl text-cream">
+              {t("rsvp.thankYou")}
+              {attending === "yes" ? (
+                <>
+                  <br />
+                  {t("rsvp.cantWaitToSeeYou")}
+                </>
+              ) : (
+                ""
+              )}
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <Link to={isWeekend ? "/weekend" : "/"} className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mt-6">
