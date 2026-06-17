@@ -11,8 +11,7 @@ export const en = {
   "hero.location": "The Venue",
   "hero.locationValue": "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.viewOnGoogleMaps": "View on Google Maps",
-
-  "hero.googleFormLink": "Respond to the invitation!",
+  "hero.formLink": "Respond to the invitation!",
 
   // Our Story Section
   "story.title": "Our Journey",
@@ -102,7 +101,7 @@ export const en = {
   "schedule.saturdayArrival": "Arrival starting at 1pm",
   "schedule.saturdayCeremony": "Ceremony at 4pm",
   "schedule.saturdayCocktail": "Cocktail hour at 5pm",
-  "schedule.saturdayDinner": "Dinner at 7pm",
+  "schedule.saturdayDinner": "Dinner between 6pm and 7pm",
   "schedule.saturdayParty": "Party... all night!",
   "schedule.sundayTitle": "Sunday, September 20th",
   "schedule.sundayBrunch": "Brunch from 10am to 12pm",
@@ -110,10 +109,9 @@ export const en = {
 
   // Children Section
   "children.title": "Children",
-  "children.welcome": "Children are welcome for the wedding day and Sunday morning brunch.",
+  "children.welcome": "Children are welcome to the wedding. There will be activities and a kids' menu to keep them entertained and well-fed.",
   "children.friday":
     "For Friday guests, we don't have any special arrangements for children (ours arrive the next day). It's the VIP evening before the wedding, we relax, have a drink (or two, or three...), so the choice is yours!",
-  "children.saturday": "Depending on the number of children present on Saturday, we may be able to arrange childcare/entertainment services.",
 
   // Accommodations Details Section
   "accommodations.title": "Rooms",
@@ -121,6 +119,8 @@ export const en = {
   "accommodations.queenRooms": "Queen rooms",
   "accommodations.kingRooms": "King room",
   "accommodations.details": "All rooms have private bathrooms.",
+  "accommodations.includedTitle": "Rooms are included at Manoir Montpellier",
+  "accommodations.includedDetails": "Rooms are included with the venue booking at Manoir Montpellier. You are encouraged to stay on-site and party all night with us!",
 
   // Packing List Section
   "packing.title": "What to bring in your travel bag?",

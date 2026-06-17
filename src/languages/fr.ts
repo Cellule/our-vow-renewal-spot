@@ -12,8 +12,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "hero.location": "Le lieu",
   "hero.locationValue": "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.viewOnGoogleMaps": "Voir sur Google Maps",
-
-  "hero.googleFormLink": "Répondez à l'invitation !",
+  "hero.formLink": "Répondez à l'invitation !",
 
   // Our Story Section
   "story.title": "Notre parcours",
@@ -103,7 +102,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "schedule.saturdayArrival": "Arrivée à partir de 13h",
   "schedule.saturdayCeremony": "Cérémonie à 16h",
   "schedule.saturdayCocktail": "Cocktail à 17h",
-  "schedule.saturdayDinner": "Souper à 19h",
+  "schedule.saturdayDinner": "Souper entre 18h et 19h",
   "schedule.saturdayParty": "Fête... toute la nuit!",
   "schedule.sundayTitle": "Dimanche 20 septembre",
   "schedule.sundayBrunch": "Brunch de 10h à 12h",
@@ -111,10 +110,9 @@ export const fr: Record<TranslationKeys, string | undefined> = {
 
   // Children Section
   "children.title": "Enfants",
-  "children.welcome": "Les enfants sont les bienvenus pour la journée du mariage et le brunch du dimanche matin.",
+  "children.welcome": "Les enfants sont les bienvenus pour le mariage. Il y aura des activités et un menu pour enfants pour les divertir et les satisfaire.",
   "children.friday":
-    "Pour les invités du vendredi, nous ne prévoyons aucun arrangement particulier pour les enfants (les nôtres arrivent le lendemain). C'est la soirée VIP avant le mariage, on relaxe, on boire un verre (ou deux, ou trois…), donc, le choix vous revient!",
-  "children.saturday": "À partir d'un certain nombre d'enfants présents le samedi, nous auront la possibilité de réserver le service de gardiennage / animation.",
+    "Pour les invités du vendredi, nous ne prévoyons aucun arrangement particulier pour les enfants (les nôtres arrivent le lendemain). C'est la soirée VIP avant le mariage, on relaxe, on boit un verre (ou deux, ou trois…), donc, le choix vous revient!",
 
   // Accommodations Details Section
   "accommodations.title": "Chambres",
@@ -122,6 +120,8 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "accommodations.queenRooms": "Chambres queen",
   "accommodations.kingRooms": "Chambre king",
   "accommodations.details": "Toutes les chambres sont équipées de salles de bain privées.",
+  "accommodations.includedTitle": "Chambres incluses au Manoir Montpellier",
+  "accommodations.includedDetails": "Les chambres sont comprises avec la location du Manoir. Vous êtes encouragés à rester sur place et à faire la fête avec nous toute la nuit !",
 
   // Packing List Section
   "packing.title": "Quoi apporter dans votre sac de voyage?",

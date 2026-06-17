@@ -26,7 +26,7 @@ const Schedule = () => {
               </div>
               <h3 className="font-script text-2xl text-burgundy">{t("schedule.fridayTitle")}</h3>
             </div>
-            <ul className="space-y-3 ml-16">
+            <ul className="space-y-3 ml-4 sm:ml-16">
               <li className="font-sans text-foreground">
                 <span className="font-semibold">•</span> {t("schedule.fridayArrival")}
               </li>
@@ -45,10 +45,12 @@ const Schedule = () => {
             </div>
             <h3 className="font-script text-2xl text-emerald">{t("schedule.saturdayTitle")}</h3>
           </div>
-          <ul className="space-y-3 ml-16">
-            <li className="font-sans text-foreground">
-              <span className="font-semibold">•</span> {t("schedule.saturdayArrival")}
-            </li>
+          <ul className="space-y-3 ml-4 sm:ml-16">
+            {!isWeekend && (
+              <li className="font-sans text-foreground">
+                <span className="font-semibold">•</span> {t("schedule.saturdayArrival")}
+              </li>
+            )}
             <li className="font-sans text-foreground">
               <span className="font-semibold">•</span> {t("schedule.saturdayCeremony")}
             </li>
@@ -72,7 +74,7 @@ const Schedule = () => {
             </div>
             <h3 className="font-script text-2xl text-navy">{t("schedule.sundayTitle")}</h3>
           </div>
-          <ul className="space-y-3 ml-16">
+          <ul className="space-y-3 ml-4 sm:ml-16">
             <li className="font-sans text-foreground">
               <span className="font-semibold">•</span> {t("schedule.sundayBrunch")}
             </li>
