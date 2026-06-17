@@ -54,10 +54,9 @@ export const fr: Record<TranslationKeys, string | undefined> = {
     "Si vous avez en tête une robe ou un habit un peu extravagant pour lequel vous n'avez jamais eu d'occasion spéciale, c'est celle-ci! Le thème visuel du mariage étant inspiré de la voûte céleste, vous pourriez incorporer des étoiles, des accessoires de lune ou de soleil à votre look!",
   "event.jewelTones": "Tons de bijoux encouragés",
   "event.colorPaletteTitle": "Palette de couleurs",
-  "event.colorPaletteText":
-    "La palette est ce qu'on appelle « jewel toned », c'est-à-dire des teintes plus saturées, dans des couleurs foncées (pierre précieuses ou semi-précieuses : saphir, rubis, grenat, émeraude, topaze, améthyste, etc.)",
+  "event.colorPaletteText": "La palette est ce qu'on appelle « jewel toned », c'est-à-dire des teintes plus saturées, dans des couleurs foncées.",
   "event.colorPaletteAvoid": "Évitez le noir",
-  "event.colorPaletteContact": "Si vous avez des doutes, envoyez-moi des photos!",
+  "event.colorPaletteContact": "Si vous avez des doutes, envoyez-moi des photos au 438-509-1989!",
   "event.presenceTitle": "Votre Présence est Notre Cadeau",
   "event.presenceText":
     "Nous sommes si reconnaissants pour l'amour et le soutien que vous nous avez témoignés tout au long de notre mariage. Votre présence à notre célébration de renouvellement de vœux rendrait cette journée encore plus spéciale.",

@@ -53,10 +53,9 @@ export const en = {
     "If you have an extravagant dress or outfit you've been waiting for the right occasion to wear, this is it! Since the wedding's visual theme is inspired by the celestial vault, you could incorporate stars, moon or sun accessories into your look!",
   "event.jewelTones": "Jewel tones encouraged",
   "event.colorPaletteTitle": "Color Palette",
-  "event.colorPaletteText":
-    "The palette is what's called 'jewel toned', meaning more saturated shades in dark colors (think precious or semi-precious stones: sapphire, ruby, garnet, emerald, topaz, amethyst, etc.)",
+  "event.colorPaletteText": "The palette is what's called 'jewel toned', meaning more saturated shades in dark colors.",
   "event.colorPaletteAvoid": "Avoid black",
-  "event.colorPaletteContact": "If you're unsure, send me photos!",
+  "event.colorPaletteContact": "If you're unsure, send me photos at 438-509-1989!",
   "event.presenceTitle": "Your Presence is Our Present",
   "event.presenceText":
     "We are so grateful for the love and support you've shown us throughout our marriage. Your presence at our vow renewal celebration would make this day even more special.",
