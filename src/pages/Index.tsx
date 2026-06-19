@@ -18,7 +18,6 @@ const Index = () => {
 
   const sections = [
     { key: "ourStory", component: <OurStory /> },
-    // { key: "eventDetails", component: <EventDetails /> },
     { key: "schedule", component: <Schedule /> },
     { key: "dressCode", component: <DressCode /> },
     { key: "palette", component: <ColorPalette /> },
