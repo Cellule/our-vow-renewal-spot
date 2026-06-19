@@ -12,6 +12,9 @@ export const en = {
   "hero.locationValue": "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.viewOnGoogleMaps": "View on Google Maps",
   "hero.formLink": "Respond to the invitation!",
+  "hero.scrollPrompt": "See below for more information",
+
+  "switcher.top": "Back to top",
 
   // Our Story Section
   "story.title": "Our Journey",
@@ -53,8 +56,7 @@ export const en = {
     "If you have an extravagant dress or outfit you've been waiting for the right occasion to wear, this is it! Since the wedding's visual theme is inspired by the celestial vault, you could incorporate accessories with star, moon or sun motifs into your look!",
   "event.jewelTones": "Jewel tones encouraged",
   "event.colorPaletteTitle": "Color Palette",
-  "event.colorPaletteText":
-    "The palette is what's called 'jewel toned', meaning more saturated shades in dark colors. Think of your favorite gemstones!",
+  "event.colorPaletteText": "The palette is what's called 'jewel toned', meaning more saturated shades in dark colors. Think of your favorite gemstones!",
   "event.colorPaletteAvoid": "If possible, avoid black.",
   "event.colorPaletteContact": "If you're unsure, send me photos at 438-509-1989!",
   "event.presenceTitle": "Your Presence is Our Present",
@@ -138,6 +140,11 @@ export const en = {
   // Contact Section
   "contact.addToCalendar": "Add to Calendar",
   "contact.addToCalendarTitle": "Andréanne & Michaël's Wedding",
+
+  // RSVP Link Section
+  "rsvpLink.title": "RSVP",
+  "rsvpLink.text": "Please confirm your attendance by filling out the form below.",
+  "rsvpLink.button": "Confirm Attendance",
 
   // RSVP Form Section
   "rsvp.title": "RSVP",

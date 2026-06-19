@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsWeekend } from "@/hooks/use-is-weekend";
-import { CalendarClock, Moon, Sun, Sunset } from "lucide-react";
+import { CalendarClock, EggFried, Sun, Sunset } from "lucide-react";
 
 const Schedule = () => {
   const { t } = useLanguage();
@@ -21,8 +21,8 @@ const Schedule = () => {
         {isWeekend && (
           <div className="bg-card rounded-2xl p-8 shadow-soft border border-burgundy/10">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center">
-                <Sunset className="w-6 h-6 text-burgundy" />
+              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
+                <Sunset className="w-6 h-6 text-cream" />
               </div>
               <h3 className="font-script text-2xl text-burgundy">{t("schedule.fridayTitle")}</h3>
             </div>
@@ -40,7 +40,7 @@ const Schedule = () => {
         {/* Saturday */}
         <div className="bg-card rounded-2xl p-8 shadow-soft border border-emerald/10">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-emerald rounded-full flex items-center justify-center">
               <Sun className="w-6 h-6 text-cream" />
             </div>
             <h3 className="font-script text-2xl text-emerald">{t("schedule.saturdayTitle")}</h3>
@@ -70,7 +70,7 @@ const Schedule = () => {
         <div className="bg-card rounded-2xl p-8 shadow-soft border border-navy/10">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 bg-gradient-secondary rounded-full flex items-center justify-center">
-              <Moon className="w-6 h-6 text-cream" />
+              <EggFried className="w-6 h-6 text-cream" />
             </div>
             <h3 className="font-script text-2xl text-navy">{t("schedule.sundayTitle")}</h3>
           </div>

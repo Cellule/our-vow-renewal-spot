@@ -13,6 +13,9 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "hero.locationValue": "Manoir Montpellier\n533 QC-315, Montpellier, QC J0V 1M0",
   "hero.viewOnGoogleMaps": "Voir sur Google Maps",
   "hero.formLink": "Répondez à l'invitation !",
+  "hero.scrollPrompt": "Voir ci-dessous pour plus d'informations",
+
+  "switcher.top": "Haut de page",
 
   // Our Story Section
   "story.title": "Notre parcours",
@@ -140,6 +143,11 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   // Contact Section
   "contact.addToCalendar": "Ajouter au Calendrier",
   "contact.addToCalendarTitle": "Mariage Andréanne & Michaël",
+
+  // RSVP Link Section
+  "rsvpLink.title": "Confirmation de présence",
+  "rsvpLink.text": "Veuillez nous confirmer votre présence en remplissant le formulaire ci-dessous.",
+  "rsvpLink.button": "Confirmer ma présence",
 
   // RSVP Form Section
   "rsvp.title": "Confirmation de présence",

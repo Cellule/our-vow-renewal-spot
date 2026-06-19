@@ -1,7 +1,7 @@
 import heroImage from "@/assets/hero-image.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsWeekend } from "@/hooks/use-is-weekend";
-import { HouseHeart, MapPin } from "lucide-react";
+import { ChevronDown, HouseHeart, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const SaveTheDateHero = () => {
@@ -9,7 +9,7 @@ const SaveTheDateHero = () => {
   const isWeekend = useIsWeekend();
 
   return (
-    <section className="relative py-6 md:py-12 min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="save-the-date-hero" className="relative py-6 md:py-12 min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-gradient-to-b from-burgundy/60 via-burgundy/40 to-navy/60"></div>
@@ -70,6 +70,12 @@ const SaveTheDateHero = () => {
       <div className="absolute top-10 left-10 w-20 h-20 border-2 border-gold/30 rounded-full animate-pulse"></div>
       <div className="absolute bottom-10 right-10 w-16 h-16 border-2 border-emerald/30 rounded-full animate-pulse delay-1000"></div>
       <div className="absolute top-1/2 left-20 w-12 h-12 border border-cream/20 rotate-45 animate-pulse delay-500"></div>
+
+      {/* Scroll Callout */}
+      <div className="absolute bottom-2 flex flex-col items-center gap-2 text-cream/70 animate-bounce">
+        <span className="text-xs tracking-wider uppercase">{t("hero.scrollPrompt")}</span>
+        <ChevronDown className="w-5 h-5" />
+      </div>
     </section>
   );
 };

@@ -4,6 +4,7 @@ import { ColorPalette } from "@/components/ColorPalette";
 import { AddToCalendar } from "@/components/Connect";
 import { DressCode } from "@/components/DressCode";
 import { Gifts } from "@/components/Gifts";
+import { RsvpLink } from "@/components/RsvpLink";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Menu } from "@/components/Menu";
 import { OurStory } from "@/components/OurStory";
@@ -27,6 +28,7 @@ const Index = () => {
     { key: "rooms", component: <Rooms /> },
     { key: "packingList", component: <PackingList /> },
     { key: "gifts", component: <Gifts /> },
+    { key: "rsvpLink", component: <RsvpLink /> },
     { key: "connect", component: <AddToCalendar /> },
   ];
 
