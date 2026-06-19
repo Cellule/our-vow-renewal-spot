@@ -12,6 +12,7 @@ import { PackingList } from "@/components/PackingList";
 import { Rooms } from "@/components/Rooms";
 import SaveTheDateHero from "@/components/SaveTheDateHero";
 import Schedule from "@/components/Schedule";
+import TableOfContents from "@/components/TableOfContents";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
@@ -36,9 +37,10 @@ const Index = () => {
     <main className="min-h-screen">
       <LanguageSwitcher />
       <SaveTheDateHero />
-      <div className="py-20 bg-gradient-to-b from-cream to-champagne">
+      <div className="py-20 bg-gradient-to-b from-cream to-champagne relative">
+        <TableOfContents />
         {sections.map((Section) => (
-          <section key={Section.key} className="py-2">
+          <section key={Section.key} id={Section.key} className="py-2">
             <div className="max-w-4xl mx-auto px-6 mb-16">{Section.component}</div>
           </section>
         ))}

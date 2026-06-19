@@ -9,7 +9,7 @@ const SaveTheDateHero = () => {
   const isWeekend = useIsWeekend();
 
   return (
-    <section id="save-the-date-hero" className="relative py-6 md:py-12 min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="save-the-date-hero" className="isolate z-40 relative py-6 md:py-12 min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-gradient-to-b from-burgundy/60 via-burgundy/40 to-navy/60"></div>
