@@ -16,8 +16,10 @@ export function ColorPalette() {
 
       <div className="bg-gradient-elegant rounded-2xl p-8 shadow-elegant">
         <div className="text-champagne">
-          <p className="font-sans text-lg leading-relaxed mb-4">{t("event.colorPaletteText")}</p>
-          <p className="font-serif text-gold text-lg mb-4">{t("event.colorPaletteAvoid")}</p>
+          <p className="font-sans text-lg leading-relaxed mb-4">
+            {t("event.colorPaletteText")}
+            <i> {t("event.colorPaletteAvoid")}</i>
+          </p>
           <div className="flex items-center justify-center gap-2 text-champagne/80">
             <Phone className="w-4 h-4" />
             <span className="font-sans">{t("event.colorPaletteContact")}</span>

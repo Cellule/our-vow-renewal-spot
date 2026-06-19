@@ -51,11 +51,12 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "event.dressCodeValue": "Tenue cocktail avec une touche de fantaisie",
   "event.dressCodeTheme": "Thème « Whimsigoth »",
   "event.dressCodeDetails":
-    "Si vous avez en tête une robe ou un habit un peu extravagant pour lequel vous n'avez jamais eu d'occasion spéciale, c'est celle-ci! Le thème visuel du mariage étant inspiré de la voûte céleste, vous pourriez incorporer des étoiles, des accessoires de lune ou de soleil à votre look!",
+    "Si vous avez en tête une robe ou un habit un peu extravagant pour lequel vous n'avez jamais eu d'occasion spéciale, c'est celle-ci! Le thème visuel du mariage étant inspiré de la voûte céleste, vous pourriez incorporer des accessoires aux motifs d'étoiles, de lune ou de soleil à votre look!",
   "event.jewelTones": "Tons de bijoux encouragés",
   "event.colorPaletteTitle": "Palette de couleurs",
-  "event.colorPaletteText": "La palette est ce qu'on appelle « jewel toned », c'est-à-dire des teintes plus saturées, dans des couleurs foncées.",
-  "event.colorPaletteAvoid": "Évitez le noir",
+  "event.colorPaletteText":
+    "La palette est ce qu'on appelle « jewel toned », c'est-à-dire des teintes plus saturées, dans des couleurs foncées. Pensez à vos pierres précieuses préférées!",
+  "event.colorPaletteAvoid": "Si possible, évitez le noir.",
   "event.colorPaletteContact": "Si vous avez des doutes, envoyez-moi des photos au 438-509-1989!",
   "event.presenceTitle": "Votre Présence est Notre Cadeau",
   "event.presenceText":
@@ -109,7 +110,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
 
   // Children Section
   "children.title": "Enfants",
-  "children.welcome": "Les enfants sont les bienvenus pour le mariage. Il y aura des activités et un menu pour enfants pour les divertir et les satisfaire.",
+  "children.welcome": "Les enfants sont les bienvenus pour le mariage! Il y aura un menu pour enfants ainsi que des activités pour les divertir.",
   "children.friday":
     "Pour les invités du vendredi, nous ne prévoyons aucun arrangement particulier pour les enfants (les nôtres arrivent le lendemain). C'est la soirée VIP avant le mariage, on relaxe, on boit un verre (ou deux, ou trois…), donc, le choix vous revient!",
 

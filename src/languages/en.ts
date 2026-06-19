@@ -50,11 +50,12 @@ export const en = {
   "event.dressCodeValue": "Cocktail attire with a touch of flair",
   "event.dressCodeTheme": "Whimsigoth Theme",
   "event.dressCodeDetails":
-    "If you have an extravagant dress or outfit you've been waiting for the right occasion to wear, this is it! Since the wedding's visual theme is inspired by the celestial vault, you could incorporate stars, moon or sun accessories into your look!",
+    "If you have an extravagant dress or outfit you've been waiting for the right occasion to wear, this is it! Since the wedding's visual theme is inspired by the celestial vault, you could incorporate accessories with star, moon or sun motifs into your look!",
   "event.jewelTones": "Jewel tones encouraged",
   "event.colorPaletteTitle": "Color Palette",
-  "event.colorPaletteText": "The palette is what's called 'jewel toned', meaning more saturated shades in dark colors.",
-  "event.colorPaletteAvoid": "Avoid black",
+  "event.colorPaletteText":
+    "The palette is what's called 'jewel toned', meaning more saturated shades in dark colors. Think of your favorite gemstones!",
+  "event.colorPaletteAvoid": "If possible, avoid black.",
   "event.colorPaletteContact": "If you're unsure, send me photos at 438-509-1989!",
   "event.presenceTitle": "Your Presence is Our Present",
   "event.presenceText":
@@ -108,7 +109,7 @@ export const en = {
 
   // Children Section
   "children.title": "Children",
-  "children.welcome": "Children are welcome to the wedding. There will be activities and a kids' menu to keep them entertained and well-fed.",
+  "children.welcome": "Children are welcome to the wedding! There will be a kids' menu as well as activities to keep them entertained.",
   "children.friday":
     "For Friday guests, we don't have any special arrangements for children (ours arrive the next day). It's the VIP evening before the wedding, we relax, have a drink (or two, or three...), so the choice is yours!",
 
