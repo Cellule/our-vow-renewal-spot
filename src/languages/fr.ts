@@ -211,6 +211,20 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.validation.guestsInRoom": "Veuillez entrer le nombre d'invités dans votre chambre si vous avez besoin d'hébergement",
   "rsvp.validation.nightsStaying": "Veuillez sélectionner les nuits où vous séjournerez si vous avez besoin d'hébergement",
 
+  // Table of Contents
+  "toc.title": "Sections",
+  "toc.ourStory": "Notre parcours",
+  "toc.schedule": "Horaire",
+  "toc.dressCode": "Code vestimentaire",
+  "toc.palette": "Palette de couleurs",
+  "toc.menu": "Menu",
+  "toc.activities": "Activités",
+  "toc.children": "Enfants",
+  "toc.rooms": "Chambres",
+  "toc.packingList": "Liste de bagages",
+  "toc.gifts": "Cadeaux",
+  "toc.connect": "Contact",
+
   // Footer
   "footer.withLove": "Avec tout notre amour",
   "footer.names": undefined,

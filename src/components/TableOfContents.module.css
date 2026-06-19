@@ -1,0 +1,18 @@
+.tocFloating {
+  display: hidden;
+}
+
+@media (min-width: 1496px) {
+  .tocFloating {
+    display: flex;
+  }
+}
+
+.tocButton {
+}
+
+@media (min-width: 1496px) {
+  .tocFloating {
+    display: hidden;
+  }
+}

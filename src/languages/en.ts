@@ -209,6 +209,20 @@ export const en = {
   "rsvp.validation.guestsInRoom": "Please enter the number of guests in your room if you require accommodations",
   "rsvp.validation.nightsStaying": "Please select which nights you'll be staying if you require accommodations",
 
+  // Table of Contents
+  "toc.title": "Sections",
+  "toc.ourStory": "Our Journey",
+  "toc.schedule": "Schedule",
+  "toc.dressCode": "Dress Code",
+  "toc.palette": "Color Palette",
+  "toc.menu": "Menu",
+  "toc.activities": "Activities",
+  "toc.children": "Children",
+  "toc.rooms": "Rooms",
+  "toc.packingList": "Packing List",
+  "toc.gifts": "Gifts",
+  "toc.connect": "Connect",
+
   // Footer
   "footer.withLove": "With all our love",
   "footer.names": "Andréanne & Michaël • 2026",
