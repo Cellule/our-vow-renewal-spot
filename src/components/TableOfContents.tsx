@@ -41,7 +41,7 @@ const TableOfContents = () => {
       {/* Mobile hamburger button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`${styles.tocButton} fixed bottom-6 right-6 z-50 w-12 h-12 bg-burgundy text-cream rounded-full shadow-lg flex items-center justify-center hover:bg-burgundy-light transition-colors`}
+        className={`${styles.tocButton} fixed bottom-6 right-6 z-50 w-12 h-12 bg-burgundy text-cream rounded-full shadow-lg items-center justify-center hover:bg-burgundy-light transition-colors`}
         aria-label={t("toc.title")}
       >
         {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
