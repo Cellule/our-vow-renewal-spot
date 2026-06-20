@@ -22,7 +22,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "story.subtitle": "Célébrant l'amour qui s'est renforcé au fil des années",
   "story.then": "Au commencement",
   "story.thenText":
-    "Notre histoire a commencé bien simplement! Nous étions fraîchement diplômés, avec la promesse d'une vie qui, déjà, nous attendait dans un autre pays. Nous sommes partis bâlir notre petite vie de couple marié, loin de tous nos proches, après une cérémonie sans prétention qui nous a nourris d'espoir et de rêves.",
+    "Notre histoire a commencé bien simplement! Nous étions fraîchement diplômés, avec la promesse d'une vie qui, déjà, nous attendait dans un autre pays. Nous sommes partis bâtir notre petite vie de couple marié, loin de tous nos proches, après une cérémonie sans prétention qui nous a nourris d'espoir et de rêves.",
   "story.now": "Maintenant",
   "story.nowText":
     "Depuis ce jour-là, notre couple a grandi à travers la distance, la parentalité et le train train quotidien. On ne s'est pas encore tannés! Cette célébration est donc notre façon de souligner tout ce que nous avons partagé et créé au fil des années, et cela, entourés de ceux qu'on aime.",
@@ -176,8 +176,8 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.name": "Votre nom",
 
   "rsvp.attending": "Serez-vous présent(e) à la célébration?",
-  "rsvp.attendingYes": "Oui, je serai là!",
-  "rsvp.attendingNo": "Désolé, je ne peux pas venir",
+  "rsvp.attendingYes": "Oui, heureux d'y être!",
+  "rsvp.attendingNo": "Malheureusement, je ne peux pas venir",
   "rsvp.backToHome": "Retour à l'accueil",
   "rsvp.submitting": "Envoi en cours...",
   "rsvp.submit": "Soumettre ma réponse",
@@ -231,7 +231,6 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "toc.rooms": "Chambres",
   "toc.packingList": "Liste de bagages",
   "toc.gifts": "Cadeaux",
-  "toc.connect": "Contact",
 
   // Footer
   "footer.withLove": "Avec tout notre amour",

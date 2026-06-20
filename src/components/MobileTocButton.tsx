@@ -1,9 +1,8 @@
+import { sectionKeys } from "@/components/TableOfContents";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-
-const sectionKeys = ["ourStory", "schedule", "dressCode", "palette", "menu", "activities", "children", "rooms", "packingList", "gifts", "connect"] as const;
 
 const MobileTocButton = () => {
   const { t } = useLanguage();

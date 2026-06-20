@@ -81,7 +81,7 @@ export const en = {
   "menu.entry": "Starter - Warm goat cheese from Floralpe farm, pears, walnuts, and maple",
   "menu.mainCourse": "Main Course",
   "menu.chicken": "Chicken Supreme with herbs and lemon, jasmine rice and seasonal vegetables",
-  "menu.beef": "Braised Beef Tenderloin with rosemary sauce, mashed potatoes and seasonal vegetables",
+  "menu.beef": "Braised Beef Chuck with rosemary sauce, mashed potatoes and seasonal vegetables",
   "menu.vegetarian": "Vegetarian Poké Bowl",
   "menu.dessertTable": "Dessert Table",
   "menu.seeBelow": "(see below)",
@@ -134,7 +134,7 @@ export const en = {
 
   // Gift Section
   "gift.title": "Gift Suggestion",
-  "gift.text": "We don't need any particular gifts, but if you feel like it, a contribution to our honeymoon would be appreciated 😊",
+  "gift.text": "We don't need any particular gifts, but if your heart desires, a contribution to our honeymoon would be appreciated 😊",
   "gift.note": "This is by no means expected, so please don't feel any pressure! Your presence at our celebration is the greatest gift we could ask for.",
 
   // Contact Section
@@ -228,7 +228,6 @@ export const en = {
   "toc.rooms": "Rooms",
   "toc.packingList": "Packing List",
   "toc.gifts": "Gifts",
-  "toc.connect": "Connect",
 
   // Footer
   "footer.withLove": "With all our love",

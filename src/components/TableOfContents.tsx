@@ -2,7 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useEffect, useState } from "react";
 import styles from "./TableOfContents.module.css";
 
-const sectionKeys = ["ourStory", "schedule", "dressCode", "palette", "menu", "activities", "children", "rooms", "packingList", "gifts", "connect"] as const;
+export const sectionKeys = ["ourStory", "schedule", "dressCode", "palette", "menu", "activities", "children", "rooms", "packingList", "gifts"] as const;
 
 const TableOfContents = () => {
   const { t } = useLanguage();
