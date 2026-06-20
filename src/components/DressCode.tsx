@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Sparkles } from "lucide-react";
+import { Shirt } from "lucide-react";
 
 export function DressCode() {
   const { t } = useLanguage();
@@ -8,7 +8,7 @@ export function DressCode() {
     <div>
       <div className="text-center mb-12">
         <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
-          <Sparkles className="w-8 h-8 text-cream" />
+          <Shirt className="w-8 h-8 text-cream" />
         </div>
         <h2 className="font-script text-4xl md:text-5xl text-burgundy mb-4">{t("event.dressCode")}</h2>
         <div className="w-24 h-px bg-gradient-primary mx-auto mb-6"></div>

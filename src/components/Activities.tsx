@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Gamepad2, Mic, Sparkles, Waves } from "lucide-react";
+import { Gamepad2, Mic, Waves, WavesVertical } from "lucide-react";
 
 export function Activities() {
   const { t } = useLanguage();
@@ -7,7 +7,7 @@ export function Activities() {
   const activities = [
     { key: "gamesRoom", icon: Gamepad2, color: "bg-gradient-primary" },
     { key: "karaoke", icon: Mic, color: "bg-gradient-secondary" },
-    { key: "spa", icon: Sparkles, color: "bg-gradient-accent" },
+    { key: "spa", icon: WavesVertical, color: "bg-gradient-accent" },
     { key: "privateBeach", icon: Waves, color: "bg-gradient-gold" },
   ] as const;
 
