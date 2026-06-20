@@ -1,14 +1,17 @@
 import { Activities } from "@/components/Activities";
+import BackToTopButton from "@/components/BackToTopButton";
+import BottomRightActions from "@/components/BottomRightActions";
 import { Children } from "@/components/Children";
 import { ColorPalette } from "@/components/ColorPalette";
 import { AddToCalendar } from "@/components/Connect";
 import { DressCode } from "@/components/DressCode";
 import { Gifts } from "@/components/Gifts";
-import { RsvpLink } from "@/components/RsvpLink";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Menu } from "@/components/Menu";
+import MobileTocButton from "@/components/MobileTocButton";
 import { OurStory } from "@/components/OurStory";
 import { PackingList } from "@/components/PackingList";
+import { RsvpLink } from "@/components/RsvpLink";
 import { Rooms } from "@/components/Rooms";
 import SaveTheDateHero from "@/components/SaveTheDateHero";
 import Schedule from "@/components/Schedule";
@@ -35,7 +38,11 @@ const Index = () => {
 
   return (
     <main className="min-h-screen">
-      <LanguageSwitcher />
+      <BottomRightActions>
+        <BackToTopButton />
+        <LanguageSwitcher />
+        <MobileTocButton />
+      </BottomRightActions>
       <SaveTheDateHero />
       <div className="py-20 bg-gradient-to-b from-cream to-champagne relative">
         <TableOfContents />

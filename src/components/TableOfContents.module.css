@@ -7,13 +7,3 @@
     display: flex;
   }
 }
-
-.tocButton {
-  display: none;
-}
-
-@media (max-width: 1200px) {
-  .tocButton {
-    display: flex;
-  }
-}

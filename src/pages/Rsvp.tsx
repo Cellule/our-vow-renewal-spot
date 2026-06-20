@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
 
+import BottomRightActions from "@/components/BottomRightActions";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -189,7 +190,7 @@ const Rsvp = () => {
   if (submitted) {
     return (
       <main className="min-h-screen bg-gradient-to-b from-burgundy via-navy to-burgundy flex items-center justify-center p-4">
-        <LanguageSwitcher />
+        <BottomRightActions><LanguageSwitcher /></BottomRightActions>
         <Card className="w-full max-w-lg bg-cream/10 backdrop-blur-md border-cream/20 shadow-elegant text-center">
           <CardHeader>
             <div className="flex justify-center mb-4">
@@ -225,7 +226,7 @@ const Rsvp = () => {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-burgundy via-navy to-burgundy">
-      <LanguageSwitcher />
+      <BottomRightActions><LanguageSwitcher /></BottomRightActions>
       <div className="max-w-2xl mx-auto px-4 py-8 md:py-16">
         <Link to={isWeekend ? "/weekend" : "/"} className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mb-8">
           <ArrowLeft className="w-4 h-4" />
