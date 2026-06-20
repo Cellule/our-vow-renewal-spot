@@ -7,8 +7,8 @@ export function Gifts() {
   return (
     <div>
       <div className="text-center mb-8">
-        <div className="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-6">
-          <Gift className="w-8 h-8 text-burgundy" />
+        <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
+          <Gift className="w-8 h-8 text-cream" />
         </div>
         <h2 className="font-script text-4xl md:text-5xl text-burgundy mb-4">{t("gift.title")}</h2>
       </div>

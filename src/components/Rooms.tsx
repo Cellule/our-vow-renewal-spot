@@ -16,7 +16,7 @@ export function Rooms() {
         <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
           <BedDouble className="w-8 h-8 text-cream" />
         </div>
-        <h2 className="font-script text-4xl md:text-5xl text-emerald mb-4">{t("accommodations.title")}</h2>
+        <h2 className="font-script text-4xl md:text-5xl text-burgundy mb-4">{t("accommodations.title")}</h2>
         <div className="w-24 h-px bg-gradient-primary mx-auto"></div>
       </div>
 
