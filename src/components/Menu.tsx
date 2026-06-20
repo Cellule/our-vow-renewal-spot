@@ -5,7 +5,6 @@ export function Menu() {
   const { t } = useLanguage();
 
   const menuItems = [
-    { key: "appetizers", icon: "🥗" },
     { key: "entry", icon: "🍽️" },
     { key: "salad", icon: "🥬" },
     { key: "mainCourse", icon: "🍽️" },
@@ -37,9 +36,7 @@ export function Menu() {
                 <span className="text-2xl">{item.icon}</span>
                 <span className="font-sans text-foreground text-lg">
                   {t(`menu.${item.key}`)}
-                  {item.key === "mainCourse" && (
-                    <span className="text-gray-400 text-sm md:hidden ml-2">{t("menu.seeBelow")}</span>
-                  )}
+                  {item.key === "mainCourse" && <span className="text-gray-400 text-sm md:hidden ml-2">{t("menu.seeBelow")}</span>}
                 </span>
               </li>
             ))}

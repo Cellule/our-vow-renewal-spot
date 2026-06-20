@@ -38,7 +38,7 @@ const TableOfContents = () => {
       {sectionKeys.map((key) => (
         <button key={key} onClick={() => scrollToSection(key)} className="group flex items-center gap-3 transition-all duration-300">
           <span
-            className={`text-sm font-serif whitespace-nowrap transition-all duration-300 ${
+            className={`text-lg font-serif whitespace-nowrap transition-all duration-300 ${
               activeSection === key ? "text-burgundy font-medium opacity-100" : "text-navy/80 opacity-70 group-hover:opacity-100"
             }`}
           >
