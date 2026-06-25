@@ -14,6 +14,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "hero.viewOnGoogleMaps": "Voir sur Google Maps",
   "hero.formLink": "Répondez à l'invitation !",
   "hero.scrollPrompt": "Voir ci-dessous pour plus d'informations",
+  "hero.rsvpDeadline": "Merci de répondre d'ici le 24 juillet",
 
   "switcher.top": "Haut de page",
 

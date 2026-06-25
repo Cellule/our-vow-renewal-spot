@@ -13,6 +13,7 @@ export const en = {
   "hero.viewOnGoogleMaps": "View on Google Maps",
   "hero.formLink": "Respond to the invitation!",
   "hero.scrollPrompt": "See below for more information",
+  "hero.rsvpDeadline": "Please respond by July 24th",
 
   "switcher.top": "Back to top",
 

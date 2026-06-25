@@ -62,6 +62,9 @@ const SaveTheDateHero = () => {
             >
               {t("hero.formLink")}
             </Link>
+            <p className="mt-4 text-sm md:text-base text-champagne/90 font-medium">
+              {t("hero.rsvpDeadline")}
+            </p>
           </div>
         </div>
       </div>
