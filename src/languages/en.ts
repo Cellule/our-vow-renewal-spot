@@ -139,6 +139,7 @@ export const en = {
   "gift.title": "Gift Suggestion",
   "gift.text": "We don't need any particular gifts, but if your heart desires, a contribution to our honeymoon would be appreciated 😊",
   "gift.note": "This is by no means expected, so please don't feel any pressure! Your presence at our celebration is the greatest gift we could ask for.",
+  "gift.anonymity": "We kindly request that all monetary gifts remain anonymous. Please avoid putting money in a card. If you wish to send us your wishes, a guest book will be available next to the gift table.",
 
   // Contact Section
   "contact.addToCalendar": "Add to Calendar",

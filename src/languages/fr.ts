@@ -142,6 +142,8 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "gift.text": "Nous ne souhaitons pas recevoir de cadeau particulier, mais si le cœur vous en dit, une contribution à notre voyage de noces serait appréciée 😊",
   "gift.note":
     "Ce n'est en aucun cas une attente, alors ne vous sentez surtout pas obligé(e)! Votre présence à notre célébration est le plus beau cadeau que nous puissions recevoir.",
+  "gift.anonymity":
+    "Nous demandons que toutes les contributions monétaires restent anonymes. Veuillez éviter de mettre de l'argent dans une carte. Si vous souhaitez nous transmettre vos vœux, un livre d'or sera à votre disposition sur la table des cadeaux.",
 
   // Contact Section
   "contact.addToCalendar": "Ajouter au Calendrier",
