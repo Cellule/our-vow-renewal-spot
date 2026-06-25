@@ -51,6 +51,16 @@ const Schedule = () => {
                 <span className="font-semibold">•</span> {t("schedule.saturdayArrival")}
               </li>
             )}
+            {isWeekend && (
+              <li className="font-sans text-foreground">
+                <span className="font-semibold">•</span> {t("schedule.saturdayBreakfast")}
+              </li>
+            )}
+            {isWeekend && (
+              <li className="font-sans text-foreground">
+                <span className="font-semibold">•</span> {t("schedule.saturdayLunch")}
+              </li>
+            )}
             <li className="font-sans text-foreground">
               <span className="font-semibold">•</span> {t("schedule.saturdayCeremony")}
             </li>
