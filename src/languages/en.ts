@@ -202,6 +202,12 @@ export const en = {
   "rsvp.fridayWelcomeGathering": "Will you attend the Friday welcome gathering?",
   "rsvp.sundayBrunch": "Will you attend the Sunday brunch from 10AM to 12PM?",
   "rsvp.travelAndAccommodations": "Travel & Accommodations",
+  "rsvp.carpooling": "Carpooling",
+  "rsvp.carpoolingQuestion": "Would you be open to carpooling with other guests?",
+  "rsvp.carpoolingOffer": "I can drive and offer a ride to someone",
+  "rsvp.carpoolingNeed": "I'd like to find a ride / join a carpool",
+  "rsvp.carpoolingDetails": "Any details? (Where you're coming from, etc.)",
+
   "rsvp.finalNotes": "Final Notes",
   "rsvp.guestQuestions": "Do you have any questions or additional information you'd like us to know?",
   "rsvp.guestNote": "Lastly, leave us a note, love letter, piece of advice, or whatever your heart desires!",

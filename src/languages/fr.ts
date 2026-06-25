@@ -205,6 +205,12 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "rsvp.fridayWelcomeGathering": "Assisterez-vous au rassemblement de bienvenue du vendredi?",
   "rsvp.sundayBrunch": "Assisterez-vous au brunch du dimanche de 10h à 12h?",
   "rsvp.travelAndAccommodations": "Voyage et hébergement",
+  "rsvp.carpooling": "Covoiturage",
+  "rsvp.carpoolingQuestion": "Seriez-vous ouvert(e) au covoiturage avec d'autres invités?",
+  "rsvp.carpoolingOffer": "Je peux conduire et offrir une place à quelqu'un",
+  "rsvp.carpoolingNeed": "Je cherche une place / faire du covoiturage",
+  "rsvp.carpoolingDetails": "Des détails? (D'où vous venez, etc.)",
+
   "rsvp.finalNotes": "Notes finales",
   "rsvp.guestQuestions": "Avez-vous des questions ou des informations supplémentaires à nous communiquer?",
   "rsvp.guestNote": "Enfin, laissez-nous un mot, une lettre d'amour, un conseil, ou tout ce que votre coeur désire!",

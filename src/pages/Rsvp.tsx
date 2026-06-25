@@ -55,6 +55,9 @@ const rsvpFormSchema = rsvpAttendingSchema.extend({
   specialArrangements: z.string().optional(),
   roomSharing: z.enum(["yes", "no"]).optional(),
   songRequest: z.string().optional(),
+  carpooling: z.enum(["yes", "no"]).optional(),
+  carpoolingRole: z.enum(["offer", "need"]).optional(),
+  carpoolingDetails: z.string().optional(),
   guestQuestions: z.string().optional(),
   guestNote: z.string().optional(),
 });
@@ -111,6 +114,9 @@ const defaultValues = {
   fridayWelcomeGathering: undefined,
   sundayBrunch: undefined,
   songRequest: "",
+  carpooling: undefined,
+  carpoolingRole: undefined,
+  carpoolingDetails: "",
   guestQuestions: "",
   guestNote: "",
 };
@@ -190,7 +196,9 @@ const Rsvp = () => {
   if (submitted) {
     return (
       <main className="min-h-screen bg-gradient-to-b from-burgundy via-navy to-burgundy flex items-center justify-center p-4">
-        <BottomRightActions><LanguageSwitcher /></BottomRightActions>
+        <BottomRightActions>
+          <LanguageSwitcher />
+        </BottomRightActions>
         <Card className="w-full max-w-lg bg-cream/10 backdrop-blur-md border-cream/20 shadow-elegant text-center">
           <CardHeader>
             <div className="flex justify-center mb-4">
@@ -226,7 +234,9 @@ const Rsvp = () => {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-burgundy via-navy to-burgundy">
-      <BottomRightActions><LanguageSwitcher /></BottomRightActions>
+      <BottomRightActions>
+        <LanguageSwitcher />
+      </BottomRightActions>
       <div className="max-w-2xl mx-auto px-4 py-8 md:py-16">
         <Link to={isWeekend ? "/weekend" : "/"} className="inline-flex items-center gap-2 text-champagne hover:text-gold transition-colors duration-200 mb-8">
           <ArrowLeft className="w-4 h-4" />
@@ -587,6 +597,83 @@ const Rsvp = () => {
                           )}
                         />
                       </>
+                    )}
+
+                    <div>
+                      <p className="font-serif text-lg text-gold">{t("rsvp.carpooling")}</p>
+                    </div>
+
+                    <FormField
+                      control={form.control}
+                      name="carpooling"
+                      render={({ field }) => (
+                        <FormItem className="space-y-3">
+                          <FormLabel className="font-serif text-lg text-cream">{t("rsvp.carpoolingQuestion")}</FormLabel>
+                          <FormControl>
+                            <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col sm:flex-row gap-4">
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="yes" id="carpooling-yes" className="border-gold text-gold" />
+                                <label htmlFor="carpooling-yes" className="text-cream cursor-pointer">
+                                  {t("rsvp.yes")}
+                                </label>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <RadioGroupItem value="no" id="carpooling-no" className="border-gold text-gold" />
+                                <label htmlFor="carpooling-no" className="text-cream cursor-pointer">
+                                  {t("rsvp.no")}
+                                </label>
+                              </div>
+                            </RadioGroup>
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    {form.watch("carpooling") === "yes" && (
+                      <div className="space-y-4 pl-4 border-l-2 border-gold/30">
+                        <FormField
+                          control={form.control}
+                          name="carpoolingRole"
+                          render={({ field }) => (
+                            <FormItem className="space-y-3">
+                              <FormControl>
+                                <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex flex-col gap-4">
+                                  <div className="flex items-center space-x-2">
+                                    <RadioGroupItem value="offer" id="carpooling-offer" className="border-gold text-gold" />
+                                    <label htmlFor="carpooling-offer" className="text-cream cursor-pointer">
+                                      {t("rsvp.carpoolingOffer")}
+                                    </label>
+                                  </div>
+                                  <div className="flex items-center space-x-2">
+                                    <RadioGroupItem value="need" id="carpooling-need" className="border-gold text-gold" />
+                                    <label htmlFor="carpooling-need" className="text-cream cursor-pointer">
+                                      {t("rsvp.carpoolingNeed")}
+                                    </label>
+                                  </div>
+                                </RadioGroup>
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <FormField
+                          control={form.control}
+                          name="carpoolingDetails"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="font-serif text-lg text-cream">
+                                {t("rsvp.carpoolingDetails")} <span className="text-cream/50 text-sm">{t("rsvp.songRequestOptional")}</span>
+                              </FormLabel>
+                              <FormControl>
+                                <Textarea {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
                     )}
 
                     <div>
