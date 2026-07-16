@@ -26,6 +26,7 @@ const rsvpAttendingSchema = z.object({
     required_error: "rsvp.validation.attending" satisfies TranslationKeys,
   }),
   name: z.string().min(1, { message: "rsvp.validation.name" satisfies TranslationKeys }),
+  guestNote: z.string().optional(),
 });
 
 const rsvpFormSchema = rsvpAttendingSchema.extend({
@@ -59,7 +60,6 @@ const rsvpFormSchema = rsvpAttendingSchema.extend({
   carpoolingRole: z.enum(["offer", "need"]).optional(),
   carpoolingDetails: z.string().optional(),
   guestQuestions: z.string().optional(),
-  guestNote: z.string().optional(),
 });
 rsvpFormSchema.superRefine((data, ctx) => {
   if (data.requireAccommodations === "yes") {
@@ -296,6 +296,21 @@ const Rsvp = () => {
                   <div className="p-6 rounded-lg bg-cream/5 border border-cream/10 text-center space-y-3">
                     <p className="font-script text-3xl text-gold">{t("rsvp.declineTitle")}</p>
                     <p className="font-serif text-lg text-cream/80">{t("rsvp.declineParagraph")}</p>
+                    <FormField
+                      control={form.control}
+                      name="guestNote"
+                      render={({ field }) => (
+                        <FormItem className="text-left pt-2">
+                          <FormLabel className="font-serif text-cream/80">
+                            {t("rsvp.declineNote")} <span className="text-cream/50 text-sm">{t("rsvp.songRequestOptional")}</span>
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea {...field} className="bg-cream/20 border-cream/30 text-cream placeholder:text-cream/50" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
                   </div>
                 )}
 

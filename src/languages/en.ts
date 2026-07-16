@@ -184,6 +184,7 @@ export const en = {
   "rsvp.submit": "Submit response",
   "rsvp.declineTitle": "We're sorry you can't make it!",
   "rsvp.declineParagraph": "We'll miss you!",
+  "rsvp.declineNote": "Leave us a note",
   "rsvp.thankYou": "Thank you for your response!",
   "rsvp.cantWaitToSeeYou": "We can't wait to see you!",
   "rsvp.goBackToResubmit": "Made a mistake? Go back to the form",
