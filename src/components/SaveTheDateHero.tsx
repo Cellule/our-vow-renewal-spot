@@ -2,7 +2,6 @@ import heroImage from "@/assets/hero-image.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useIsWeekend } from "@/hooks/use-is-weekend";
 import { ChevronDown, HouseHeart, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const SaveTheDateHero = () => {
   const { t } = useLanguage();
@@ -56,15 +55,8 @@ const SaveTheDateHero = () => {
           </div>
 
           <div className="mt-4 md:mt-8 pt-4 md:pt-8 border-t border-cream/20">
-            <Link
-              to={isWeekend ? "/weekend/rsvp" : "/rsvp"}
-              className="inline-flex items-center justify-center gap-2 px-4 md:px-6 py-2 md:py-3 bg-gold/50 hover:bg-gold/60 text-cream font-semibold text-base md:text-lg rounded-lg border-2 border-gold/70 hover:border-gold shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
-            >
-              {t("hero.formLink")}
-            </Link>
-            <p className="mt-4 text-sm md:text-base text-champagne/90 font-medium">
-              {t("hero.rsvpDeadline")}
-            </p>
+            <p className="font-script text-2xl md:text-3xl text-gold mb-2">{t("hero.thankYou")}</p>
+            <p className="font-sans text-base md:text-lg text-cream">{t("hero.thankYouMessage")}</p>
           </div>
         </div>
       </div>

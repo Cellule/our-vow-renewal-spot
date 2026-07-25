@@ -14,6 +14,8 @@ export const en = {
   "hero.formLink": "Respond to the invitation!",
   "hero.scrollPrompt": "See below for more information",
   "hero.rsvpDeadline": "Please respond by July 24th",
+  "hero.thankYou": "Thank you for your response!",
+  "hero.thankYouMessage": "We can't wait to see you and celebrate together!",
 
   "switcher.top": "Back to top",
 

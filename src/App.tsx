@@ -7,7 +7,6 @@ import { BrowserRouter, Route, Routes, useLocation, useNavigate } from "react-ro
 import { LanguageProvider } from "./contexts/LanguageProvider";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Rsvp from "./pages/Rsvp";
 
 const queryClient = new QueryClient();
 
@@ -65,8 +64,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/weekend" element={<Index />} />
-            <Route path="/rsvp" element={<Rsvp />} />
-            <Route path="/weekend/rsvp" element={<Rsvp />} />
+            {/* <Route path="/rsvp" element={<Rsvp />} /> */}
+            {/* <Route path="/weekend/rsvp" element={<Rsvp />} /> */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

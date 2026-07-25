@@ -11,7 +11,6 @@ import { Menu } from "@/components/Menu";
 import MobileTocButton from "@/components/MobileTocButton";
 import { OurStory } from "@/components/OurStory";
 import { PackingList } from "@/components/PackingList";
-import { RsvpLink } from "@/components/RsvpLink";
 import { Rooms } from "@/components/Rooms";
 import SaveTheDateHero from "@/components/SaveTheDateHero";
 import Schedule from "@/components/Schedule";
@@ -32,7 +31,6 @@ const Index = () => {
     { key: "rooms", component: <Rooms /> },
     { key: "packingList", component: <PackingList /> },
     { key: "gifts", component: <Gifts /> },
-    { key: "rsvpLink", component: <RsvpLink /> },
     { key: "connect", component: <AddToCalendar /> },
   ];
 

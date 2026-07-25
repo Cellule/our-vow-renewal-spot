@@ -15,6 +15,8 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "hero.formLink": "Répondez à l'invitation !",
   "hero.scrollPrompt": "Voir ci-dessous pour plus d'informations",
   "hero.rsvpDeadline": "Merci de répondre d'ici le 24 juillet",
+  "hero.thankYou": "Merci pour votre réponse !",
+  "hero.thankYouMessage": "Nous avons hâte de vous voir et de célébrer avec vous !",
 
   "switcher.top": "Haut de page",
 
