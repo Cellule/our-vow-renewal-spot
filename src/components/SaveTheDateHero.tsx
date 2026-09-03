@@ -4,7 +4,6 @@ import { useIsWeekend } from "@/hooks/use-is-weekend";
 import { Camera, ChevronDown, HouseHeart, MapPin } from "lucide-react";
 
 const PHOTOS_URL = "https://wedding.dd-mike.ca/photos";
-const QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(PHOTOS_URL)}&color=8B2635&bgcolor=FFF8F0`;
 
 const SaveTheDateHero = () => {
   const { t } = useLanguage();
@@ -65,7 +64,7 @@ const SaveTheDateHero = () => {
             <h3 className="font-serif text-lg md:text-xl text-gold mb-1">{t("hero.photosTitle")}</h3>
             <p className="font-sans text-sm md:text-base text-cream/90 mb-4">{t("hero.photosSubtitle")}</p>
             <a href="/photos" target="_blank" rel="noopener noreferrer" className="inline-block bg-white rounded-xl p-3 shadow-lg hover:shadow-xl transition-shadow">
-              <img src={QR_URL} alt="QR code photos" width={160} height={160} className="w-32 h-32 md:w-40 md:h-40" loading="lazy" />
+              <img src="/qr-photos.svg" alt="QR code photos" width={160} height={160} className="w-32 h-32 md:w-40 md:h-40" loading="lazy" />
             </a>
             <div className="mt-4">
               <a
