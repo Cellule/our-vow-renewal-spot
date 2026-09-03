@@ -18,6 +18,7 @@ export const en = {
   "hero.thankYouMessage": "We can't wait to see you and celebrate together!",
   "hero.photosTitle": "Share your photos!",
   "hero.photosSubtitle": "Scan the QR code to upload your memories",
+  "hero.photosButton": "Take photos",
   "hero.photosLink": "wedding.dd-mike.ca/photos",
 
   "switcher.top": "Back to top",

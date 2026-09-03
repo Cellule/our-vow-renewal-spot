@@ -13,6 +13,10 @@
 - radix-ui for components
 - tailwindcss for styling
 
+## Git
+
+- Never commit or push without explicit user instruction
+
 ## Language
 
 - English and French

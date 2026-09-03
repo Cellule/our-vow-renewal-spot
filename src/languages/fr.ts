@@ -19,6 +19,7 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "hero.thankYouMessage": "Nous avons hâte de vous voir et de célébrer avec vous !",
   "hero.photosTitle": "Partagez vos photos !",
   "hero.photosSubtitle": "Scannez le code QR pour partager vos souvenirs",
+  "hero.photosButton": "Prendre des photos",
   "hero.photosLink": "wedding.dd-mike.ca/photos",
 
   "switcher.top": "Haut de page",
