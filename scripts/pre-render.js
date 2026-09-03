@@ -35,7 +35,8 @@ async function preRender() {
 
     // Generate photos redirect (static HTML for instant redirect + QR proxy)
     console.log("🔄 Generating photos redirect (/photos)...");
-    const destination = "https://guests.camera/e/mariage-andreanne-michael";
+    const destination = process.env.VITE_PHOTOS_URL || "/";
+    if (process.env.VITE_PHOTOS_URL) console.log("ℹ️  Using VITE_PHOTOS_URL from environment");
     const photosDir = path.join(distDir, "photos");
     if (!fs.existsSync(photosDir)) {
       fs.mkdirSync(photosDir, { recursive: true });
@@ -60,12 +61,12 @@ async function preRender() {
   </body>
 </html>`;
     fs.writeFileSync(path.join(photosDir, "index.html"), photosHtml);
-    console.log("✅ Photos redirect generated");
+    console.log("✅ Photos redirect generated" + (process.env.VITE_PHOTOS_URL ? " (env var)" : ""));
 
     console.log("✅ Pre-rendering completed successfully!");
     console.log("📄 index.html now contains server-rendered content");
     console.log("📄 weekend/index.html now contains server-rendered content");
-    console.log("📄 photos/index.html is a redirect to", destination);
+    console.log("📄 photos/index.html is a redirect" + (process.env.VITE_PHOTOS_URL ? " (target hidden)" : ` to ${destination}`));
   } catch (error) {
     console.error("❌ Pre-rendering failed:", error);
     process.exit(1);

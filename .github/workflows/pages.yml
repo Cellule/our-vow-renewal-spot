@@ -39,6 +39,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build:preview
+        env:
+          VITE_PHOTOS_URL: ${{ vars.VITE_PHOTOS_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
