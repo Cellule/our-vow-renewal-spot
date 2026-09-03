@@ -110,9 +110,9 @@ export const en = {
   "schedule.saturdayArrival": "Arrival starting at 1pm",
   "schedule.saturdayBreakfast": "Breakfast — brunch buffet style",
   "schedule.saturdayLunch": "Lunch — buffet sandwiches and more",
-  "schedule.saturdayCeremony": "Ceremony at 4pm",
+  "schedule.saturdayCeremony": "Ceremony at 4:30pm",
   "schedule.saturdayCocktail": "Cocktail hour at 5pm",
-  "schedule.saturdayDinner": "Dinner between 6pm and 7pm",
+  "schedule.saturdayDinner": "Dinner at 7pm",
   "schedule.saturdayParty": "Party... all night!",
   "schedule.sundayTitle": "Sunday, September 20th",
   "schedule.sundayBrunch": "Brunch from 10am to 12pm",
@@ -145,7 +145,8 @@ export const en = {
   "gift.title": "Gift Suggestion",
   "gift.text": "We don't need any particular gifts, but if your heart desires, a contribution to our honeymoon would be appreciated 😊",
   "gift.note": "This is by no means expected, so please don't feel any pressure! Your presence at our celebration is the greatest gift we could ask for.",
-  "gift.anonymity": "We kindly request that all monetary gifts remain anonymous. Please avoid putting money in a card. If you wish to send us your wishes, a guest book will be available next to the gift table.",
+  "gift.anonymity":
+    "We kindly request that all monetary gifts remain anonymous. Please avoid putting money in a card. If you wish to send us your wishes, a guest book will be available next to the gift table.",
 
   // Contact Section
   "contact.addToCalendar": "Add to Calendar",
