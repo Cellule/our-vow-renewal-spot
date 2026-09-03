@@ -17,6 +17,9 @@ export const fr: Record<TranslationKeys, string | undefined> = {
   "hero.rsvpDeadline": "Merci de répondre d'ici le 24 juillet",
   "hero.thankYou": "Merci pour votre réponse !",
   "hero.thankYouMessage": "Nous avons hâte de vous voir et de célébrer avec vous !",
+  "hero.photosTitle": "Partagez vos photos !",
+  "hero.photosSubtitle": "Scannez le code QR pour partager vos souvenirs",
+  "hero.photosLink": "wedding.dd-mike.ca/photos",
 
   "switcher.top": "Haut de page",
 

@@ -16,6 +16,9 @@ export const en = {
   "hero.rsvpDeadline": "Please respond by July 24th",
   "hero.thankYou": "Thank you for your response!",
   "hero.thankYouMessage": "We can't wait to see you and celebrate together!",
+  "hero.photosTitle": "Share your photos!",
+  "hero.photosSubtitle": "Scan the QR code to upload your memories",
+  "hero.photosLink": "wedding.dd-mike.ca/photos",
 
   "switcher.top": "Back to top",
 
