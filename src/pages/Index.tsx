@@ -1,9 +1,7 @@
 import { Activities } from "@/components/Activities";
 import BackToTopButton from "@/components/BackToTopButton";
 import BottomRightActions from "@/components/BottomRightActions";
-import { Children } from "@/components/Children";
 import { ColorPalette } from "@/components/ColorPalette";
-import { AddToCalendar } from "@/components/Connect";
 import { DressCode } from "@/components/DressCode";
 import { Gifts } from "@/components/Gifts";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -11,7 +9,6 @@ import { Menu } from "@/components/Menu";
 import MobileTocButton from "@/components/MobileTocButton";
 import { OurStory } from "@/components/OurStory";
 import { PackingList } from "@/components/PackingList";
-import { Rooms } from "@/components/Rooms";
 import SaveTheDateHero from "@/components/SaveTheDateHero";
 import Schedule from "@/components/Schedule";
 import TableOfContents from "@/components/TableOfContents";
@@ -27,11 +24,11 @@ const Index = () => {
     { key: "palette", component: <ColorPalette /> },
     { key: "menu", component: <Menu /> },
     { key: "activities", component: <Activities /> },
-    { key: "children", component: <Children /> },
-    { key: "rooms", component: <Rooms /> },
+    // { key: "children", component: <Children /> },
+    // { key: "rooms", component: <Rooms /> },
     { key: "packingList", component: <PackingList /> },
     { key: "gifts", component: <Gifts /> },
-    { key: "connect", component: <AddToCalendar /> },
+    // { key: "connect", component: <AddToCalendar /> },
   ];
 
   return (
