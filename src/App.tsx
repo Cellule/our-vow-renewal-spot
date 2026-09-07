@@ -6,9 +6,9 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageProvider";
 import Index from "./pages/Index";
-import Intro from "./pages/Intro";
 import NotFound from "./pages/NotFound";
-import Photos from "./pages/Photos";
+import Redirect from "./pages/Redirect";
+import { REDIRECTS } from "./lib/redirects.js";
 
 const queryClient = new QueryClient();
 
@@ -66,8 +66,10 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/weekend" element={<Index />} />
-            <Route path="/photos" element={<Photos />} />
-            <Route path="/intro" element={<Intro />} />
+            {REDIRECTS.map((r) => {
+              const destination = (import.meta.env as Record<string, string>)[r.envVar] || r.fallback;
+              return <Route key={r.path} path={`/${r.path}`} element={<Redirect destination={destination} />} />;
+            })}
             {/* <Route path="/rsvp" element={<Rsvp />} /> */}
             {/* <Route path="/weekend/rsvp" element={<Rsvp />} /> */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

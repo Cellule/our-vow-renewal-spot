@@ -6,8 +6,8 @@ import { Route, Routes } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 import { LanguageProvider } from "./contexts/LanguageProvider";
 import Index from "./pages/Index";
-import Intro from "./pages/Intro";
-import Photos from "./pages/Photos";
+import Redirect from "./pages/Redirect";
+import { REDIRECTS } from "./lib/redirects.js";
 
 const queryClient = new QueryClient();
 
@@ -25,8 +25,10 @@ const AppServer = ({ url }: AppServerProps) => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/weekend" element={<Index />} />
-            <Route path="/photos" element={<Photos />} />
-            <Route path="/intro" element={<Intro />} />
+            {REDIRECTS.map((r) => {
+              const destination = (import.meta.env as Record<string, string>)[r.envVar] || r.fallback;
+              return <Route key={r.path} path={`/${r.path}`} element={<Redirect destination={destination} />} />;
+            })}
           </Routes>
         </StaticRouter>
       </LanguageProvider>
