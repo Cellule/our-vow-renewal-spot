@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const DESTINATION = import.meta.env.VITE_PHOTOS_URL || "/";
+const DESTINATION = import.meta.env.VITE_PHOTOS_URL || "https://guests.camera/e/mariage-andreanne-michael";
 
 const Photos = () => {
   useEffect(() => {

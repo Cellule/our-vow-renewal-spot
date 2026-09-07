@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageProvider";
 import Index from "./pages/Index";
+import Intro from "./pages/Intro";
 import NotFound from "./pages/NotFound";
 import Photos from "./pages/Photos";
 
@@ -66,6 +67,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/weekend" element={<Index />} />
             <Route path="/photos" element={<Photos />} />
+            <Route path="/intro" element={<Intro />} />
             {/* <Route path="/rsvp" element={<Rsvp />} /> */}
             {/* <Route path="/weekend/rsvp" element={<Rsvp />} /> */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

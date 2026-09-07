@@ -40,7 +40,8 @@ jobs:
       - name: Build
         run: npm run build:preview
         env:
-          VITE_PHOTOS_URL: ${{ vars.VITE_PHOTOS_URL }}
+          VITE_PHOTOS_URL: ${{ secrets.VITE_PHOTOS_URL || vars.VITE_PHOTOS_URL }}
+          VITE_INTRO_URL: ${{ secrets.VITE_INTRO_URL || vars.VITE_INTRO_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

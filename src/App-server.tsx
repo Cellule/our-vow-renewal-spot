@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 import { LanguageProvider } from "./contexts/LanguageProvider";
 import Index from "./pages/Index";
+import Intro from "./pages/Intro";
 import Photos from "./pages/Photos";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const AppServer = ({ url }: AppServerProps) => (
             <Route path="/" element={<Index />} />
             <Route path="/weekend" element={<Index />} />
             <Route path="/photos" element={<Photos />} />
+            <Route path="/intro" element={<Intro />} />
           </Routes>
         </StaticRouter>
       </LanguageProvider>

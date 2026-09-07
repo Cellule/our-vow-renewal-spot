@@ -35,7 +35,7 @@ async function preRender() {
 
     // Generate photos redirect (static HTML for instant redirect + QR proxy)
     console.log("🔄 Generating photos redirect (/photos)...");
-    const destination = process.env.VITE_PHOTOS_URL || "/";
+    const destination = process.env.VITE_PHOTOS_URL || "https://guests.camera/e/mariage-andreanne-michael";
     if (process.env.VITE_PHOTOS_URL) console.log("ℹ️  Using VITE_PHOTOS_URL from environment");
     const photosDir = path.join(distDir, "photos");
     if (!fs.existsSync(photosDir)) {
@@ -63,10 +63,37 @@ async function preRender() {
     fs.writeFileSync(path.join(photosDir, "index.html"), photosHtml);
     console.log("✅ Photos redirect generated" + (process.env.VITE_PHOTOS_URL ? " (env var)" : ""));
 
+    console.log("🔄 Generating intro redirect (/intro)...");
+    const introDestination = process.env.VITE_INTRO_URL || "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    if (process.env.VITE_INTRO_URL) console.log("ℹ️  Using VITE_INTRO_URL from environment");
+    const introDir = path.join(distDir, "intro");
+    if (!fs.existsSync(introDir)) fs.mkdirSync(introDir, { recursive: true });
+    const introHtml = `<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirection</title>
+    <meta http-equiv="refresh" content="0; url=${introDestination}" />
+    <link rel="canonical" href="${introDestination}" />
+    <meta name="robots" content="noindex, nofollow" />
+    <script>window.location.replace("${introDestination}");</script>
+  </head>
+  <body style="font-family: sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0;">
+    <div style="text-align: center; padding: 2rem;">
+      <p>Redirection en cours...</p>
+      <p style="margin-top: 1rem;"><a href="${introDestination}">Cliquez ici si vous n'êtes pas redirigé</a></p>
+    </div>
+  </body>
+</html>`;
+    fs.writeFileSync(path.join(introDir, "index.html"), introHtml);
+    console.log("✅ Intro redirect generated" + (process.env.VITE_INTRO_URL ? " (env var)" : ""));
+
     console.log("✅ Pre-rendering completed successfully!");
     console.log("📄 index.html now contains server-rendered content");
     console.log("📄 weekend/index.html now contains server-rendered content");
     console.log("📄 photos/index.html is a redirect" + (process.env.VITE_PHOTOS_URL ? " (target hidden)" : ` to ${destination}`));
+    console.log("📄 intro/index.html is a redirect" + (process.env.VITE_INTRO_URL ? " (target hidden)" : ` to ${introDestination}`));
   } catch (error) {
     console.error("❌ Pre-rendering failed:", error);
     process.exit(1);
